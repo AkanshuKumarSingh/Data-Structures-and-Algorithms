@@ -1,0 +1,27 @@
+package Pattern;
+
+import java.util.Scanner;
+
+public class pattern4 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int row = scan.nextInt();
+		int star = row, space = 0;
+		for(int r = 1; r <= row; r++) {
+			for(int sp = 1; sp <= space; sp++) {
+				System.out.print("\t");
+			}
+			
+			for(int st = star; st >= 1; st--) {
+				System.out.print("*\t");
+			}
+			System.out.println();
+			star--;
+			space++;
+		}
+		scan.close();
+		
+	}
+
+}
