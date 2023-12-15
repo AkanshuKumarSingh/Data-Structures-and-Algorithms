@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class InsertionSort {
+public class _6_InsertionSort {
 	
 //	Time Complexity: O(n^2) 
 //	Auxiliary Space: O(1)

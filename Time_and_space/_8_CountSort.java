@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class CountSort {
+public class _8_CountSort {
 
 	public static void countSort(int[] arr, int min, int max) {
 		int map[] = new int[max - min + 1];

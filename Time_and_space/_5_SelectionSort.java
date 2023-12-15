@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class SelectionSort {
+public class _5_SelectionSort {
 //	Time Complexity: O(n2) as there are two nested loops.
 //	Auxiliary Space: O(1) 
 //	The good thing about selection sort is it never makes more than O(n) swaps and can be 
@@ -18,7 +18,6 @@ public class SelectionSort {
 			}
 			swap(arr,i,minIndex);
 		}
-
 	}
 
 	public static void swap(int[] arr, int i, int j) {

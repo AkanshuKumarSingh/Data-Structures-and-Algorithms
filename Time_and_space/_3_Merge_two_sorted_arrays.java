@@ -3,7 +3,7 @@ package Time_and_space;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Merge_two_sorted_arrays {
+public class _3_Merge_two_sorted_arrays {
 
 	public static int[] mergeTwoSortedArrays(int[] a, int[] b) {
 		int i = 0;

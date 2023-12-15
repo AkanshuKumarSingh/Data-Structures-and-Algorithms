@@ -3,7 +3,7 @@ package Time_and_space;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class mergeSort {
+public class _7_mergeSort {
 
 //	Time Complexity: Sorting arrays on different machines. Merge Sort is a recursive algorithm 
 //	and time complexity can be expressed as following recurrence relation. 

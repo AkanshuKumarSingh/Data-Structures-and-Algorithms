@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class QuickSelect {
+public class _12_QuickSelect {
 
 	  public static int quickSelect(int[] arr, int lo, int hi, int k) {
 	    
