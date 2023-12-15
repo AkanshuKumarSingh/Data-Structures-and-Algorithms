@@ -1,6 +1,6 @@
 package Time_and_space;
 
-public class Pivot_in_sorted_rotated_array {
+public class _13_Pivot_in_sorted_rotated_array {
 
 	public static int findPivot(int arr[], int lo, int hi) {
 		if(lo == hi) return arr[lo];

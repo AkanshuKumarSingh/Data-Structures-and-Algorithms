@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class QuickSort {
+public class _10_QuickSort {
 
 	public static void quickSort(int[] arr, int low, int high) {
 		if (low > high)

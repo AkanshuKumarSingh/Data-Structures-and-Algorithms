@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class BubbleSort {
+public class _4_BubbleSort {
 
 //	Worst and Average Case Time Complexity: O(n*n). Worst case occurs when array is reverse 
 //	sorted.

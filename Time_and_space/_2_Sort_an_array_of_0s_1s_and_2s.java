@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class Sort012 {
+public class _2_Sort_an_array_of_0s_1s_and_2s {
 	
 	// Dutch National Flag Problem
 

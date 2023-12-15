@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Arrays;
 
-public class Target_Sum_Pair_1 {
+public class _11_Target_Sum_Pair_1 {
 	
 	public static void targetSum(int arr[], int target) {
 		Arrays.sort(arr);

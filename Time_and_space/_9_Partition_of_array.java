@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class Partition_of_array {
+public class _9_Partition_of_array {
 
 	public static void partition(int[] arr, int pivot) {
 //		int j = 0;

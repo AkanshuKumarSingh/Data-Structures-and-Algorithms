@@ -2,7 +2,7 @@ package Time_and_space;
 
 import java.util.Scanner;
 
-public class Sort01 {
+public class _1_Segregate_0s_and_1s {
 	
 	public static void swap(int i, int j, int arr[]) {
 		int t = arr[j];
