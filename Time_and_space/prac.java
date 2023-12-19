@@ -1,6 +1,8 @@
 package Time_and_space;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class prac {
@@ -47,6 +49,23 @@ public class prac {
 
 	public static void main(String[] args) throws Exception {
 		Scanner scn = new Scanner(System.in);
+		
+		HashSet<ArrayList<Integer>> set = new HashSet<>();
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(1);
+		list.add(3);
+		list.add(5);
+		set.add(list);
+		System.out.println(set);
+		
+		ArrayList<Integer> list1 = new ArrayList<>();
+		list1.add(1);
+		list1.add(3);
+		list1.add(5);
+		System.out.println(set.contains(list1));
+		list1.addAll(list);
+		System.out.println(list1);
+		
 		int n = Integer.parseInt(scn.nextLine());
 		String[] arr = new String[n];
 		for (int i = 0; i < n; i++) {
@@ -54,9 +73,8 @@ public class prac {
 		}
 //		merge_sort(arr, 0, arr.length - 1);
 //		System.out.print("Sorted Array -> ");
-//		System.out.println(Arrays.toString(arr));
-		
-		sortDates(arr);
+//		System.out.println(Arrays.toString(arr));		
+//		sortDates(arr);
 	}
 	
 	public static void sortDates(String arr[]) {
