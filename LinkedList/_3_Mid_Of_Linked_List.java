@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Merge_Two_Sorted_Linked_Lists {
+public class _3_Mid_Of_Linked_List {
 	public static class Node {
 		int data;
 		Node next;
@@ -217,70 +217,96 @@ public class Merge_Two_Sorted_Linked_Lists {
 		}
 
 		public int mid() {
-			Node f = head;
-			Node s = head;
-
-			while (f.next != null && f.next.next != null) {
-				f = f.next.next;
-				s = s.next;
+			if (head == null)
+				return -1;
+			Node fast = head;
+			Node slow = head;
+			while (fast.next != null && fast.next.next != null) {
+				fast = fast.next.next;
+				slow = slow.next;
 			}
-
-			return s.data;
+			return slow.data;
 		}
-
-		public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
-			Node p1 = l1.head;
-			Node p2 = l2.head;
-			LinkedList l = new LinkedList();
-
-			while (p1 != null && p2 != null) {
-				int no1 = p1.data;
-				int no2 = p2.data;
-
-				if(no1 < no2) {
-					l.addLast(no1);
-					p1 = p1.next;
-				}else {
-					l.addLast(no2);
-					p2 = p2.next;
-				}
+		
+		public int mid1() {
+			if (head == null)
+				return -1;
+			Node fast = head;
+			Node slow = head.next;
+			while (fast != null && fast.next != null) {
+				fast = fast.next.next;
+				slow = slow.next;
 			}
-
-			while(p1 != null) {
-				l.addLast(p1.data);
-				p1 = p1.next;
-			} 
-			while (p2 != null){
-				l.addLast(p2.data);
-				p2 = p2.next;
+			return slow.data;
+		}
+		
+		public int mid2() {
+			if (head == null)
+				return -1;
+			Node fast = head;
+			Node slow = head;
+			while (fast != null && fast.next != null) {
+				fast = fast.next.next;
+				slow = slow.next;
 			}
-
-			return l;
+			return slow.data;
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		LinkedList list = new LinkedList();
 
-		int n1 = Integer.parseInt(br.readLine());
-		LinkedList l1 = new LinkedList();
-		String[] values1 = br.readLine().split(" ");
-		for (int i = 0; i < n1; i++) {
-			int d = Integer.parseInt(values1[i]);
-			l1.addLast(d);
+		String str = br.readLine();
+		while (str.equals("quit") == false) {
+			if (str.startsWith("addLast")) {
+				int val = Integer.parseInt(str.split(" ")[1]);
+				list.addLast(val);
+			} else if (str.startsWith("size")) {
+				System.out.println(list.size());
+			} else if (str.startsWith("display")) {
+				list.display();
+			} else if (str.startsWith("removeFirst")) {
+				list.removeFirst();
+			} else if (str.startsWith("getFirst")) {
+				int val = list.getFirst();
+				if (val != -1) {
+					System.out.println(val);
+				}
+			} else if (str.startsWith("getLast")) {
+				int val = list.getLast();
+				if (val != -1) {
+					System.out.println(val);
+				}
+			} else if (str.startsWith("getAt")) {
+				int idx = Integer.parseInt(str.split(" ")[1]);
+				int val = list.getAt(idx);
+				if (val != -1) {
+					System.out.println(val);
+				}
+			} else if (str.startsWith("addFirst")) {
+				int val = Integer.parseInt(str.split(" ")[1]);
+				list.addFirst(val);
+			} else if (str.startsWith("addAt")) {
+				int idx = Integer.parseInt(str.split(" ")[1]);
+				int val = Integer.parseInt(str.split(" ")[2]);
+				list.addAt(idx, val);
+			} else if (str.startsWith("removeLast")) {
+				list.removeLast();
+			} else if (str.startsWith("removeAt")) {
+				int idx = Integer.parseInt(str.split(" ")[1]);
+				list.removeAt(idx);
+			} else if (str.startsWith("reverseDI")) {
+				list.reverseDI();
+			} else if (str.startsWith("reversePI")) {
+				list.reversePI();
+			} else if (str.startsWith("kthFromEnd")) {
+				int idx = Integer.parseInt(str.split(" ")[1]);
+				System.out.println(list.kthFromLast(idx));
+			} else if (str.startsWith("mid")) {
+				System.out.println(list.mid());
+			}
+			str = br.readLine();
 		}
-
-		int n2 = Integer.parseInt(br.readLine());
-		LinkedList l2 = new LinkedList();
-		String[] values2 = br.readLine().split(" ");
-		for (int i = 0; i < n2; i++) {
-			int d = Integer.parseInt(values2[i]);
-			l2.addLast(d);
-		}
-
-		LinkedList merged = LinkedList.mergeTwoSortedLists(l1, l2);
-		merged.display();
-		l1.display();
-		l2.display();
 	}
 }

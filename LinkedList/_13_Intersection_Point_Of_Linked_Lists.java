@@ -3,9 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import LinkedList.isLinkedListPaindrome.Node;
-
-public class Fold_A_Linked_List {
+public class _13_Intersection_Point_Of_Linked_Lists {
 	public static class Node {
 		int data;
 		Node next;
@@ -397,95 +395,35 @@ public class Fold_A_Linked_List {
 			tail.next = null;
 		}
 
-		public Node reverseNode(Node node) {
-			Node prev = null;
-			Node curr = node;
+		public static int findIntersection(LinkedList one, LinkedList two) {
+			int size1 = one.size();
+			int size2 = two.size();
 
-			while (curr != null) {
-				Node next = curr.next;
-				curr.next = prev;
-				prev = curr;
-				curr = next;
+			Node p1 = one.head;
+			Node p2 = two.head;
+			if (size1 > size2) {
+				int cnt = size1 - size2;
+				while (cnt-- > 0) {
+					p1 = p1.next;
+				}
+			} else {
+				int cnt = size2 - size1;
+				while (cnt-- > 0) {
+					p2 = p2.next;
+				}
 			}
 
-			return prev;
-		}
-
-		public Node getMiddle(Node node) {
-			Node slow = node;
-			Node fast = node;
-			while (fast.next != null && fast.next.next != null) {
-				slow = slow.next;
-				fast = fast.next.next;
+			while(p1 != p2) {
+				p1 = p1.next;
+				p2 = p2.next;
 			}
-			return slow;
+			
+			return p1.data;
 		}
-
-//		public void fold() {
-//			Node mid = getMiddle(head);
-//			Node head2 = mid.next;
-//			mid.next = null;
-//
-//			head2 = reverseNode(head2);
-//			Node p1 = head;
-//			Node p2 = head2;
-//			Node curr = head;
-//
-//			while (curr != null) {
-//				if (curr == p1) {
-//					p1 = p1.next;
-//					curr.next = p2;
-//					curr = curr.next;
-//				} else {
-//					p2 = p2.next;
-//					curr.next = p1;
-//					curr = curr.next;
-//				}
-//			}
-//
-//			this.tail = getNodeAt(this.size - 1);
-//
-//		}
-
-		public void fold() {
-			if (head == null || head.next == null || head.next.next == null)
-				return;
-
-			Node mid = getMiddle(head);
-
-			Node head2 = mid.next;
-			mid.next = null;
-			head2 = reverseNode(head2);
-
-			Node p1 = head;
-			Node p2 = head2;
-
-			Node prev = head;
-
-			while (p1 != null && p2 != null) {
-				Node n1 = p1.next;
-				Node n2 = p2.next;
-
-				p1.next = p2;
-				p2.next = n1;
-
-				p1 = n1;
-				p2 = n2;
-
-				if (p1 != null)
-					prev = p1;
-				if (p2 != null)
-					prev = p2;
-
-			}
-
-			this.tail = prev;
-
-		}
-
 	}
 
 	public static void main(String[] args) throws Exception {
+		System.out.println("HHM");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int n1 = Integer.parseInt(br.readLine());
@@ -496,14 +434,29 @@ public class Fold_A_Linked_List {
 			l1.addLast(d);
 		}
 
-		int a = Integer.parseInt(br.readLine());
-		int b = Integer.parseInt(br.readLine());
+		int n2 = Integer.parseInt(br.readLine());
+		LinkedList l2 = new LinkedList();
+		String[] values2 = br.readLine().split(" ");
+		for (int i = 0; i < n2; i++) {
+			int d = Integer.parseInt(values2[i]);
+			l2.addLast(d);
+		}
 
-		l1.display();
-		l1.fold();
-		l1.display();
-		l1.addFirst(a);
-		l1.addLast(b);
-		l1.display();
+		int li = Integer.parseInt(br.readLine());
+		int di = Integer.parseInt(br.readLine());
+		if (li == 1) {
+			Node n = l1.getNodeAt(di);
+			l2.tail.next = n;
+			l2.tail = l1.tail;
+			l2.size += l1.size - di;
+		} else {
+			Node n = l2.getNodeAt(di);
+			l1.tail.next = n;
+			l1.tail = l2.tail;
+			l1.size += l2.size - di;
+		}
+
+		int inter = LinkedList.findIntersection(l1, l2);
+		System.out.println(inter);
 	}
 }

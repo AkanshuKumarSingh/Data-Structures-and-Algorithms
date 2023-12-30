@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Remove_Duplicates_In_A_Sorted_Linked_List {
+public class _6_Remove_Duplicates_In_A_Sorted_Linked_List {
 	  public static class Node {
 		    int data;
 		    Node next;
@@ -298,6 +298,23 @@ public class Remove_Duplicates_In_A_Sorted_Linked_List {
 		      
 		      // set original head and tail
 		      this.tail = curr;
+		    }
+		    
+		    //GFG
+		    Node removeDuplicates(Node head)
+		    {
+		        if(head == null || head.next == null) return head;
+				Node curr = head.next, prev = head;
+				while(curr != null){
+				    if(curr.data == prev.data){
+				        prev.next = curr.next;
+				        curr = curr.next;
+				    }else{
+				        prev = curr;
+				        curr = curr.next;
+				    }
+				}
+				return head;
 		    }
 		    
 		  }

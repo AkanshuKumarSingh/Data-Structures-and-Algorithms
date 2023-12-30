@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Mid_Of_Linked_List {
+public class _9_Display_Reverse_recursive_Linked_List {
 	public static class Node {
 		int data;
 		Node next;
@@ -217,96 +217,187 @@ public class Mid_Of_Linked_List {
 		}
 
 		public int mid() {
-			if (head == null)
-				return -1;
-			Node fast = head;
-			Node slow = head;
-			while (fast.next != null && fast.next.next != null) {
-				fast = fast.next.next;
-				slow = slow.next;
+			Node f = head;
+			Node s = head;
+
+			while (f.next != null && f.next.next != null) {
+				f = f.next.next;
+				s = s.next;
 			}
-			return slow.data;
+
+			return s.data;
 		}
-		
-		public int mid1() {
-			if (head == null)
-				return -1;
-			Node fast = head;
-			Node slow = head.next;
-			while (fast != null && fast.next != null) {
-				fast = fast.next.next;
-				slow = slow.next;
+
+		public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
+			LinkedList ml = new LinkedList();
+
+			Node one = l1.head;
+			Node two = l2.head;
+			while (one != null && two != null) {
+				if (one.data < two.data) {
+					ml.addLast(one.data);
+					one = one.next;
+				} else {
+					ml.addLast(two.data);
+					two = two.next;
+				}
 			}
-			return slow.data;
+
+			while (one != null) {
+				ml.addLast(one.data);
+				one = one.next;
+			}
+
+			while (two != null) {
+				ml.addLast(two.data);
+				two = two.next;
+			}
+
+			return ml;
 		}
-		
-		public int mid2() {
-			if (head == null)
-				return -1;
-			Node fast = head;
-			Node slow = head;
-			while (fast != null && fast.next != null) {
-				fast = fast.next.next;
-				slow = slow.next;
+
+		public static Node midNode(Node head, Node tail) {
+			Node f = head;
+			Node s = head;
+
+			while (f != tail && f.next != tail) {
+				f = f.next.next;
+				s = s.next;
 			}
-			return slow.data;
+
+			return s;
+		}
+
+		public static LinkedList mergeSort(Node head, Node tail) {
+			if (head == tail) {
+				LinkedList br = new LinkedList();
+				br.addLast(head.data);
+				return br;
+			}
+
+			Node mid = midNode(head, tail);
+			LinkedList fsh = mergeSort(head, mid);
+			LinkedList ssh = mergeSort(mid.next, tail);
+			LinkedList sl = mergeTwoSortedLists(fsh, ssh);
+			return sl;
+		}
+
+		public void removeDuplicates() {
+			LinkedList res = new LinkedList();
+
+			while (this.size() > 0) {
+				int val = this.getFirst();
+				this.removeFirst();
+
+				if (res.size() == 0 || val != res.tail.data) {
+					res.addLast(val);
+				}
+			}
+
+			this.head = res.head;
+			this.tail = res.tail;
+			this.size = res.size;
+		}
+
+		public void oddEven() {
+			LinkedList odd = new LinkedList();
+			LinkedList even = new LinkedList();
+
+			while (this.size > 0) {
+				int val = this.getFirst();
+				this.removeFirst();
+
+				if (val % 2 == 0) {
+					even.addLast(val);
+				} else {
+					odd.addLast(val);
+				}
+			}
+
+			if (odd.size > 0 && even.size > 0) {
+				odd.tail.next = even.head;
+
+				this.head = odd.head;
+				this.tail = even.tail;
+				this.size = odd.size + even.size;
+			} else if (odd.size > 0) {
+				this.head = odd.head;
+				this.tail = odd.tail;
+				this.size = odd.size;
+			} else if (even.size > 0) {
+				this.head = even.head;
+				this.tail = even.tail;
+				this.size = even.size;
+			}
+		}
+
+		public void kReverse(int k) {
+			LinkedList prev = null;
+
+			while (this.size > 0) {
+				LinkedList curr = new LinkedList();
+
+				if (this.size >= k) {
+					for (int i = 0; i < k; i++) {
+						int val = this.getFirst();
+						this.removeFirst();
+						curr.addFirst(val);
+					}
+				} else {
+					int sz = this.size;
+					for (int i = 0; i < sz; i++) {
+						int val = this.getFirst();
+						this.removeFirst();
+						curr.addLast(val);
+					}
+				}
+
+				if (prev == null) {
+					prev = curr;
+				} else {
+					prev.tail.next = curr.head;
+					prev.tail = curr.tail;
+					prev.size += curr.size;
+				}
+			}
+
+			this.head = prev.head;
+			this.tail = prev.tail;
+			this.size = prev.size;
+		}
+
+		private void displayReverseHelper(Node node) {
+			if(node == null) {
+				return;
+			}
+			displayReverseHelper(node.next);
+			System.out.print(node.data + " ");
+		}
+
+		public void displayReverse() {
+			displayReverseHelper(head);
+			System.out.println();
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		LinkedList list = new LinkedList();
 
-		String str = br.readLine();
-		while (str.equals("quit") == false) {
-			if (str.startsWith("addLast")) {
-				int val = Integer.parseInt(str.split(" ")[1]);
-				list.addLast(val);
-			} else if (str.startsWith("size")) {
-				System.out.println(list.size());
-			} else if (str.startsWith("display")) {
-				list.display();
-			} else if (str.startsWith("removeFirst")) {
-				list.removeFirst();
-			} else if (str.startsWith("getFirst")) {
-				int val = list.getFirst();
-				if (val != -1) {
-					System.out.println(val);
-				}
-			} else if (str.startsWith("getLast")) {
-				int val = list.getLast();
-				if (val != -1) {
-					System.out.println(val);
-				}
-			} else if (str.startsWith("getAt")) {
-				int idx = Integer.parseInt(str.split(" ")[1]);
-				int val = list.getAt(idx);
-				if (val != -1) {
-					System.out.println(val);
-				}
-			} else if (str.startsWith("addFirst")) {
-				int val = Integer.parseInt(str.split(" ")[1]);
-				list.addFirst(val);
-			} else if (str.startsWith("addAt")) {
-				int idx = Integer.parseInt(str.split(" ")[1]);
-				int val = Integer.parseInt(str.split(" ")[2]);
-				list.addAt(idx, val);
-			} else if (str.startsWith("removeLast")) {
-				list.removeLast();
-			} else if (str.startsWith("removeAt")) {
-				int idx = Integer.parseInt(str.split(" ")[1]);
-				list.removeAt(idx);
-			} else if (str.startsWith("reverseDI")) {
-				list.reverseDI();
-			} else if (str.startsWith("reversePI")) {
-				list.reversePI();
-			} else if (str.startsWith("kthFromEnd")) {
-				int idx = Integer.parseInt(str.split(" ")[1]);
-				System.out.println(list.kthFromLast(idx));
-			} else if (str.startsWith("mid")) {
-				System.out.println(list.mid());
-			}
-			str = br.readLine();
+		int n1 = Integer.parseInt(br.readLine());
+		LinkedList l1 = new LinkedList();
+		String[] values1 = br.readLine().split(" ");
+		for (int i = 0; i < n1; i++) {
+			int d = Integer.parseInt(values1[i]);
+			l1.addLast(d);
 		}
+
+		int a = Integer.parseInt(br.readLine());
+		int b = Integer.parseInt(br.readLine());
+
+		l1.display();
+		l1.displayReverse();
+		l1.addLast(a);
+		l1.addFirst(b);
+		l1.display();
 	}
 }

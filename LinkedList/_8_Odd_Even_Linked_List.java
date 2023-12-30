@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Odd_Even_Linked_List {
+public class _8_Odd_Even_Linked_List {
 	public static class Node {
 		int data;
 		Node next;

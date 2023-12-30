@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Reverse_A_Linked_List_data_Iterative {
+public class _11_Reverse_A_Linked_List_data_Iterative {
 	public static class Node {
 		int data;
 		Node next;

@@ -1,6 +1,7 @@
 package Recursion_and_Backtracking;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 
 public class prac {
@@ -29,10 +30,23 @@ public class prac {
 		list1.add(0, "1st");
 		list1.add("last");
 		System.out.println(list1);
+		ArrayList<String> list2 = new ArrayList<>(list1);
+		list1.add("0");
+		System.out.println(list2);
+		System.out.println(list1);
 		
 		System.out.println(String.valueOf("" + 17).length());
 		
 		System.out.println(Integer.BYTES);
+		
+		ArrayList<Integer> a = new ArrayList<>();
+		for(int i : new int[] {5, 6, 6, 10, 3, 4, 6, 6, 4}) {
+			a.add(i)
+		}
+		
+		Collections.sort(null);
+		Sysout
+		
 		
 	}
 

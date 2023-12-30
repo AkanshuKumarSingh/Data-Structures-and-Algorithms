@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Intersection_Point_Of_Linked_Lists {
+public class _4_Merge_Two_Sorted_Linked_Lists {
 	public static class Node {
 		int data;
 		Node next;
@@ -229,201 +229,76 @@ public class Intersection_Point_Of_Linked_Lists {
 		}
 
 		public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
-			LinkedList ml = new LinkedList();
+			Node p1 = l1.head;
+			Node p2 = l2.head;
+			LinkedList l = new LinkedList();
 
-			Node one = l1.head;
-			Node two = l2.head;
-			while (one != null && two != null) {
-				if (one.data < two.data) {
-					ml.addLast(one.data);
-					one = one.next;
-				} else {
-					ml.addLast(two.data);
-					two = two.next;
-				}
-			}
+			while (p1 != null && p2 != null) {
+				int no1 = p1.data;
+				int no2 = p2.data;
 
-			while (one != null) {
-				ml.addLast(one.data);
-				one = one.next;
-			}
-
-			while (two != null) {
-				ml.addLast(two.data);
-				two = two.next;
-			}
-
-			return ml;
-		}
-
-		public static Node midNode(Node head, Node tail) {
-			Node f = head;
-			Node s = head;
-
-			while (f != tail && f.next != tail) {
-				f = f.next.next;
-				s = s.next;
-			}
-
-			return s;
-		}
-
-		public static LinkedList mergeSort(Node head, Node tail) {
-			if (head == tail) {
-				LinkedList br = new LinkedList();
-				br.addLast(head.data);
-				return br;
-			}
-
-			Node mid = midNode(head, tail);
-			LinkedList fsh = mergeSort(head, mid);
-			LinkedList ssh = mergeSort(mid.next, tail);
-			LinkedList sl = mergeTwoSortedLists(fsh, ssh);
-			return sl;
-		}
-
-		public void removeDuplicates() {
-			LinkedList res = new LinkedList();
-
-			while (this.size() > 0) {
-				int val = this.getFirst();
-				this.removeFirst();
-
-				if (res.size() == 0 || val != res.tail.data) {
-					res.addLast(val);
-				}
-			}
-
-			this.head = res.head;
-			this.tail = res.tail;
-			this.size = res.size;
-		}
-
-		public void oddEven() {
-			LinkedList odd = new LinkedList();
-			LinkedList even = new LinkedList();
-
-			while (this.size > 0) {
-				int val = this.getFirst();
-				this.removeFirst();
-
-				if (val % 2 == 0) {
-					even.addLast(val);
-				} else {
-					odd.addLast(val);
-				}
-			}
-
-			if (odd.size > 0 && even.size > 0) {
-				odd.tail.next = even.head;
-
-				this.head = odd.head;
-				this.tail = even.tail;
-				this.size = odd.size + even.size;
-			} else if (odd.size > 0) {
-				this.head = odd.head;
-				this.tail = odd.tail;
-				this.size = odd.size;
-			} else if (even.size > 0) {
-				this.head = even.head;
-				this.tail = even.tail;
-				this.size = even.size;
-			}
-		}
-
-		public void kReverse(int k) {
-			LinkedList prev = null;
-
-			while (this.size > 0) {
-				LinkedList curr = new LinkedList();
-
-				if (this.size >= k) {
-					for (int i = 0; i < k; i++) {
-						int val = this.getFirst();
-						this.removeFirst();
-						curr.addFirst(val);
-					}
-				} else {
-					int sz = this.size;
-					for (int i = 0; i < sz; i++) {
-						int val = this.getFirst();
-						this.removeFirst();
-						curr.addLast(val);
-					}
-				}
-
-				if (prev == null) {
-					prev = curr;
-				} else {
-					prev.tail.next = curr.head;
-					prev.tail = curr.tail;
-					prev.size += curr.size;
-				}
-			}
-
-			this.head = prev.head;
-			this.tail = prev.tail;
-			this.size = prev.size;
-		}
-
-		private void displayReverseHelper(Node node) {
-			if (node == null) {
-				return;
-			}
-			displayReverseHelper(node.next);
-			System.out.print(node.data + " ");
-		}
-
-		public void displayReverse() {
-			displayReverseHelper(head);
-			System.out.println();
-		}
-
-		private void reversePRHelper(Node node) {
-			if (node == tail) {
-				return;
-			}
-			reversePRHelper(node.next);
-			node.next.next = node;
-		}
-
-		public void reversePR() {
-			reversePRHelper(head);
-			Node temp = head;
-			head = tail;
-			tail = temp;
-			tail.next = null;
-		}
-
-		public static int findIntersection(LinkedList one, LinkedList two) {
-			int size1 = one.size();
-			int size2 = two.size();
-
-			Node p1 = one.head;
-			Node p2 = two.head;
-			if (size1 > size2) {
-				int cnt = size1 - size2;
-				while (cnt-- > 0) {
+				if(no1 < no2) {
+					l.addLast(no1);
 					p1 = p1.next;
-				}
-			} else {
-				int cnt = size2 - size1;
-				while (cnt-- > 0) {
+				}else {
+					l.addLast(no2);
 					p2 = p2.next;
 				}
 			}
 
-			while(p1 != p2) {
+			while(p1 != null) {
+				l.addLast(p1.data);
 				p1 = p1.next;
+			} 
+			while (p2 != null){
+				l.addLast(p2.data);
 				p2 = p2.next;
 			}
-			
-			return p1.data;
+
+			return l;
 		}
+		
+		// GFG
+	    Node sortedMerge(Node head1, Node head2) {
+	        Node head = null, tail = null;
+	        while(head1 != null && head2 != null){
+	            if(head1.data < head2.data){
+	                if(head == null){
+	                    head = tail = head1;
+	                    head1 = head1.next;
+	                    tail.next = null;
+	                }else{
+	                    tail.next = head1;
+	                    tail = head1;
+	                    head1 = head1.next;
+	                    tail.next = null;
+	                }
+	            }else{
+	                if(head == null){
+	                    head = tail = head2;
+	                    head2 = head2.next;
+	                    tail.next = null;
+	                }else{
+	                    tail.next = head2;
+	                    tail = head2;
+	                    head2 = head2.next;
+	                    tail.next = null;
+	                }
+	            }
+	            
+	        }
+	        
+	        if(head1 != null){
+	            tail.next = head1;
+	        }else{
+	            tail.next = head2;
+	        }
+	        
+	        return head;
+	      } 
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("HHM");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		int n1 = Integer.parseInt(br.readLine());
@@ -442,21 +317,9 @@ public class Intersection_Point_Of_Linked_Lists {
 			l2.addLast(d);
 		}
 
-		int li = Integer.parseInt(br.readLine());
-		int di = Integer.parseInt(br.readLine());
-		if (li == 1) {
-			Node n = l1.getNodeAt(di);
-			l2.tail.next = n;
-			l2.tail = l1.tail;
-			l2.size += l1.size - di;
-		} else {
-			Node n = l2.getNodeAt(di);
-			l1.tail.next = n;
-			l1.tail = l2.tail;
-			l1.size += l2.size - di;
-		}
-
-		int inter = LinkedList.findIntersection(l1, l2);
-		System.out.println(inter);
+		LinkedList merged = LinkedList.mergeTwoSortedLists(l1, l2);
+		merged.display();
+		l1.display();
+		l2.display();
 	}
 }

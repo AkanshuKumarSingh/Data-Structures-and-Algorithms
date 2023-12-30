@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Merge_Sort_A_Linked_List {
+public class _5_Merge_Sort_A_Linked_List {
 
 	public static class Node {
 		int data;
@@ -289,6 +289,78 @@ public class Merge_Sort_A_Linked_List {
 			return res;
 
 		}
+		
+		
+		
+		// GFG
+	    static Node getMiddle(Node head) {
+			if(head == null) {
+				return head;
+			}
+			Node slow = head;
+			Node fast = head;
+			while(fast.next != null && fast.next.next != null) {
+				slow = fast.next;
+				fast = fast.next.next;
+			}
+			return slow;
+		}
+		
+	    static Node sortedMerge(Node head1, Node head2) {
+	        Node head = null, tail = null;
+	        while(head1 != null && head2 != null){
+	            if(head1.data < head2.data){
+	                if(head == null){
+	                    head = tail = head1;
+	                    head1 = head1.next;
+	                    tail.next = null;
+	                }else{
+	                    tail.next = head1;
+	                    tail = head1;
+	                    head1 = head1.next;
+	                    tail.next = null;
+	                }
+	            }else{
+	                if(head == null){
+	                    head = tail = head2;
+	                    head2 = head2.next;
+	                    tail.next = null;
+	                }else{
+	                    tail.next = head2;
+	                    tail = head2;
+	                    head2 = head2.next;
+	                    tail.next = null;
+	                }
+	            }
+	            
+	        }
+	        
+	        if(head1 != null){
+	            tail.next = head1;
+	        }else{
+	            tail.next = head2;
+	        }
+	        
+	        return head;
+	      } 
+
+	    
+	    //Function to sort the given linked list using Merge Sort.
+	    static Node mergeSort(Node head)
+	    {
+	        if(head == null || head.next == null) {
+				return head;
+			}        
+	        Node mid = getMiddle(head);
+	        Node midNextHead = mid.next;
+	        mid.next = null;
+	        
+	        Node firstHead = mergeSort(head);
+	        Node secondHead = mergeSort(midNextHead);
+	        head = sortedMerge(firstHead, secondHead);
+	        return head;
+	        
+	    }
 	}
 
 	public static void main(String[] args) throws Exception {

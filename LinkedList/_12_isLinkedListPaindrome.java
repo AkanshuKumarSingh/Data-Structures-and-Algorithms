@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class isLinkedListPaindrome {
+public class _12_isLinkedListPaindrome {
 	public static class Node {
 		int data;
 		Node next;

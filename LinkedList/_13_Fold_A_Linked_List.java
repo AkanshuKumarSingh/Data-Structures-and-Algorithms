@@ -3,7 +3,9 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Display_Reverse_recursive_Linked_List {
+import LinkedList._12_isLinkedListPaindrome.Node;
+
+public class _13_Fold_A_Linked_List {
 	public static class Node {
 		int data;
 		Node next;
@@ -367,7 +369,7 @@ public class Display_Reverse_recursive_Linked_List {
 		}
 
 		private void displayReverseHelper(Node node) {
-			if(node == null) {
+			if (node == null) {
 				return;
 			}
 			displayReverseHelper(node.next);
@@ -378,6 +380,109 @@ public class Display_Reverse_recursive_Linked_List {
 			displayReverseHelper(head);
 			System.out.println();
 		}
+
+		private void reversePRHelper(Node node) {
+			if (node == tail) {
+				return;
+			}
+			reversePRHelper(node.next);
+			node.next.next = node;
+		}
+
+		public void reversePR() {
+			reversePRHelper(head);
+			Node temp = head;
+			head = tail;
+			tail = temp;
+			tail.next = null;
+		}
+
+		public Node reverseNode(Node node) {
+			Node prev = null;
+			Node curr = node;
+
+			while (curr != null) {
+				Node next = curr.next;
+				curr.next = prev;
+				prev = curr;
+				curr = next;
+			}
+
+			return prev;
+		}
+
+		public Node getMiddle(Node node) {
+			Node slow = node;
+			Node fast = node;
+			while (fast.next != null && fast.next.next != null) {
+				slow = slow.next;
+				fast = fast.next.next;
+			}
+			return slow;
+		}
+
+//		public void fold() {
+//			Node mid = getMiddle(head);
+//			Node head2 = mid.next;
+//			mid.next = null;
+//
+//			head2 = reverseNode(head2);
+//			Node p1 = head;
+//			Node p2 = head2;
+//			Node curr = head;
+//
+//			while (curr != null) {
+//				if (curr == p1) {
+//					p1 = p1.next;
+//					curr.next = p2;
+//					curr = curr.next;
+//				} else {
+//					p2 = p2.next;
+//					curr.next = p1;
+//					curr = curr.next;
+//				}
+//			}
+//
+//			this.tail = getNodeAt(this.size - 1);
+//
+//		}
+
+		public void fold() {
+			if (head == null || head.next == null || head.next.next == null)
+				return;
+
+			Node mid = getMiddle(head);
+
+			Node head2 = mid.next;
+			mid.next = null;
+			head2 = reverseNode(head2);
+
+			Node p1 = head;
+			Node p2 = head2;
+
+			Node prev = head;
+
+			while (p1 != null && p2 != null) {
+				Node n1 = p1.next;
+				Node n2 = p2.next;
+
+				p1.next = p2;
+				p2.next = n1;
+
+				p1 = n1;
+				p2 = n2;
+
+				if (p1 != null)
+					prev = p1;
+				if (p2 != null)
+					prev = p2;
+
+			}
+
+			this.tail = prev;
+
+		}
+
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -395,9 +500,10 @@ public class Display_Reverse_recursive_Linked_List {
 		int b = Integer.parseInt(br.readLine());
 
 		l1.display();
-		l1.displayReverse();
-		l1.addLast(a);
-		l1.addFirst(b);
+		l1.fold();
+		l1.display();
+		l1.addFirst(a);
+		l1.addLast(b);
 		l1.display();
 	}
 }

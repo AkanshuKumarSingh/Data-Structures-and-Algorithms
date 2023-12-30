@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Kth_Node_From_End_Of_Linked_List {
+public class _2_Kth_Node_From_End_Of_Linked_List {
 	  public static class Node {
 		    int data;
 		    Node next;

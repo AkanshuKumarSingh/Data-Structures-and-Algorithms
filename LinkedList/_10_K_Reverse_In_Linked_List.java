@@ -3,7 +3,7 @@ package LinkedList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Add_Two_Linked_Lists {
+public class _10_K_Reverse_In_Linked_List {
 	public static class Node {
 		int data;
 		Node next;
@@ -334,21 +334,20 @@ public class Add_Two_Linked_Lists {
 		public void kReverse(int k) {
 			LinkedList prev = null;
 
-			while (this.size > 0) {
+			while (this.size() > 0) {
 				LinkedList curr = new LinkedList();
-
-				if (this.size >= k) {
+				if (this.size() >= k) {
 					for (int i = 0; i < k; i++) {
-						int val = this.getFirst();
+						int data = this.getFirst();
 						this.removeFirst();
-						curr.addFirst(val);
+						curr.addFirst(data);
 					}
 				} else {
-					int sz = this.size;
+					int sz = this.size();
 					for (int i = 0; i < sz; i++) {
-						int val = this.getFirst();
+						int data = this.getFirst();
 						this.removeFirst();
-						curr.addLast(val);
+						curr.addLast(data);
 					}
 				}
 
@@ -361,108 +360,99 @@ public class Add_Two_Linked_Lists {
 				}
 			}
 
+			this.size = prev.size;
 			this.head = prev.head;
 			this.tail = prev.tail;
-			this.size = prev.size;
-		}
-
-		private void displayReverseHelper(Node node) {
-			if (node == null) {
-				return;
-			}
-			displayReverseHelper(node.next);
-			System.out.print(node.data + " ");
-		}
-
-		public void displayReverse() {
-			displayReverseHelper(head);
-			System.out.println();
-		}
-
-		private void reversePRHelper(Node node) {
-			if (node == tail) {
-				return;
-			}
-			reversePRHelper(node.next);
-			node.next.next = node;
-		}
-
-		public void reversePR() {
-			reversePRHelper(head);
-			Node temp = head;
-			head = tail;
-			tail = temp;
-			tail.next = null;
-		}
-
-		public static int additionHelper(Node head1, int idx1, Node head2, int idx2, LinkedList ans) {
-			if (head1 == null || head2 == null) {
-				return 0;
-			}
-
-//			if(idx1 == 1 && idx2 == 1) {  also correct
-//				ans.addFirst((head1.data + head2.data)%10);
-//				return (head1.data + head2.data)%10;
-//			}
-
-			int carry = 0;
-			int sum = 0;
-			if (idx1 > idx2) {
-				carry = additionHelper(head1.next, idx1 - 1, head2, idx2, ans);
-				sum = head1.data + carry;
-			} else if (idx2 > idx1) {
-				carry = additionHelper(head1, idx1, head2.next, idx2 - 1, ans);
-				sum = head2.data + carry;
-			} else {
-				carry = additionHelper(head1.next, idx1 - 1, head2.next, idx2 - 1, ans);
-				sum = head1.data + head2.data + carry;
-			}
-
-			ans.addFirst(sum % 10);
-			return sum / 10;
 
 		}
-
-		public static LinkedList addTwoLists(LinkedList one, LinkedList two) {
-			LinkedList ans = new LinkedList();
-			int carry = additionHelper(one.head, one.size(), two.head, two.size(), ans);
-			if (carry != 0)
-				ans.addFirst(carry);
-			return ans;
-		}
-
-		public static LinkedList addTwoList1(LinkedList one, LinkedList two) {
-			LinkedList ans = new LinkedList();
-			one.reversePI();
-			two.reversePI();
-
-			Node h1 = one.head;
-			Node h2 = two.head;
-			int carry = 0;
-
-			while (h1 != null || h2 != null) {
-				int no1 = (h1 != null) ? h1.data : 0;
-				int no2 = (h2 != null) ? h2.data : 0;
-				int sum = no1 + no2 + carry;
-				ans.addLast(sum % 10);
-				carry = sum / 10;
-				if (h1 != null)
-					h1 = h1.next;
-				if (h2 != null)
-					h2 = h2.next;
-			}
-
-			if (carry != 0)
-				ans.addLast(carry);
-
-			ans.reversePI();
-			one.reversePI();
-			two.reversePI();
-
-			return ans;
-		}
-
 	}
+
+	private Node tail;
+
+	public Node kReverse(int k, Node head, int remSize) {
+//		  for leetcode		
+//        boolean isFirst = true;
+//        ListNode curr = head, prevTail = head, prev = null;
+//        int size = 0;
+//        while(curr != null){
+//            size++;
+//            curr = curr.next;
+//        }
+//        curr = head;
+//
+//        while(curr != null){
+//            
+//            int n = k;
+//            prev = null;
+//            ListNode tail = curr;
+//            while(curr != null && n-- > 0 && size >= k){
+//                ListNode next = curr.next;
+//                curr.next = prev;
+//                prev = curr;
+//                curr = next;
+//            }
+//            
+//            if(size < k){
+//                prevTail.next = curr;
+//                break;
+//            }else if(isFirst){
+//                isFirst = false;
+//                head = prev;
+//            }else{
+//                prevTail.next = prev;
+//                prevTail = tail;
+//            }
+//            size = size - k;
+//            
+//        }
+//        
+//        return head;
+
+		
+		if (head == null)
+			return head;
+		else if (remSize < k)
+			return head;
+
+		Node prev = null, curr = head, next = null;
+		for (int i = 0; i < k && remSize >= k && curr != null; i++) {
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+
+		if (curr == null) {
+			this.tail = head;
+		}
+		head.next = kReverse(k, curr, remSize - k);
+		return prev;
+	}
+	
+	
+	// GFG
+    public static Node reverse(Node node, int k)
+    {
+        Node prev = null, curr = node, next = null;
+        for(int i = 0 ; i < k && curr != null ; i++){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        
+        if(curr == null) return prev;
+        node.next = reverse(curr, k);
+        return prev;
+        
+    }
+
+//	public void kReverse(int k) {
+//		// Second and nice way
+//		Node head = this.head;
+//		int remSize = this.size();
+//		this.head = kReverse(k, head, remSize);
+//	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -475,24 +465,15 @@ public class Add_Two_Linked_Lists {
 			l1.addLast(d);
 		}
 
-		int n2 = Integer.parseInt(br.readLine());
-		LinkedList l2 = new LinkedList();
-		String[] values2 = br.readLine().split(" ");
-		for (int i = 0; i < n2; i++) {
-			int d = Integer.parseInt(values2[i]);
-			l2.addLast(d);
-		}
-
-		LinkedList sum = LinkedList.addTwoLists(l1, l2);
-
+		int k = Integer.parseInt(br.readLine());
 		int a = Integer.parseInt(br.readLine());
 		int b = Integer.parseInt(br.readLine());
 
 		l1.display();
-		l2.display();
-		sum.display();
-		sum.addFirst(a);
-		sum.addLast(b);
-		sum.display();
+		l1.kReverse(k);
+		l1.display();
+		l1.addFirst(a);
+		l1.addLast(b);
+		l1.display();
 	}
 }

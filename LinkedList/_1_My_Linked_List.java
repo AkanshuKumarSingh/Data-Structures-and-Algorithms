@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.LinkedList;
 
-import LinkedList.Reverse_A_Linked_List_data_Iterative.Node;
+import LinkedList._11_Reverse_A_Linked_List_data_Iterative.Node;
 
 class linkedList {
 
