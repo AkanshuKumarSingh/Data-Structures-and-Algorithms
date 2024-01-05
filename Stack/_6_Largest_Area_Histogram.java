@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Largest_Area_Histogram {
+public class _6_Largest_Area_Histogram {
 	
 	public static int[] nslIndex(int arr[]) {
 		Stack<Integer> st = new Stack<>();

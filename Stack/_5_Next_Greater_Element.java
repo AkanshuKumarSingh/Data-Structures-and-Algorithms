@@ -2,9 +2,10 @@ package Stack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Stack;
 
-public class Next_Greater_Element {
+public class _5_Next_Greater_Element {
 
 	public static void display(int[] a) {
 		StringBuilder sb = new StringBuilder();
@@ -128,9 +129,9 @@ public class Next_Greater_Element {
 			while (!st.isEmpty() && arr[st.peek()] < arr[i]) {
 				st.pop();
 			}
-			if(!st.isEmpty()) {
+			if (!st.isEmpty()) {
 				res[i] = arr[st.peek()];
-			}else {
+			} else {
 				res[i] = -1;
 			}
 			st.push(i);
@@ -139,6 +140,22 @@ public class Next_Greater_Element {
 //		while (st.size() > 0) {
 //			res[st.pop()] = -1;
 //		}
+
+		return res;
+	}
+
+	// GFG
+	public static long[] nextLargerElement(long[] arr, int n) {
+		long res[] = new long[n];
+		Arrays.fill(res, -1);
+		Stack<Integer> st = new Stack<>();
+		st.push(0);
+		for (int i = 1; i < n; i++) {
+			while (!st.isEmpty() && arr[st.peek()] < arr[i]) {
+				res[st.pop()] = arr[i];
+			}
+			st.push(i);
+		}
 
 		return res;
 	}

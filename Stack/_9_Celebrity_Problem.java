@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Celebrity_Problem {
+public class _9_Celebrity_Problem {
 
 	public static void findCelebrity(int[][] arr) {
 		int n = arr.length;

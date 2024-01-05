@@ -14,23 +14,36 @@ public class Test {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();
+		int n = 5; //scan.nextInt();
+		System.out.println("asq".substring(1, 2));
+		Stack<String> s1 = new Stack<>();
+		s1.push("a");
+		System.out.println(s1);
+//		s1.peek() = s1.peek() + "1";
+		
+		Stack<Integer> st = new Stack<>();
+		
 		int arr[] = new int[n];
 		for (int i = 0; i < n; i++) {
-			arr[i] = scan.nextInt();
+//			arr[i] = scan.nextInt();
+			st.push(i);
 		}
 
-		int ans[] = nge(arr);
-		display(ans);
-
-		ans = pge(arr);
-		display(ans);
+		for(int i : st) {
+			System.out.println(i);
+		}
 		
-		ans = nse(arr);
-		display(ans);
-		
-		ans = pse(arr);
-		display(ans);
+//		int ans[] = nge(arr);
+//		display(ans);
+//
+//		ans = pge(arr);
+//		display(ans);
+//		
+//		ans = nse(arr);
+//		display(ans);
+//		
+//		ans = pse(arr);
+//		display(ans);
 	}
 
 	public static int[] nge(int arr[]) {

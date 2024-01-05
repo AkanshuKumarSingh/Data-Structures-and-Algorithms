@@ -3,7 +3,7 @@ package Stack;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Normal_Stack {
+public class _1_Normal_Stack {
 
 	public static class CustomStack {
 		int[] data;

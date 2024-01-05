@@ -8,7 +8,7 @@ import java.util.Stack;
 // Postfix -> PostOrder ( Left Right Root) -> val1 val2 operator
 // Prefix -> Prefix (Root Left Right ) -> operator val1 val2
 
-public class evaluation {
+public class _8_evaluation {
 
 	public static int priority(char op) {
 		if (op == '*' || op == '/') {

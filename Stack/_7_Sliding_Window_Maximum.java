@@ -2,9 +2,10 @@ package Stack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Stack;
 
-public class Sliding_Window_Maximum {
+public class _7_Sliding_Window_Maximum {
 	public static int[] ngrIndex(int arr[]) {
 		Stack<Integer> st = new Stack<>();
 		st.push(0);
@@ -38,6 +39,41 @@ public class Sliding_Window_Maximum {
 			System.out.println(arr[j]);
 		}
 
+	}
+
+	// GFG
+	static int[] ngi(int arr[], int n) {
+		Stack<Integer> st = new Stack<>();
+		int res[] = new int[n];
+		st.push(0);
+
+		for (int i = 1; i < n; i++) {
+			while (!st.isEmpty() && arr[st.peek()] < arr[i]) {
+				res[st.pop()] = i;
+			}
+			st.push(i);
+		}
+
+		while (!st.isEmpty()) {
+			res[st.pop()] = n;
+		}
+
+		return res;
+	}
+
+	static ArrayList<Integer> max_of_subarrays(int arr[], int n, int k) {
+		ArrayList<Integer> ans = new ArrayList<>();
+		int ngi[] = ngi(arr, n);
+		int j = 0;
+		for (int i = 0; i <= n - k; i++) {
+			if (j < i)
+				j = i;
+			while (ngi[j] < i + k) {
+				j = ngi[j];
+			}
+			ans.add(arr[j]);
+		}
+		return ans;
 	}
 
 	public static void main(String[] args) throws Exception {

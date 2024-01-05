@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class MinimumStack1 {
+public class _12_MinimumStack1 {
 
 	  public static class MinStack { // sir
 			Stack<Integer> allData;

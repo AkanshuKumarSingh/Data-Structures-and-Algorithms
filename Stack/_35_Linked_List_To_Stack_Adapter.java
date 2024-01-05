@@ -2,71 +2,45 @@ package Stack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
 
-public class DynamicStack {
-	public static class CustomStack {
-		int[] data;
-		int tos;
+public class _35_Linked_List_To_Stack_Adapter {
 
-		public CustomStack(int cap) {
-			data = new int[cap + 1];
-			tos = -1;
+	public static class LLToStackAdapter {
+		LinkedList<Integer> list;
+
+		public LLToStackAdapter() {
+			list = new LinkedList<>();
 		}
 
 		int size() {
-			return tos + 1;
+			return list.size();
 		}
 
-		void display() {
-			for (int i = tos; i >= 0; i--) {
-				System.out.print(data[i] + " ");
-			}
-			System.out.println();
-		}
-
-		void increaseSize() {
-			int nArr[] = new int[data.length * 2];
-			for (int i = 0; i < data.length; i++) {
-				nArr[i] = data[i];
-			}
-			data = nArr;
-		}
-
-		// change the code of this function according to question
 		void push(int val) {
-			if (tos == data.length - 1) {
-				increaseSize();
-			}
-			tos++;
-			data[tos] = val;
-
+			list.addFirst(val);
 		}
 
 		int pop() {
-			if (tos == -1) {
+			if (list.size() == 0) {
 				System.out.println("Stack underflow");
 				return -1;
-			} else {
-				int val = data[tos];
-				tos--;
-				return val;
 			}
+			return list.removeFirst();
 		}
 
 		int top() {
-			if (tos == -1) {
+			if (list.size() == 0) {
 				System.out.println("Stack underflow");
 				return -1;
-			} else {
-				return data[tos];
 			}
+			return list.getFirst();
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		CustomStack st = new CustomStack(n);
+		LLToStackAdapter st = new LLToStackAdapter();
 
 		String str = br.readLine();
 		while (str.equals("quit") == false) {
@@ -85,8 +59,6 @@ public class DynamicStack {
 				}
 			} else if (str.startsWith("size")) {
 				System.out.println(st.size());
-			} else if (str.startsWith("display")) {
-				st.display();
 			}
 			str = br.readLine();
 		}

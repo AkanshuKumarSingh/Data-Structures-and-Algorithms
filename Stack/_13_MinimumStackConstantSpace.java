@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class MinimumStackConstantSpace {
+public class _13_MinimumStackConstantSpace {
 	
 //	https://practice.geeksforgeeks.org/problems/get-minimum-element-from-stack/1
 	

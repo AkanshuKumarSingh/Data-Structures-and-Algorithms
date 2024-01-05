@@ -3,7 +3,7 @@ package Stack;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Duplicate_Brackets {
+public class _3_Duplicate_Brackets {
 
 	// if str contains extra brackets
 
@@ -61,6 +61,29 @@ public class Duplicate_Brackets {
 			}
 		}
 		return false;
+	}
+
+	// GFG
+	public static int checkRedundancy(String s) {
+		Stack<Character> st = new Stack<>();
+		for (int i = 0; i < s.length(); i++) {
+			char ch = s.charAt(i);
+			if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+				st.push(ch);
+			} else if (ch == '(' || ch == ')') {
+				if (ch == '(') {
+					st.push(ch);
+				} else {
+					if (st.peek() == '(')
+						return 1;
+					while (st.peek() != '(') {
+						st.pop();
+					}
+					st.pop();
+				}
+			}
+		}
+		return 0;
 	}
 
 	public static void main(String[] args) {

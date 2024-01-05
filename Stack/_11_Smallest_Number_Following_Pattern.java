@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Smallest_Number_Following_Pattern {
+public class _11_Smallest_Number_Following_Pattern {
 
 	public static void smallestNumberFollowingPattern(String pattern) {
 		Stack<Integer> st = new Stack<>();

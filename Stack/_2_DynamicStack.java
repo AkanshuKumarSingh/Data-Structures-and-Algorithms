@@ -1,46 +1,72 @@
-package LinkedList;
+package Stack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
 
-public class Linked_List_To_Stack_Adapter {
+public class _2_DynamicStack {
+	public static class CustomStack {
+		int[] data;
+		int tos;
 
-	public static class LLToStackAdapter {
-		LinkedList<Integer> list;
-
-		public LLToStackAdapter() {
-			list = new LinkedList<>();
+		public CustomStack(int cap) {
+			data = new int[cap + 1];
+			tos = -1;
 		}
 
 		int size() {
-			return list.size();
+			return tos + 1;
 		}
 
+		void display() {
+			for (int i = tos; i >= 0; i--) {
+				System.out.print(data[i] + " ");
+			}
+			System.out.println();
+		}
+
+		void increaseSize() {
+			int nArr[] = new int[data.length * 2];
+			for (int i = 0; i < data.length; i++) {
+				nArr[i] = data[i];
+			}
+			data = nArr;
+		}
+
+		// change the code of this function according to question
 		void push(int val) {
-			list.addFirst(val);
+			if (tos == data.length - 1) {
+				increaseSize();
+			}
+			tos++;
+			data[tos] = val;
+
 		}
 
 		int pop() {
-			if (list.size() == 0) {
+			if (tos == -1) {
 				System.out.println("Stack underflow");
 				return -1;
+			} else {
+				int val = data[tos];
+				tos--;
+				return val;
 			}
-			return list.removeFirst();
 		}
 
 		int top() {
-			if (list.size() == 0) {
+			if (tos == -1) {
 				System.out.println("Stack underflow");
 				return -1;
+			} else {
+				return data[tos];
 			}
-			return list.getFirst();
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		LLToStackAdapter st = new LLToStackAdapter();
+		int n = Integer.parseInt(br.readLine());
+		CustomStack st = new CustomStack(n);
 
 		String str = br.readLine();
 		while (str.equals("quit") == false) {
@@ -59,6 +85,8 @@ public class Linked_List_To_Stack_Adapter {
 				}
 			} else if (str.startsWith("size")) {
 				System.out.println(st.size());
+			} else if (str.startsWith("display")) {
+				st.display();
 			}
 			str = br.readLine();
 		}

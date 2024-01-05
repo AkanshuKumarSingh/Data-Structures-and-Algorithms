@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Stock_Span_Problem {
+public class _14_Stock_Span_Problem {
 
 	public static void display(int[] a) {
 		StringBuilder sb = new StringBuilder();
@@ -54,5 +54,26 @@ public class Stock_Span_Problem {
 		return res;
 
 	}
+	
+	//GFG
+    public static int[] calculateSpan(int price[], int n)
+    {
+        int res[] = new int[n];
+        Stack<Integer> st = new Stack<>();
+        st.push(n-1);
+        for(int i = n-2; i >= 0; i--){
+            while(!st.isEmpty() && price[st.peek()] < price[i]){
+                int idx = st.pop();
+                res[idx] = idx-i;
+            }
+            st.push(i);
+        }
+        
+        while(!st.isEmpty()){
+            int idx = st.pop();
+            res[idx] = idx+1;
+        }
+        return res;
+    }
 	
 }

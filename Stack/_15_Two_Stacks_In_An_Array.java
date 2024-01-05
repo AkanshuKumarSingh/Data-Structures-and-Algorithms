@@ -3,7 +3,7 @@ package Stack;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Two_Stacks_In_An_Array {
+public class _15_Two_Stacks_In_An_Array {
 	
 //	https://practice.geeksforgeeks.org/problems/implement-two-stacks-in-an-array/1
 

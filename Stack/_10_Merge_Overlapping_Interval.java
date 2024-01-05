@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class Merge_Overlapping_Interval {
+public class _10_Merge_Overlapping_Interval {
 	
 //	https://leetcode.com/problems/merge-intervals/submissions/
 
