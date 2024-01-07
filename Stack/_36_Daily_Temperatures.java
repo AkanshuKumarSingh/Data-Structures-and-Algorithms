@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Daily_Temperatures {
+public class _36_Daily_Temperatures {
 
 	// https://leetcode.com/problems/daily-temperatures/
 

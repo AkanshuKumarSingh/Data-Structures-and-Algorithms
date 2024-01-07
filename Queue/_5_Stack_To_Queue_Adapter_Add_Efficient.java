@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Stack_To_Queue_Adapter_Add_Efficient {
+public class _5_Stack_To_Queue_Adapter_Add_Efficient {
 
 	public static class StackToQueueAdapter {
 		Stack<Integer> mainS;
@@ -16,19 +16,50 @@ public class Stack_To_Queue_Adapter_Add_Efficient {
 		}
 
 		int size() {
-			// write your code here
+			return mainS.size();
 		}
 
 		void add(int val) {
-			// write your code here
+			mainS.push(val);
 		}
 
 		int remove() {
-			// write your code here
+			if(this.size() == 0) {
+				System.out.println("Queue is Empty");
+				return -1;
+			}
+			
+			while(mainS.size() > 1) {
+				helperS.add(mainS.pop());
+			}
+			
+			int no = mainS.pop();
+			
+			while(helperS.size() > 0) {
+				mainS.add(helperS.pop());
+			}
+			
+			return no;
 		}
 
 		int peek() {
-			// write your code here
+			if(this.size() == 0) {
+				System.out.println("Queue is Empty");
+				return -1;
+			}
+			
+			while(mainS.size() > 1) {
+				helperS.add(mainS.pop());
+			}
+			
+			int no = mainS.pop();
+			helperS.add(no);
+			
+			while(helperS.size() > 0) {
+				mainS.add(helperS.pop());
+			}
+			
+			return no;
 		}
 	}
 

@@ -5,7 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-public class Queue_To_Stack_Adapter_Push_Efficient {
+public class _4_Queue_To_Stack_Adapter_Pop_Efficient {
+
 	public static class QueueToStackAdapter {
 		Queue<Integer> mainQ;
 		Queue<Integer> helperQ;
@@ -20,46 +21,32 @@ public class Queue_To_Stack_Adapter_Push_Efficient {
 		}
 
 		void push(int val) {
+			while(!mainQ.isEmpty()) {
+				helperQ.add(mainQ.remove());
+			}
+			
 			mainQ.add(val);
+			
+			while(!helperQ.isEmpty()) {
+				mainQ.add(helperQ.remove());
+			}
+			
 		}
 
 		int pop() {
-			if (mainQ.size() == 0) {
+			if(mainQ.isEmpty()) {
 				System.out.println("Stack underflow");
 				return -1;
 			}
-
-			while (mainQ.size() > 1) {
-				helperQ.add(mainQ.remove());
-			}
-
-			int data = mainQ.remove();
-
-			Queue<Integer> temp = mainQ;
-			mainQ = helperQ;
-			helperQ = temp;
-
-			return data;
+			return mainQ.remove();
 		}
 
 		int top() {
-			if (mainQ.size() == 0) {
+			if(mainQ.isEmpty()) {
 				System.out.println("Stack underflow");
 				return -1;
 			}
-
-			while (mainQ.size() > 1) {
-				helperQ.add(mainQ.remove());
-			}
-
-			int data = mainQ.remove();
-			helperQ.add(data);
-
-			Queue<Integer> temp = mainQ;
-			mainQ = helperQ;
-			helperQ = temp;
-
-			return data;
+			return mainQ.peek();
 		}
 	}
 

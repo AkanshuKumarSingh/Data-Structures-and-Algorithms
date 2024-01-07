@@ -1,10 +1,10 @@
-package LinkedList;
+package Queue;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 
-public class Linked_List_To_Queue_Adapter {
+public class _8_Linked_List_To_Queue_Adapter {
 
 	  public static class LLToQueueAdapter {
 	    LinkedList<Integer> list;

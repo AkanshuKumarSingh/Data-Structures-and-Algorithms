@@ -3,6 +3,7 @@ package Array;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Stack;
 
 public class _29_Maximum_of_all_subarrays_of_size_k {
 
@@ -10,6 +11,8 @@ public class _29_Maximum_of_all_subarrays_of_size_k {
     //Function to find maximum of each subarray of size k.
     static ArrayList <Integer> max_of_subarrays(int arr[], int n, int k)
     {
+    	
+    	// 1st way
         ArrayList<Integer> list = new ArrayList<>();
         Deque<Integer> deq = new LinkedList<>();
         int i;
@@ -40,6 +43,40 @@ public class _29_Maximum_of_all_subarrays_of_size_k {
         }
         
         return list;
+    }
+
+    static ArrayList <Integer> max_of_subarrays1(int arr[], int n, int k)
+    {
+    	//2nd way
+		int nge[] = new int[n];
+		Stack<Integer> st = new Stack<>();
+
+		for (int i = 0; i < n; i++) {
+			while (!st.isEmpty() && arr[i] > arr[st.peek()]) {
+				nge[st.pop()] = i;
+			}
+			st.push(i);
+		}
+
+		while (!st.isEmpty()) {
+			nge[st.pop()] = n;
+		}
+		
+		ArrayList<Integer> ans = new ArrayList<>();
+		for(int i = 0 ; i <= n-k; i++){
+		    ans.add(0);
+		}
+		
+		int j = 0;
+		for(int i = 0; i <= n-k; i++){
+		    if(j < i) j = i;
+		    while(nge[j] < i+k){
+		        j = nge[j];
+		    }
+		    ans.set(i, arr[j]);
+		}
+		
+		return ans;
     }
 
 	

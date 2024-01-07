@@ -3,7 +3,7 @@ package Queue;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Normal_Queue {
+public class _1_Normal_Queue {
 
 	public static class CustomQueue {
 		int[] data;
