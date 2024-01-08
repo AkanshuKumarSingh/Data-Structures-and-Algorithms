@@ -5,11 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Height_Of_Generic_Tree {
-
-//	 Depth of a node is defined as the number of edges it is away from the root 
-//	(depth of root is 0). Height of a tree is defined as depth of deepest node.
-
+public class _20_Diameter_Of_Generic_Tree {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -52,46 +48,67 @@ public class Height_Of_Generic_Tree {
 		return root;
 	}
 
-	public static int size(Node node) {
-		int s = 0;
-
-		for (Node child : node.children) {
-			s += size(child);
+	// Diameter of Generic Tree is distance btw two farthest node in tree
+	
+	// Diameter can on the left side or right side on any root or pass through it 
+	// So we should give chance to every node.
+	
+	static int Diameter = 0;
+	
+	public static int height(Node root) {
+		int ht = -1;
+		
+		for(Node child : root.children) {
+			ht = Math.max(ht, height(child));
 		}
-		s += 1;
-
-		return s;
+		
+		return ht+1;
 	}
-
-	public static int max(Node node) {
-		int m = Integer.MIN_VALUE;
-
-		for (Node child : node.children) {
-			int cm = max(child);
-			m = Math.max(m, cm);
+	
+	public static void diameter(Node root) {
+		
+		int max = -1;
+		int secondMax = -1;
+		
+		for(Node child : root.children) {
+			diameter(child);
 		}
-		m = Math.max(m, node.data);
-
-		return m;
-	}
-
-	public static int height(Node node) {
-//		int height = 0;
-//		
-//		for(Node child : node.children) {
-//			height = Math.max(height, height(child) + 1);
-//		}
-//		
-//		return height;
-		int height = -1;
-
-		for (Node child : node.children) {
-			height = Math.max(height, height(child));
+		
+		for(Node child : root.children) {
+			int ht = height(child);
+			
+			if(ht > max) {
+				secondMax = max;
+				max = ht;
+			}else if(ht > secondMax) {
+				secondMax = ht;
+			}
 		}
-
-		return height + 1;
+		
+		Diameter = Math.max(Diameter, max+secondMax+2);
 	}
-
+	
+	public static int heightForDiameter(Node root) {
+		
+		int max = -1;
+		int secondMax = -1;
+		
+		for(Node child : root.children) {
+			int ht = heightForDiameter(child);
+			
+			if(max < ht) {
+				secondMax = max;
+				max = ht;
+			}else if(secondMax < ht) {
+				secondMax = ht;
+			}
+		}
+		
+		Diameter = Math.max(Diameter, max + secondMax+ 2);
+		
+		return max + 1;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
@@ -102,9 +119,8 @@ public class Height_Of_Generic_Tree {
 		}
 
 		Node root = construct(arr);
-		int h = height(root);
-		System.out.println(h);
-		// display(root);
+		diameter(root);
+		System.out.println(Diameter);
 	}
 
 }

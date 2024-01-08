@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Ceil_And_Floor_In_Generic_Tree {
+public class _18_Ceil_And_Floor_In_Generic_Tree {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();

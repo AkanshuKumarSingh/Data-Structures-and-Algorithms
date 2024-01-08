@@ -5,7 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Is_Generic_Tree_Symmetric {
+public class _14_Are_Trees_Similar_In_Shape {
+
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -82,45 +83,47 @@ public class Is_Generic_Tree_Symmetric {
 
 		return h;
 	}
-	
-	public static boolean areMirror(Node n1, Node n2) {
-		// if no of children are same and areMirror(child1,child2) traversing for left to right for n1 and
-		// traversing for right to left for n2 gives true  and then return true;
+
+	public static boolean areSimilar(Node n1, Node n2) {
+		// similar are those figures which are superimposable 
+		// just check if children are same and children are similar
 		
 		if(n1.children.size() != n2.children.size()) {
 			return false;
 		}
 		
-		int n = n1.children.size();
 		for(int i = 0 ; i < n1.children.size(); i++) {
 			Node child1 = n1.children.get(i);
-			Node child2 = n2.children.get(n-i-1);
-			if(!areMirror(child1,child2)) {
+			Node child2 = n1.children.get(i);
+			if(!areSimilar(child1,child2)) {
 				return false;
 			}
 		}
-		return true;
-	}
-
-	public static boolean IsSymmetric(Node node) {
-		// if figure is mirror of itself the it is symmetric
 		
-		return areMirror(node,node);
+		return true;
 	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine());
-		int[] arr = new int[n];
-		String[] values = br.readLine().split(" ");
-		for (int i = 0; i < n; i++) {
-			arr[i] = Integer.parseInt(values[i]);
-		}
 
-		Node root = construct(arr);
-		boolean sym = IsSymmetric(root);
-		System.out.println(sym);
-		// display(root);
+		int n1 = Integer.parseInt(br.readLine());
+		int[] arr1 = new int[n1];
+		String[] values1 = br.readLine().split(" ");
+		for (int i = 0; i < n1; i++) {
+			arr1[i] = Integer.parseInt(values1[i]);
+		}
+		Node root1 = construct(arr1);
+
+		int n2 = Integer.parseInt(br.readLine());
+		int[] arr2 = new int[n2];
+		String[] values2 = br.readLine().split(" ");
+		for (int i = 0; i < n2; i++) {
+			arr2[i] = Integer.parseInt(values2[i]);
+		}
+		Node root2 = construct(arr2);
+
+		boolean similar = areSimilar(root1, root2);
+		System.out.println(similar);
 	}
 
 }

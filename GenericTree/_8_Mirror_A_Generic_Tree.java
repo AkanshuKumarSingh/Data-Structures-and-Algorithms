@@ -3,10 +3,9 @@ package GenericTree;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Stack;
 
-public class Linearize_A_Generic_Tree {
+public class _8_Mirror_A_Generic_Tree {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -129,73 +128,27 @@ public class Linearize_A_Generic_Tree {
 	}
 
 	public static void mirror(Node node) {
-		for (Node child : node.children) {
+		//faith
+		for(Node child : node.children) {
 			mirror(child);
 		}
-		Collections.reverse(node.children);
-	}
-
-	public static void removeLeaves(Node node) {
-		for (int i = node.children.size() - 1; i >= 0; i--) {
-			Node child = node.children.get(i);
-			if (child.children.size() == 0) {
-				node.children.remove(i);
-			}
-		}
-
-		for (Node child : node.children) {
-			removeLeaves(child);
-		}
 		
+		//merging -> reverse nodes children
+		int left = 0;
+		int right = node.children.size()-1;
+		
+		while(left < right) {
+			Node data1 = node.children.get(left);
+			Node data2 = node.children.get(right);
+			
+			node.children.set(left, data2);
+			node.children.set(right, data1);
+			
+			left++;
+			right--;
+		}
 	}
 
-	public static Node getTail(Node node) {
-		Node tail = node;
-		while(tail.children.size() != 0) {
-			tail = tail.children.get(0);
-		}
-		return tail;
-	}
-	
-	public static void linearize(Node root) {
-		// O(n2)
-		for(Node child : root.children) {
-			linearize(child);
-		}
-
-		// make connection
-		for(int i = root.children.size()-2; i >= 0; i--) {
-			Node rem = root.children.remove(i+1);
-			Node tail = getTail(root.children.get(i));
-			tail.children.add(rem);
-		}
-		
-	}
-
-	public static Node linearizeBetter(Node root) {
-		// O(n)
-		if(root.children.size() == 0) return root;
-		
-		int n = root.children.size();
-		Node tail = linearizeBetter(root.children.get(n-1));
-		for(int i = root.children.size()-2; i >= 0; i--) {
-			Node rem = root.children.remove(i+1);
-			Node ntail = linearizeBetter(root.children.get(i));
-			ntail.children.add(rem);
-		}
-		
-		return tail;
-//		O(n) -> My new solution
-//		ArrayList<Node> children = node.children;
-//        node.children = new ArrayList<>();
-//        if(prev != null)
-//            prev.children.add(node);
-//        prev = node;
-//        for(Node child : children){
-//            linearize(child);
-//        }
-	}
-	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
@@ -206,7 +159,8 @@ public class Linearize_A_Generic_Tree {
 		}
 
 		Node root = construct(arr);
-		linearize(root);
+		display(root);
+		mirror(root);
 		display(root);
 	}
 

@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Distance_Between_Two_Nodes_In_Generic_Tree {
+public class _13_Distance_Between_Two_Nodes_In_Generic_Tree {
 	  private static class Node {
 		    int data;
 		    ArrayList<Node> children = new ArrayList<>();

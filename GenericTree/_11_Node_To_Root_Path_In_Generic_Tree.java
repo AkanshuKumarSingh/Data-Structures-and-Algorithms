@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Node_With_Maximum_Subtree_Sum {
+public class _11_Node_To_Root_Path_In_Generic_Tree {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -48,25 +48,24 @@ public class Node_With_Maximum_Subtree_Sum {
 		return root;
 	}
 
-	static Node maxNode = null;
-	static int maxSum = 0;
+	public static ArrayList<Integer> nodeToRootPath(Node node, int data) {
+		if (node.data == data) {
+			ArrayList<Integer> bres = new ArrayList<>();
+			bres.add(data);
+			return bres;
+		}
 
-	public static int findSum(Node node) {
-		int sum = node.data;
-		
-		for(Node child : node.children) {
-			sum += (findSum(child));
+		for (Node child : node.children) {
+			ArrayList<Integer> rres = nodeToRootPath(child, data);
+			if (rres.size() > 0) {
+				rres.add(node.data);
+				return rres;
+			}
 		}
-		
-		
-		if(maxSum < sum) {
-			maxSum = sum;
-			maxNode = node;
-		}
-		
-		return sum;
+
+		return new ArrayList<>();
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
@@ -76,11 +75,12 @@ public class Node_With_Maximum_Subtree_Sum {
 			arr[i] = Integer.parseInt(values[i]);
 		}
 
+		int data = Integer.parseInt(br.readLine());
+
 		Node root = construct(arr);
-
-		findSum(root);
-
-		System.out.println(maxNode.data + "@" + maxSum);
+		ArrayList<Integer> path = nodeToRootPath(root, data);
+		System.out.println(path);
+		// display(root);
 	}
 
 }

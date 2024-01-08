@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Lowest_Common_Ancestor_generic_Tree {
+public class _2_Maximum_Minimum_In_Generic_Tree {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -48,46 +48,36 @@ public class Lowest_Common_Ancestor_generic_Tree {
 		return root;
 	}
 
-	public static ArrayList<Integer> nodeToRootPath(Node node, int data) {
-		if (node.data == data) {
-			ArrayList<Integer> path = new ArrayList<>();
-			path.add(node.data);
-			return path;
-		}
+	public static int size(Node node) {
+		int s = 0;
 
 		for (Node child : node.children) {
-			ArrayList<Integer> ptc = nodeToRootPath(child, data);
-			if (ptc.size() > 0) {
-				ptc.add(node.data);
-				return ptc;
-			}
+			s += size(child);
 		}
+		s += 1;
 
-		return new ArrayList<>();
+		return s;
 	}
 
-	public static int lca(Node node, int d1, int d2) {
-		ArrayList<Integer> path1 = nodeToRootPath(node,d1);
-		ArrayList<Integer> path2 = nodeToRootPath(node,d2);
-		
-		int i = path1.size()-1;
-		int j = path2.size()-1;
-		
-		int prev = 0;
-		
-		while(i >= 0 && j >= 0) {
-			if(path1.get(i) != path2.get(j)) {
-				break;
-			}
-			
-			prev = path1.get(i);
-			i--;
-			j--;
+	public static int max(Node node) {
+		int max = Integer.MIN_VALUE;
+		for(Node child : node.children) {
+			max = Math.max(max, max(child));
 		}
 		
-		return prev;
+		return Math.max(max, node.data);
 	}
 
+	public static int min(Node node) {
+		int min = Integer.MAX_VALUE;
+		for(Node child : node.children) {
+			min = Math.min(min, min(child));
+		}
+		
+		return Math.min(min, node.data);
+	}
+
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
@@ -97,12 +87,9 @@ public class Lowest_Common_Ancestor_generic_Tree {
 			arr[i] = Integer.parseInt(values[i]);
 		}
 
-		int d1 = Integer.parseInt(br.readLine());
-		int d2 = Integer.parseInt(br.readLine());
-
 		Node root = construct(arr);
-		int lca = lca(root, d1, d2);
-		System.out.println(lca);
+		int m = max(root);
+		System.out.println(m);
 		// display(root);
 	}
 

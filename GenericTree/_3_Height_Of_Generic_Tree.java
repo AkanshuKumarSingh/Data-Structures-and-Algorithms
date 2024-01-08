@@ -5,7 +5,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Are_Trees_Mirror_In_Shape {
+public class _3_Height_Of_Generic_Tree {
+
+//	 Depth of a node is defined as the number of edges it is away from the root 
+//	(depth of root is 0). Height of a tree is defined as depth of deepest node.
+
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -72,57 +76,35 @@ public class Are_Trees_Mirror_In_Shape {
 	}
 
 	public static int height(Node node) {
-		int h = -1;
+//		int height = 0;
+//		
+//		for(Node child : node.children) {
+//			height = Math.max(height, height(child) + 1);
+//		}
+//		
+//		return height;
+		int height = -1;
 
 		for (Node child : node.children) {
-			int ch = height(child);
-			h = Math.max(h, ch);
+			height = Math.max(height, height(child));
 		}
-		h += 1;
 
-		return h;
-	}
-
-	public static boolean areMirror(Node n1, Node n2) {
-		// if no of children are same and areMirror(child1,child2) traversing for left to right for n1 and
-		// traversing for right to left for n2 gives true  and then return true;
-		
-		if(n1.children.size() != n2.children.size()) {
-			return false;
-		}
-		
-		int n = n1.children.size();
-		for(int i = 0 ; i < n1.children.size(); i++) {
-			Node child1 = n1.children.get(i);
-			Node child2 = n2.children.get(n-i-1);
-			if(!areMirror(child1,child2)) {
-				return false;
-			}
-		}
-		return true;
+		return height + 1;
 	}
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-		int n1 = Integer.parseInt(br.readLine());
-		int[] arr1 = new int[n1];
-		String[] values1 = br.readLine().split(" ");
-		for (int i = 0; i < n1; i++) {
-			arr1[i] = Integer.parseInt(values1[i]);
+		int n = Integer.parseInt(br.readLine());
+		int[] arr = new int[n];
+		String[] values = br.readLine().split(" ");
+		for (int i = 0; i < n; i++) {
+			arr[i] = Integer.parseInt(values[i]);
 		}
-		Node root1 = construct(arr1);
 
-		int n2 = Integer.parseInt(br.readLine());
-		int[] arr2 = new int[n2];
-		String[] values2 = br.readLine().split(" ");
-		for (int i = 0; i < n2; i++) {
-			arr2[i] = Integer.parseInt(values2[i]);
-		}
-		Node root2 = construct(arr2);
-
-		boolean mirror = areMirror(root1, root2);
-		System.out.println(mirror);
+		Node root = construct(arr);
+		int h = height(root);
+		System.out.println(h);
+		// display(root);
 	}
 
 }

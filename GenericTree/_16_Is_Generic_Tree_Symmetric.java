@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Euler_Traversals {
+public class _16_Is_Generic_Tree_Symmetric {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -82,21 +82,30 @@ public class Euler_Traversals {
 
 		return h;
 	}
-
-	public static void traversals(Node node) {
-		// euler's left, on the way before going deep in recursion , node's pre area
-		System.out.println("Node Pre " + node.data);
-
-		for (Node child : node.children) {
-			// edge pre
-			System.out.println("Edge Pre " + node.data + "--" + child.data);
-			traversals(child);
-			System.out.println("Edge Post " + node.data + "--" + child.data);
-			//edge post
+	
+	public static boolean areMirror(Node n1, Node n2) {
+		// if no of children are same and areMirror(child1,child2) traversing for left to right for n1 and
+		// traversing for right to left for n2 gives true  and then return true;
+		
+		if(n1.children.size() != n2.children.size()) {
+			return false;
 		}
+		
+		int n = n1.children.size();
+		for(int i = 0 ; i < n1.children.size(); i++) {
+			Node child1 = n1.children.get(i);
+			Node child2 = n2.children.get(n-i-1);
+			if(!areMirror(child1,child2)) {
+				return false;
+			}
+		}
+		return true;
+	}
 
-		System.out.println("Node Post " + node.data);
-		// euler's right, on the way out of recursion, node's post area.
+	public static boolean IsSymmetric(Node node) {
+		// if figure is mirror of itself the it is symmetric
+		
+		return areMirror(node,node);
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -109,7 +118,9 @@ public class Euler_Traversals {
 		}
 
 		Node root = construct(arr);
-		traversals(root);
+		boolean sym = IsSymmetric(root);
+		System.out.println(sym);
+		// display(root);
 	}
 
 }

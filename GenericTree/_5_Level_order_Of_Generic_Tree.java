@@ -2,10 +2,13 @@ package GenericTree;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Queue;
 import java.util.Stack;
 
-public class Mirror_A_Generic_Tree {
+public class _5_Level_order_Of_Generic_Tree {
+
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -16,6 +19,7 @@ public class Mirror_A_Generic_Tree {
 		for (Node child : node.children) {
 			str += child.data + ", ";
 		}
+		
 		str += ".";
 		System.out.println(str);
 
@@ -95,58 +99,21 @@ public class Mirror_A_Generic_Tree {
 		System.out.println("Node Post " + node.data);
 	}
 
-	public static void levelOrderLinewiseZZ(Node node) {
-		Stack<Node> stack = new Stack<>();
-		stack.add(node);
-
-		Stack<Node> cstack = new Stack<>();
-		int level = 0;
-
-		while (stack.size() > 0) {
-			node = stack.pop();
-			System.out.print(node.data + " ");
-
-			if (level % 2 == 0) {
-				for (int i = 0; i < node.children.size(); i++) {
-					Node child = node.children.get(i);
-					cstack.push(child);
-				}
-			} else {
-				for (int i = node.children.size() - 1; i >= 0; i--) {
-					Node child = node.children.get(i);
-					cstack.push(child);
-				}
-			}
-
-			if (stack.size() == 0) {
-				stack = cstack;
-				cstack = new Stack<>();
-				level++;
-				System.out.println();
-			}
-		}
-	}
-
-	public static void mirror(Node node) {
-		//faith
-		for(Node child : node.children) {
-			mirror(child);
+	public static void levelOrder(Node node) {
+		Queue<Node> q = new ArrayDeque<>();
+		q.add(node);
+		
+		while(!q.isEmpty()) {
+			Node rem = q.remove();
+			
+			System.out.print(rem.data + " ");
+			
+			for(Node child : rem.children) {
+				q.add(child);
+			}	
 		}
 		
-		//merging -> reverse nodes children
-		int left = 0;
-		int right = node.children.size()-1;
-		
-		while(left < right) {
-			Node data1 = node.children.get(left);
-			Node data2 = node.children.get(right);
-			
-			node.children.set(left, data2);
-			node.children.set(right, data1);
-			
-			left++;
-			right--;
-		}
+		System.out.println(".");
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -159,9 +126,7 @@ public class Mirror_A_Generic_Tree {
 		}
 
 		Node root = construct(arr);
-		display(root);
-		mirror(root);
-		display(root);
+		levelOrder(root);
 	}
 
 }

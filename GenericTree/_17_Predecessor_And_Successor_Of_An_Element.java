@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Predecessor_And_Successor_Of_An_Element {
+public class _17_Predecessor_And_Successor_Of_An_Element {
 
 	private static class Node {
 		int data;

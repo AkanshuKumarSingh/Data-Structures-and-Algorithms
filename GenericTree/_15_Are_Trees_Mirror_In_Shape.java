@@ -5,8 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Are_Trees_Similar_In_Shape {
-
+public class _15_Are_Trees_Mirror_In_Shape {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -84,22 +83,22 @@ public class Are_Trees_Similar_In_Shape {
 		return h;
 	}
 
-	public static boolean areSimilar(Node n1, Node n2) {
-		// similar are those figures which are superimposable 
-		// just check if children are same and children are similar
+	public static boolean areMirror(Node n1, Node n2) {
+		// if no of children are same and areMirror(child1,child2) traversing for left to right for n1 and
+		// traversing for right to left for n2 gives true  and then return true;
 		
 		if(n1.children.size() != n2.children.size()) {
 			return false;
 		}
 		
+		int n = n1.children.size();
 		for(int i = 0 ; i < n1.children.size(); i++) {
 			Node child1 = n1.children.get(i);
-			Node child2 = n1.children.get(i);
-			if(!areSimilar(child1,child2)) {
+			Node child2 = n2.children.get(n-i-1);
+			if(!areMirror(child1,child2)) {
 				return false;
 			}
 		}
-		
 		return true;
 	}
 
@@ -122,8 +121,8 @@ public class Are_Trees_Similar_In_Shape {
 		}
 		Node root2 = construct(arr2);
 
-		boolean similar = areSimilar(root1, root2);
-		System.out.println(similar);
+		boolean mirror = areMirror(root1, root2);
+		System.out.println(mirror);
 	}
 
 }

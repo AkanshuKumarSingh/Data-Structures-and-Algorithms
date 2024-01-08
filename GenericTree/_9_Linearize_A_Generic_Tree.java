@@ -3,11 +3,10 @@ package GenericTree;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Collections;
 import java.util.Stack;
 
-public class Levelorder_Linewise_Zig_Zag {
+public class _9_Linearize_A_Generic_Tree {
 	private static class Node {
 		int data;
 		ArrayList<Node> children = new ArrayList<>();
@@ -98,81 +97,104 @@ public class Levelorder_Linewise_Zig_Zag {
 	}
 
 	public static void levelOrderLinewiseZZ(Node node) {
-		Stack<Node> mainS = new Stack<>();
-		Stack<Node> helperS = new Stack<>();
+		Stack<Node> stack = new Stack<>();
+		stack.add(node);
 
-		mainS.push(node);
-
+		Stack<Node> cstack = new Stack<>();
 		int level = 0;
-		while (!mainS.isEmpty()) {
 
-			while (!mainS.isEmpty()) {
-				Node rem = mainS.pop();
-				System.out.print(rem.data + " ");
-
-				if (level % 2 == 0) {
-					// left to right
-					for (Node child : rem.children) {
-						helperS.push(child);
-					}
-				} else {
-					// right to left
-					for (int i = rem.children.size() - 1; i >= 0; i--) {
-						Node child = rem.children.get(i);
-						helperS.push(child);
-					}
-				}
-
-			}
-
-			System.out.println();
-
-			Stack<Node> temp = mainS;
-			mainS = helperS;
-			helperS = temp;
-			level++;
-		}
-
-	}
-
-	public static void levelOrderLinewiseZZ1(Node node) {
-		// mine
-		Stack<Node> mainS = new Stack<>();
-		Stack<Node> helperS = new Stack<>();
-
-		mainS.push(node);
-
-		int level = 0;
-		while (!mainS.isEmpty()) {
-
-			Node rem = mainS.pop();
-			System.out.print(rem.data + " ");
+		while (stack.size() > 0) {
+			node = stack.pop();
+			System.out.print(node.data + " ");
 
 			if (level % 2 == 0) {
-				// left to right
-				for (Node child : rem.children) {
-					helperS.push(child);
+				for (int i = 0; i < node.children.size(); i++) {
+					Node child = node.children.get(i);
+					cstack.push(child);
 				}
 			} else {
-				// right to left
-				for (int i = rem.children.size() - 1; i >= 0; i--) {
-					Node child = rem.children.get(i);
-					helperS.push(child);
+				for (int i = node.children.size() - 1; i >= 0; i--) {
+					Node child = node.children.get(i);
+					cstack.push(child);
 				}
 			}
 
-
-			if (mainS.isEmpty()) {
-				System.out.println(); 
-				Stack<Node> temp = mainS;
-				mainS = helperS;
-				helperS = temp;
+			if (stack.size() == 0) {
+				stack = cstack;
+				cstack = new Stack<>();
 				level++;
+				System.out.println();
+			}
+		}
+	}
+
+	public static void mirror(Node node) {
+		for (Node child : node.children) {
+			mirror(child);
+		}
+		Collections.reverse(node.children);
+	}
+
+	public static void removeLeaves(Node node) {
+		for (int i = node.children.size() - 1; i >= 0; i--) {
+			Node child = node.children.get(i);
+			if (child.children.size() == 0) {
+				node.children.remove(i);
 			}
 		}
 
+		for (Node child : node.children) {
+			removeLeaves(child);
+		}
+		
 	}
 
+	public static Node getTail(Node node) {
+		Node tail = node;
+		while(tail.children.size() != 0) {
+			tail = tail.children.get(0);
+		}
+		return tail;
+	}
+	
+	public static void linearize(Node root) {
+		// O(n2)
+		for(Node child : root.children) {
+			linearize(child);
+		}
+
+		// make connection
+		for(int i = root.children.size()-2; i >= 0; i--) {
+			Node rem = root.children.remove(i+1);
+			Node tail = getTail(root.children.get(i));
+			tail.children.add(rem);
+		}
+ 	}
+
+	public static Node linearizeBetter(Node root) {
+		// O(n)
+		if(root.children.size() == 0) return root;
+		
+		int n = root.children.size();
+		Node tail = linearizeBetter(root.children.get(n-1));
+		for(int i = root.children.size()-2; i >= 0; i--) {
+			Node rem = root.children.remove(i+1);
+			Node ntail = linearizeBetter(root.children.get(i));
+			ntail.children.add(rem);
+		}
+		
+		return tail;
+//		O(n) -> My new solution
+//		ArrayList<Node> children = node.children;
+//        node.children = new ArrayList<>();
+//        if(prev != null)
+//            prev.children.add(node);
+//        prev = node;
+//        for(Node child : children){
+//            linearize(child);
+//        }
+	}
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
@@ -183,7 +205,8 @@ public class Levelorder_Linewise_Zig_Zag {
 		}
 
 		Node root = construct(arr);
-		levelOrderLinewiseZZ(root);
+		linearize(root);
+		display(root);
 	}
 
 }
