@@ -1,6 +1,6 @@
 package BinarySearchTree;
 
-import BinaryTree.binaryTree.Node;
+import BinaryTree._1_binaryTree.Node;
 
 public class Construction {
 

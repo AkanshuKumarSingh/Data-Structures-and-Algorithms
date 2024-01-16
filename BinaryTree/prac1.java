@@ -1,6 +1,7 @@
 package BinaryTree;
 
 import java.util.Stack;
+import java.util.TreeSet;
 
 public class prac1 {
 
@@ -90,6 +91,10 @@ public class prac1 {
 	}
 
 	public static void main(String[] args) {
+		TreeSet<Integer> set = new TreeSet<>();
+		set.add(1);
+		set.add(1);
+		System.out.println(set);
 		Integer arr[] = { 1, 2, 3, null, null, 4, null, null, 6, 5, 
 				null, null, 7, null, null};
 		Node root = construct(arr);
