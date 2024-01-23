@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class K_Largest_Elements {
+public class _2_k_largest_elements {
 
 	public static void kLargest(int arr[], int k) {
 		// o(nlog(k))

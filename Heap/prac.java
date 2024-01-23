@@ -91,6 +91,25 @@ public class prac {
 		System.out.println(data);
 	}
 	
+    static class Node implements Comparable<Node>{
+        int data;
+        int no;
+        Node left;
+        Node right;
+        Node(int data, int no){
+            this.data = data;
+            this.left = null;
+            this.right = null;
+            this.no = no;
+        }
+        public int compareTo(Node temp){
+            if(this.data == temp.data){
+                return 1;
+            }
+            return this.data - temp.data;
+        }
+    }
+	
 	public static void main(String[] args) {
 		System.out.println("HHM");
 		prac minHeap = new prac();
@@ -112,7 +131,13 @@ public class prac {
 		System.out.println(pq.peek());
 		pq.offer(1234);
 		System.out.println(pq.poll());
-		
+        PriorityQueue<Node> q = new PriorityQueue<>();
+        q.offer(new Node(3, 1));
+        q.offer(new Node(3, 2));
+        q.offer(new Node(3, 3));
+		System.out.println(q.poll().no);
+		System.out.println(q.poll().no);
+
 	}
 
 }

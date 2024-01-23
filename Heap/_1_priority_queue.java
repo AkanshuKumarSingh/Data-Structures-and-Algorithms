@@ -2,15 +2,15 @@ package Heap;
 
 import java.util.ArrayList;
 
-public class priority_queue {
+public class _1_priority_queue {
 
 	private ArrayList<Integer> data;
 
-	public priority_queue() {
+	public _1_priority_queue() {
 		data = new ArrayList<>();
 	}
 
-	public priority_queue(int arr[]) {
+	public _1_priority_queue(int arr[]) {
 		data = new ArrayList<>();
 
 //		high complexity ways -> more than O(nlogn)
@@ -101,7 +101,7 @@ public class priority_queue {
 
 	public static void main(String[] args) {
 		int[] arr = { 2, 5, 8, 9, 6, 3, 12, 4, 45, 78, 1, 45, 6, 2 };
-		priority_queue pq = new priority_queue(arr);
+		_1_priority_queue pq = new _1_priority_queue(arr);
 //		for(int val : arr) {
 //			pq.add(val);
 //		}

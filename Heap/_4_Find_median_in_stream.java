@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class Median_Priority_Queue {
+public class _4_Find_median_in_stream {
 
 	public static class MedianPriorityQueue {
 		PriorityQueue<Integer> left;

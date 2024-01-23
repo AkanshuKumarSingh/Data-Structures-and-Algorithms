@@ -41,11 +41,11 @@ public class prac {
 		
 		ArrayList<Integer> a = new ArrayList<>();
 		for(int i : new int[] {5, 6, 6, 10, 3, 4, 6, 6, 4}) {
-			a.add(i)
+			a.add(i);
 		}
 		
 		Collections.sort(null);
-		Sysout
+//		Sysout
 		
 		
 	}

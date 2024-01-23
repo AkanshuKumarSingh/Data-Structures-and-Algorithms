@@ -5,8 +5,40 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-public class Merge_K_Sorted_Lists {
+public class _3_Merge_K_Sorted_Arrays {
 
+    static class Node implements Comparable<Node>{
+        int no, row, col;
+        Node(int no, int row, int col){
+            this.row = row;
+            this.no = no;
+            this.col = col;
+        }
+        
+        public int compareTo(Node node){
+            return this.no - node.no;
+        }
+        
+    }
+    
+    public static ArrayList<Integer> mergeKArrays(int[][] arr,int K) 
+    {
+        ArrayList<Integer> ans = new ArrayList<>();
+        PriorityQueue<Node> q = new PriorityQueue<>();
+        for(int i = 0 ; i < arr.length; i++){
+            q.offer(new Node(arr[i][0], i, 0));
+        }
+        
+        while(!q.isEmpty()){
+            Node node = q.poll();
+            ans.add(node.no);
+            if(node.col + 1 < arr[node.row].length){
+                q.offer(new Node(arr[node.row][node.col+1], node.row, node.col+1));
+            }
+        }
+        return ans;
+    }
+	
 	public static ArrayList<Integer> mergeKSortedLists(ArrayList<ArrayList<Integer>> lists) {
 		ArrayList<Integer> rv = new ArrayList<>();
 
