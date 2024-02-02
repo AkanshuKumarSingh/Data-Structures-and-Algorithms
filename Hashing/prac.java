@@ -180,6 +180,10 @@ public class prac<K, V> {
 		map1.put("vishal", 10);
 		map1.put("sachin", 30);
 		map1.put("vaibhav", 20);
+		System.out.println("Here");
+		System.out.println(map1);
+		System.out.println(map1.get("1q") == null);
+		System.out.println(": " + true);
 
 		// Iterate the map using
 		// for-each loop
