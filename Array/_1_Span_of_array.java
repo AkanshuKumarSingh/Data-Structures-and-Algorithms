@@ -32,6 +32,20 @@ public class _1_Span_of_array {
 		}
 		System.out.println(max-min);
 
+//		python code
+//	    n = int(input())
+//	    arr = []
+//	    for i in range(n):
+//	        arr.append(int(input()))
+//	    min_val = float('inf')
+//	    max_val = float('-inf')
+//	    print(min_val)
+//	    print(max_val)
+//	    for i in range(n):
+//	        min_val = min(min_val, arr[i])
+//	        max_val = max(max_val, arr[i])
+//	    print(max_val - min_val)
+
 	}
 
 }

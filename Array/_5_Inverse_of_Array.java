@@ -39,6 +39,13 @@ public class _5_Inverse_of_Array {
 		    	res[a[i]] = i;
 		    }
 		    return res;
+		    
+//		    python code
+//		    res = [0] * len(a)
+//		    for i in range(len(a)):
+//		        res[a[i]] = i
+//		    return res
+
 		  }
 
 		public static void main(String[] args) throws Exception {

@@ -26,6 +26,15 @@ public class _3_Reverse_an_array {
 			a[n-i-1] = t;
 		}
 		
+//		python code
+//		n = len(a)
+//		for i in range(n//2):
+//		    t = a[i]
+//		    a[i] = a[n-1-i]
+//		    a[n-i-1] = t
+
+
+		
 //		int left = 0,right = n-1; also good;
 //		while(left < right) {
 //			int t = a[left];

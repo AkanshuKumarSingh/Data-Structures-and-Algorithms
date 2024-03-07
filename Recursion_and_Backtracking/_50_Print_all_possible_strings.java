@@ -21,5 +21,10 @@ public class _50_Print_all_possible_strings {
         makeStrings(str, 1, ""+str.charAt(0), list);
         return list;
     }
+    
+    public static void main(String args[]) {
+    	String str = "ABC";
+    	System.out.println(new _50_Print_all_possible_strings().spaceString(str));
+    }
 	
 }

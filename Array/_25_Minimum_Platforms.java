@@ -21,6 +21,27 @@ public class _25_Minimum_Platforms {
             }
         }
         return ans;
+        
+        
+//        python code
+//        arrival.sort()
+//        departure.sort()
+//        
+//        ans = 0
+//        cnt = 0
+//        i = 0
+//        j = 0
+//        
+//        while i < len(arrival):
+//            if arrival[i] <= departure[j]:
+//                cnt += 1
+//                ans = max(ans, cnt)
+//                i += 1
+//            else:
+//                cnt -= 1
+//                j += 1
+//        
+//        return ans
     }
 
 }

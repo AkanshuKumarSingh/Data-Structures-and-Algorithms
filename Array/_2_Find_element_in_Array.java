@@ -28,6 +28,20 @@ public class _2_Find_element_in_Array {
 		}
 
 		System.out.println(index);
+
+//		python code
+//		n = int(input())
+//		arr = []
+//		for i in range(n):
+//		    arr.append(int(input()))
+//		d = int(input())
+//		index = -1
+//		for i in range(n):
+//		    if arr[i] == d:
+//		        index = i
+//		        break
+//		print(index)
+		
 	}
 
 }

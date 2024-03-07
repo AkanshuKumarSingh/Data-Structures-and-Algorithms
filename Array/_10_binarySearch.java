@@ -16,6 +16,16 @@ public class _10_binarySearch {
 				end = mid-1;
 			}
 		}
+		
+//		python code
+//		   while start <= end:
+//		        mid = start + (end - start) // 2
+//		        if arr[mid] == no:
+//		            return mid
+//		        elif arr[mid] < no:
+//		            start = mid + 1
+//		        else:
+//		            end = mid - 1
 		return -1;
 	}
 	

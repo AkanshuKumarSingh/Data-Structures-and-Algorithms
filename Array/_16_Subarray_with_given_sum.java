@@ -24,5 +24,30 @@ public class _16_Subarray_with_given_sum {
         	ans.add(-1);
         }
         return ans;        // Your code here
+
+
+//      python code  
+//      ans = []
+//	    n = len(arr)
+//	    sum_val = 0
+//	    start = 0
+//	    i = 0
+//	    
+//	    while i < n:
+//	        sum_val += arr[i]
+//	        
+//	        while sum_val > s:
+//	            sum_val -= arr[start]
+//	            start += 1
+//	            
+//	        if sum_val == s and start <= i:
+//	            ans.append(start + 1)
+//	            ans.append(i + 1)
+//	            break
+//	        
+//	        i += 1
+//	    
+//	    if not ans:
+//	        ans.append(-1)
     }
 }

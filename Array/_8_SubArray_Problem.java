@@ -50,14 +50,13 @@ public class _8_SubArray_Problem {
 		
 		System.out.println("\n");
 		
-		for(int i = 0 ; i < n ; i++) {
-			for(int j = i; j < n; j++) {
-				for(int k = i; k <= j; k++) {
-					System.out.print(arr[k] + "\n");
-				}
-				System.out.println();
-			}
-		}
+//		python code
+//		for i in range(n):
+//		    for j in range(i, n):
+//		        for k in range(i, j+1):
+//		            print(arr[k])
+//		        print()
+
 		
 	}
 

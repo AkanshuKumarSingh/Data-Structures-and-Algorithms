@@ -35,6 +35,17 @@ public class _9_Subset_of_array_sir {
 			pow *= 10;
 		}
 		return res;
+
+//		python code
+//		pow = 1
+//		res = 0
+//		while n != 0:
+//		    rem = n % 2
+//		    n //= 2
+//		    res += rem * pow
+//		    pow *= 10
+//		return res
+
 	}
 	
 	public static void main(String[] args) {
@@ -69,6 +80,25 @@ public class _9_Subset_of_array_sir {
 			}
 			System.out.println();
 		}
+		
+//		python code
+//		n = int(input())
+//		arr = []
+//		for i in range(n):
+//		    arr.append(int(input()))
+//		sc = 2 ** n
+//		power = 10 ** (n-1)
+//		for i in range(sc):
+//		    bn = getBinary(i)
+//		    bn = '0' * (n - len(bn)) + bn
+//		    pow = power
+//		    for j in range(n):
+//		        digit = int(bn[j])
+//		        if digit == 0:
+//		            print("-\t", end="")
+//		        else:
+//		            print(arr[j], "\t", end="")
+//		    print()
 		
 	}
 

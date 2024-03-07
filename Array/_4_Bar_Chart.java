@@ -40,6 +40,23 @@ public class _4_Bar_Chart {
 			max--;
 			System.out.println();
 		}
+		
+		
+//		python code
+//		n = int(input())
+//		arr = []
+//		max_arr = -1
+//		for i in range(n):
+//		    arr.append(int(input()))
+//		    max_arr = max(max_arr, arr[i])
+//		while max_arr > 0:
+//		    for i in range(n):
+//		        if arr[i] >= max_arr:
+//		            print("*\t", end="")
+//		        else:
+//		            print("\t", end="")
+//		    max_arr -= 1
+//		    print()
 
 	}
 

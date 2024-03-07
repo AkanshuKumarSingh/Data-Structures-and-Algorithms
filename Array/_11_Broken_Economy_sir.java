@@ -70,6 +70,27 @@ public class _11_Broken_Economy_sir {
 //	    }
 //	    System.out.println(next + "\n" + prev);
 //	    
+		
+//	python code
+//	start = 0
+//	end = n - 1
+//	mid = 0
+//	floor = float('-inf')
+//	ceil = float('inf')
+//
+//	# Binary search to find floor and ceil values
+//	while start <= end:
+//	    mid = start + (end - start) // 2
+//	    if arr[mid] == no:
+//	        floor = arr[mid]
+//	        ceil = arr[mid]
+//	        break
+//	    elif arr[mid] < no:
+//	        floor = arr[mid]
+//	        start = mid + 1
+//	    else:
+//	        ceil = arr[mid]
+//	        end = mid - 1
 	}
 
 	

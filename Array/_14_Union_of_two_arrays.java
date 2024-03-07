@@ -14,6 +14,11 @@ public class _14_Union_of_two_arrays {
 	    for(int i : b){
 	        set.add(i);
 	    }
+	    
 	    return set.size();
+	
+//	    python code
+//	    set_union = set(a) | set(b)
+//	    result = len(set_union)
 	}
 }

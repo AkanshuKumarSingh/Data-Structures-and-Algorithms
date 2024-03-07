@@ -16,5 +16,14 @@ public class _20_Leaders_in_an_array {
 		}
 		Collections.reverse(list);
 		return list;
+		
+//		python code
+//	    for i in range(len(arr) - 2, -1, -1):
+//	        if arr[i] >= max_val:
+//	            list.append(arr[i])
+//	            max_val = arr[i]
+//	    
+//	    list.reverse()
+
 	}
 }

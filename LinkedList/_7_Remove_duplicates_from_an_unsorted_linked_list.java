@@ -4,8 +4,7 @@ import java.util.HashSet;
 
 public class _7_Remove_duplicates_from_an_unsorted_linked_list {
 
-	public static class Node
-	{
+	public static class Node{
 	    int data;
 	    Node next;
 	    Node(int d) {

@@ -2,8 +2,7 @@ package LinkedList;
 
 public class _15_Remove_loop_in_Linked_List {
 
-	static class Node
-	{
+	static class Node{
 	    int data;
 	    Node next;
 	}

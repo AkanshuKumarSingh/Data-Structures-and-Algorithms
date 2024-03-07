@@ -2,13 +2,11 @@ package LinkedList;
 
 public class _18_Delete_Node_in_Single_Linked_List {
 
-	class Node
-	{
+	class Node{
 		int data;
 		Node next;
 		
-		Node(int d)
-		{
+		Node(int d){
 			data = d;
 			next = null;
 		}

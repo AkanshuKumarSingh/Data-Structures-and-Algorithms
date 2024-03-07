@@ -50,6 +50,30 @@ public class _6_Sum_of_2_arrays {
 			System.out.println(res[i]);
 		}
 		
+		
+//		python code
+//		n1 = int(input())
+//		arr1 = [int(input()) for _ in range(n1)]
+//		n2 = int(input())
+//		arr2 = [int(input()) for _ in range(n2)]
+//		curr_max = max(n1, n2) + 1
+//		res = [0] * curr_max
+//		i = n1-1
+//		j = n2-1
+//		k = curr_max-1
+//		carry = 0
+//		while i >= 0 or j >= 0 or carry == 1:
+//		    sum = (arr1[i] if i >= 0 else 0) + (arr2[j] if j >= 0 else 0) + carry
+//		    res[k] = sum % 10
+//		    carry = sum // 10
+//		    k -= 1
+//		    i -= 1
+//		    j -= 1
+//		for i in range(curr_max):
+//		    if i == 0 and res[i] == 0:
+//		        continue
+//		    print(res[i])
+		
 	}
 
 }

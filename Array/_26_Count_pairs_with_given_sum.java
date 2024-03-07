@@ -18,6 +18,19 @@ public class _26_Count_pairs_with_given_sum {
         }
         
         return cnt;
+
+//        python code
+//        map = {}
+//        cnt = 0
+//        
+//        for i in arr:
+//            diff = k - i
+//            if diff in map:
+//                cnt += map[diff]
+//            map[i] = map.get(i, 0) + 1
+//            
+//        return cnt
+
     }
 	
 }

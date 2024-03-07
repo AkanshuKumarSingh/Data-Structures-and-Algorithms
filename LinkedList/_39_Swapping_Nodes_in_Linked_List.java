@@ -19,6 +19,42 @@ public class _39_Swapping_Nodes_in_Linked_List {
 		}
 	}
 
+	public ListNode swapNodes1(ListNode head, int k) {
+
+		if (head == null || head.next == null)
+			return head;
+
+		ListNode len = head;
+		int length = 0;
+
+		while (len != null) {
+			len = len.next;
+			length++;
+		}
+
+		ListNode curr1 = head;
+		ListNode curr2 = head;
+
+		int l = length - k;
+
+		while (k-- > 1) {
+			curr1 = curr1.next;
+		}
+
+		while (l-- > 0) {
+			curr2 = curr2.next;
+		}
+
+		if (curr1 == curr2)
+			return head;
+
+		curr1.val = curr1.val + curr2.val;
+		curr2.val = curr1.val - curr2.val;
+		curr1.val = curr1.val - curr2.val;
+		return head;
+
+	}
+
 	public ListNode swapNodes(ListNode head, int k) {
 		int len = 0;
 		ListNode t1 = head, t2 = head;

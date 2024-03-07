@@ -56,6 +56,35 @@ public class _7_Difference_of_2_arrays {
 		for(;i < max; i++) {
 			System.out.println(res[i]);
 		}
+		
+		
+//		python code
+//		n1 = int(input())
+//		arr1 = [int(input()) for _ in range(n1)]
+//		n2 = int(input())
+//		arr2 = [int(input()) for _ in range(n2)]
+//		max = n2
+//		res = [0] * max
+//		i = n1-1
+//		j = n2-1
+//		k = max-1
+//		carry = 0
+//		while j >= 0:
+//		    subtract = arr2[j] + carry - (arr1[i] if i > -1 else 0)
+//		    if subtract < 0:
+//		        subtract += 10
+//		        carry = -1
+//		    else:
+//		        carry = 0
+//		    res[k] = subtract % 10
+//		    k -= 1
+//		    i -= 1
+//		    j -= 1
+//		for i in range(max):
+//		    if res[i] != 0:
+//		        break
+//		for i in range(i, max):
+//		    print(res[i])
 	}
 
 	

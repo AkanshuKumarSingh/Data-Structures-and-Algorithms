@@ -22,6 +22,25 @@ public class _24_Delete_nodes_having_greater_value_on_right {
 		return prev;
 	}
 
+	Node compute1(Node head) {
+		if (head == null || head.next == null)
+			return head;
+		head = reverse(head);
+		Node prev = head;
+		Node curr = head.next;
+
+		while (curr != null) {
+			if (curr.data < prev.data) {
+				prev.next = curr.next;
+				curr = curr.next;
+			} else {
+				curr = curr.next;
+				prev = prev.next;
+			}
+		}
+		return reverse(head);
+	}
+
 	Node compute(Node head) {
 		if (head == null || head.next == null)
 			return head;
