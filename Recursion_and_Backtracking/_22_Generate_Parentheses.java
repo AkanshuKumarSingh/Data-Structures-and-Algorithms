@@ -24,7 +24,6 @@ public class _22_Generate_Parentheses {
         if(left < right){
             generate(left, right-1, length, asf+")", ans);
         }
-
     }
 
 }

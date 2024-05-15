@@ -16,7 +16,6 @@ public class _8_Number_Of_Provinces {
                 cnt += bfs(i, vis, adj);
             }
         }
-        
         return cnt;
     }
     

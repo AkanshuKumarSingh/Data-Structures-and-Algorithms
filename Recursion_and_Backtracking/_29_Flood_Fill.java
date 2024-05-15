@@ -54,7 +54,6 @@ public class _29_Flood_Fill {
 
 		if(sr < 0 || sr >= maze.length || sc < 0 || sc >= maze[0].length || maze[sr][sc] == 1) {
 			return;
-			
 		}
 		
 		maze[sr][sc] = 1;

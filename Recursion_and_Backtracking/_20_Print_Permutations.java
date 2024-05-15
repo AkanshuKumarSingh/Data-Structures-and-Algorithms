@@ -26,14 +26,12 @@ public class _20_Print_Permutations {
 		}
 		
 		for(int i = 0; i < str.length(); i++) {
-			
 			char ch = str.charAt(i);
 			
 			String firstHalf = str.substring(0,i);
 			String secondHalf = str.substring(i+1);
 			
 			printPermutations(firstHalf + secondHalf , ans + ch);
-			
 		}
 		
 	}

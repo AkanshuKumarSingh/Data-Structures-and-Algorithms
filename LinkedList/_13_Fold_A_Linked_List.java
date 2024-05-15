@@ -476,7 +476,6 @@ public class _13_Fold_A_Linked_List {
 					prev = p1;
 				if (p2 != null)
 					prev = p2;
-
 			}
 
 			this.tail = prev;

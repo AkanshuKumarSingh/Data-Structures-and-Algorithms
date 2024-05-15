@@ -41,6 +41,19 @@ public class _21_Print_Encodings {
 			printEncodings(str.substring(i + 1), ans + ((char) (no + 96)));
 		}
 
+		
+//		python code
+//	    if len(string) == 0:
+//	        if len(ans) != 0:
+//	            print(ans)
+//	        return
+//	    
+//	    for i in range(len(string)):
+//	        no = int(string[:i + 1])
+//	        if no > 26 or no == 0:
+//	            break
+//	        printEncodings(string[i + 1:], ans + chr(no + 96))
+
 	}
 
 	public static void printEncodingsSir(String qsf, String asf) { // Sir

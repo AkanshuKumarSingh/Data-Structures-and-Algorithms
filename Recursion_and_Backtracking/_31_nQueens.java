@@ -115,7 +115,6 @@ public class _31_nQueens {
 				board[r][c] = false;
 			}
 		}
-
 	}
 
 	public static void main(String[] args) {

@@ -431,8 +431,7 @@ public class _10_K_Reverse_In_Linked_List {
 	
 	
 	// GFG
-    public static Node reverse(Node node, int k)
-    {
+    public static Node reverse(Node node, int k){
         Node prev = null, curr = node, next = null;
         for(int i = 0 ; i < k && curr != null ; i++){
             next = curr.next;
@@ -444,7 +443,6 @@ public class _10_K_Reverse_In_Linked_List {
         if(curr == null) return prev;
         node.next = reverse(curr, k);
         return prev;
-        
     }
 
 //	public void kReverse(int k) {

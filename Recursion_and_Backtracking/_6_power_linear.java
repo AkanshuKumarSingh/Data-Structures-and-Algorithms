@@ -15,7 +15,6 @@ public class _6_power_linear {
 		int pxnm1 = power(x,n-1);
 		int pxn = pxnm1*x;
 		return pxn;
-		
 	}
 
 	public static void main(String[] args) {

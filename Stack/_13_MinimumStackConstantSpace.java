@@ -33,7 +33,6 @@ public class _13_MinimumStackConstantSpace {
 				st.push(2*val - min);
 				min = val;
 			}
-			
 		}
 
 		int pop() {

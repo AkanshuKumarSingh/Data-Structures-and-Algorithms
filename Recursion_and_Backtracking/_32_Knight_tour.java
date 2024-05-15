@@ -18,7 +18,6 @@ public class _32_Knight_tour {
 	}
 
 	public static void knightTour(int board[][], int r, int c, int step) {
-
 		if (step == board.length * board.length) {
 			board[r][c] = step;
 			displayBoard(board);

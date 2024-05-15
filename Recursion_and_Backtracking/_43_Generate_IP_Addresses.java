@@ -39,6 +39,7 @@ public class _43_Generate_IP_Addresses {
     }
     
     public static void main(String args[]) {
+    	System.out.println(Integer.parseInt("0024"));
     	System.out.println(new _43_Generate_IP_Addresses().genIp("3783022527424056"));
     }
 	

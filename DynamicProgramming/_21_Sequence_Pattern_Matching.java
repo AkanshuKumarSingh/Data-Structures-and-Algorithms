@@ -19,6 +19,7 @@ public class _21_Sequence_Pattern_Matching {
 		}
 		return t[n][m];
 	}
+
     public boolean isSubsequence(String s, String t) {
         if(lcsTabulation(s.length(), t.length(), s, t) == s.length()) return true;
         else return false;

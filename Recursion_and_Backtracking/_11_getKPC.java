@@ -43,6 +43,26 @@ public class _11_getKPC {
 		
 		return cres;
     }
+
+	
+// python code
+//	codes = [".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"]
+//
+//	def getKPC(string):
+//	    if len(string) == 0:
+//	        return [""]
+//	    
+//	    no = int(string[0])
+//	    code = codes[no]
+//	    
+//	    rres = getKPC(string[1:])
+//	    cres = []
+//	    
+//	    for char in code:
+//	        for s in rres:
+//	            cres.append(char + s)
+//	    
+//	    return cres
 	
 	public static void main(String args[]) {
 		Scanner scan = new Scanner(System.in);

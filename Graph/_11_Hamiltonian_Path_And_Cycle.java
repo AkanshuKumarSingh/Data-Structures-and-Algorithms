@@ -77,7 +77,6 @@ public class _11_Hamiltonian_Path_And_Cycle {
 			} else {
 				System.out.println(".");
 			}
-
 			return;
 		}
 

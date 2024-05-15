@@ -30,7 +30,6 @@ public class _42_Unique_Subsets {
         generate(arr, i+1, n, subset, ans, set);
         subset.remove(subset.size()-1);
 
-        
         generate(arr, i+1, n, subset, ans, set);
         
     }
