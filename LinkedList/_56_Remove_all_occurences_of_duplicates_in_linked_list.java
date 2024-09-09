@@ -46,8 +46,11 @@ public class _56_Remove_all_occurences_of_duplicates_in_linked_list {
 				prev.next = null;
 			}
 		}
+		
+		// Case when we have ip of: 1->2->2->3
 		if (head != null && prev != null)
 			prev.next = head;
+		// Case when we have ip of: 2->2->3
 		else if (head != null && prev == null)
 			return head;
 		return newHead;

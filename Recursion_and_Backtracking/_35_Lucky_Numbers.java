@@ -8,6 +8,7 @@ public class _35_Lucky_Numbers {
     // otherwise returns 0
     static boolean find(int n)
     {
+    	System.out.println(n + " " + counter);
         if (counter > n)
             return true;
         if (n % counter == 0)
@@ -27,6 +28,10 @@ public class _35_Lucky_Numbers {
     static boolean isLucky(int n){
         counter = 2;
         return find(n);
+    }
+    
+    public static void main(String args[]) {
+    	System.out.println(isLucky(4));
     }
 	
 }

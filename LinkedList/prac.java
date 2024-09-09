@@ -217,6 +217,32 @@ public class prac {
 	}
 
 	public static void main(String[] args) {
+		
+        // Create a LinkedList of Strings
+        LinkedList<String> list = new LinkedList<>();
+
+        // Adding elements to the LinkedList
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+        list.addFirst("First Fruit"); // Adding at the beginning
+        list.addLast("Last Fruit"); // Adding at the end
+
+        // Displaying the LinkedList
+        System.out.println("LinkedList: " + list);
+
+        // Accessing elements
+        String firstElement = list.getFirst(); // Get first element
+        String lastElement = list.getLast(); // Get last element
+        String elementAtIndex2 = list.get(2); // Get element at index 2
+
+        System.out.println("First Element: " + firstElement);
+        System.out.println("Last Element: " + lastElement);
+        System.out.println("Element at Index 2: " + elementAtIndex2);
+        System.out.println(list);
+        System.out.println("Element at Index 2: " + list.remove());
+
+		
 		int nk = (int) Math.ceil((float)15 / (float)2);
 		System.out.println(nk);
 
@@ -235,18 +261,18 @@ public class prac {
 			System.out.println(i);
 		}
 
-		linkedList1 list = new linkedList1();
-		list.addFirst(23);
-		list.addLast(21);
-		list.addFirst(98);
-		System.out.println(list);
-		System.out.println(list.getNodeAt(1));
-		list.addAt(11, 2);
-		System.out.println(list);
-
-		System.out.println("\n\n");
-
-		System.out.println(minSwap(new int[] { 2, 5, 1, 5, 6, 3 }, 6, 3));
+//		linkedList1 list = new linkedList1();
+//		list.addFirst(23);
+//		list.addLast(21);
+//		list.addFirst(98);
+//		System.out.println(list);
+//		System.out.println(list.getNodeAt(1));
+//		list.addAt(11, 2);
+//		System.out.println(list);
+//
+//		System.out.println("\n\n");
+//
+//		System.out.println(minSwap(new int[] { 2, 5, 1, 5, 6, 3 }, 6, 3));
 
 	}
 

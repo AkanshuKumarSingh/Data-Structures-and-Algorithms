@@ -316,7 +316,6 @@ public class _6_Remove_Duplicates_In_A_Sorted_Linked_List {
 				}
 				return head;
 		    }
-		    
 		  }
 
 		  public static void main(String[] args) throws Exception {

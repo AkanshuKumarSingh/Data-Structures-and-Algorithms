@@ -24,5 +24,4 @@ public class _5_bellmon_ford {
         return distance;
     }
 
-
 }

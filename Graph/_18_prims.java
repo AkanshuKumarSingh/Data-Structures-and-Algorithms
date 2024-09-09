@@ -19,7 +19,6 @@ public class _18_prims {
         public int compareTo(Node oth){
             return this.wt - oth.wt;
         }
-        
     }
     
 	static int spanningTree(int V, int E, int edges[][]){

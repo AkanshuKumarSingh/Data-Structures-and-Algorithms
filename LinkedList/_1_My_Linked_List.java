@@ -250,7 +250,6 @@ public class _1_My_Linked_List {
 		System.out.println(list.removeAt(2));
 		System.out.println(list);
 		System.out.println(list.size());
-		
 	}
 
 }

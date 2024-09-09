@@ -14,12 +14,22 @@ public class _4_BubbleSort {
 //	Stable: Yes
 	
 	public static void bubbleSort(int[] arr) {
+        boolean swapped;
+
 		for (int i = 0; i < arr.length; i++) {
+            swapped = false;
+
 			for (int j = 0; j < arr.length - i - 1; j++) {
 				if (isSmaller(arr, j + 1, j)) {
 					swap(arr, j + 1, j);
+                    swapped = true;
 				}
 			}
+			
+            if (!swapped) {
+                break;
+            }
+
 		}
 	}
 

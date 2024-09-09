@@ -38,9 +38,54 @@ public class _43_Generate_IP_Addresses {
         return gen(s, 3);
     }
     
+    public void findList(String s, ArrayList<String> ans, String asf, int deci){
+        if(deci == 0){
+            if(s.length() == 0) return;
+            else{
+            	System.out.println(s);
+                if(s.charAt(0) == '0' && s.length() == 1){
+                    ans.add(asf + 0);
+                }else if(s.charAt(0) == '0'){
+                    return;
+                }else if(s.length() < 4 && Integer.parseInt(s) <= 255){
+                    ans.add(asf + s);
+                }else{
+                    return;
+                }
+                return;
+            }
+        }else if(s.length() == 0){
+            return;
+        }
+        
+        if(s.charAt(0) == '0'){
+            findList(s.substring(1), ans, asf + "0.", deci-1);
+        }else{
+            int no1 = s.charAt(0)-'0';
+            findList(s.substring(1), ans, asf + no1 + ".", deci-1);
+            
+            if(s.length() < 2) return;
+            int no2 = no1*10 + (s.charAt(1)-'0');
+            findList(s.substring(2), ans, asf + no2 + ".", deci-1);
+
+            if(s.length() < 3) return;
+            int no3 = no2*10 + (s.charAt(2)-'0');
+            if(no3 > 255) return;
+            findList(s.substring(3), ans, asf + no3 + ".", deci-1);
+        }
+        
+    }
+    
+    public ArrayList<String> genIp1(String s) {
+        ArrayList<String> ans = new ArrayList<>();
+        findList(s, ans, "", 3);
+        return ans;
+    }
+    
     public static void main(String args[]) {
+    	System.out.println("ajs".substring(1, 2));
     	System.out.println(Integer.parseInt("0024"));
-    	System.out.println(new _43_Generate_IP_Addresses().genIp("3783022527424056"));
+    	System.out.println(new _43_Generate_IP_Addresses().genIp1("3783022527424056"));
     }
 	
 }

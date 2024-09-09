@@ -6,11 +6,11 @@ public class _53_Largest_number_in_K_swaps {
 		static String max = "";
 	}
 
-	public static void findMaximumNum(char ar[], int k, Res r) {
+	public static void findMaximumNum(char ar[], int k, Res r, int idx) {
 		if (k == 0)
 			return;
 		int n = ar.length;
-		for (int i = 0; i < n - 1; i++) {
+		for (int i = idx; i < n - 1; i++) {
 			for (int j = i + 1; j < n; j++) {
 					// if digit at position i is less than digit
 					// at position j, we swap them and check for
@@ -29,7 +29,7 @@ public class _53_Largest_number_in_K_swaps {
 					}
 					// calling recursive function to set the
 					// next digit.
-					findMaximumNum(ar, k - 1, r);
+					findMaximumNum(ar, k - 1, r, idx+1);
 
 					// backtracking
 					temp = ar[i];
@@ -87,7 +87,7 @@ public class _53_Largest_number_in_K_swaps {
 		int k = 2;
 		Res r = new Res();
 		r.max = str;
-		findMaximumNum(str.toCharArray(), k, r);
+		findMaximumNum(str.toCharArray(), k, r, 0);
 		System.out.println(r.max);
 		
 		// This code not working as we can have 2 types of cases

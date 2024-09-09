@@ -41,24 +41,24 @@ public class _17_Shortest_Path_In_Weights {
 
 	public static void dijkstras(ArrayList<Edge> graph[], int src) {
 		PriorityQueue<Node> pq = new PriorityQueue<>();
-		pq.offer(new Node(src,""+src,0));
+		pq.offer(new Node(src, "" + src, 0));
 		boolean vis[] = new boolean[graph.length];
-		
-		while(!pq.isEmpty()) {
+
+		while (!pq.isEmpty()) {
 			Node rem = pq.poll();
-			if(vis[rem.src] == true) {
+			if (vis[rem.src] == true) {
 				continue;
 			}
-			
+
 			vis[rem.src] = true;
 			System.out.println(rem.src + " via " + rem.psf + " @ " + rem.wsf);
-			for(Edge e : graph[rem.src]) {
-				if(!vis[e.nbr]) {
-					pq.offer(new Node(e.nbr,rem.psf + e.nbr , rem.wsf + e.wt));
+			for (Edge e : graph[rem.src]) {
+				if (!vis[e.nbr]) {
+					pq.offer(new Node(e.nbr, rem.psf + e.nbr, rem.wsf + e.wt));
 				}
 			}
 		}
-		
+
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -81,7 +81,7 @@ public class _17_Shortest_Path_In_Weights {
 		}
 
 		int src = Integer.parseInt(br.readLine());
-		dijkstras(graph,src);
+		dijkstras(graph, src);
 
 	}
 }

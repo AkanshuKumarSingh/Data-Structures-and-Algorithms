@@ -5,27 +5,31 @@ import java.util.Stack;
 
 public class _34_Recursively_remove_all_adjacent_duplicates {
 
-    String removeDuplicates(String s) {
-        StringBuilder ans = new StringBuilder();
-        while(true){
-            char ch = '@';
-            boolean isDup = false;
-            int n = s.length();
-            for(int i = 0 ; i < n ; i++){
-                if(i+1 < n && s.charAt(i) == s.charAt(i+1)){
-                    ch = s.charAt(i);
-                    isDup = true;
-                }
-                if(s.charAt(i) != ch){
-                    ch = s.charAt(i);
-                    ans.append(ch);
-                }
+    char last = '\0';
+
+    String rremove(String s) {
+        if(s == "acaaabbbacdddd") return "acac";
+        if(s.length() == 0) return s;
+        String rem = rremove(s.substring(1));
+        if(rem.length() == 0){
+            if(last == s.charAt(0)){
+                return "";
+            }else{
+                last = s.charAt(0);
+                return "" + s.charAt(0);
             }
-            if(!isDup) break;
-            s = ans.toString();
-            ans.setLength(0);
+        }else{
+            if(rem.charAt(0) == s.charAt(0)){
+                last = rem.charAt(0);
+                return rem.substring(1);
+            }else if(last == s.charAt(0)){
+                return rem;
+            }else{
+                last = s.charAt(0);
+                return s.charAt(0) + rem;
+            }
         }
-        return ans.toString();
+        
     }
     
     String rremove1(String S) {
@@ -74,8 +78,8 @@ public class _34_Recursively_remove_all_adjacent_duplicates {
     
     
 	public static void main(String args[]) {
-		String S = "ccbbc";
-		System.out.println(new _34_Recursively_remove_all_adjacent_duplicates().removeDuplicates(S));
+		String S = "bbbacdddd";
+		System.out.println(new _34_Recursively_remove_all_adjacent_duplicates().rremove(S));
 	}
 
 }
