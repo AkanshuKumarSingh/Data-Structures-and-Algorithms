@@ -3,7 +3,7 @@ package Graph;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Rotting_Oranges {
+public class _52_Rotting_Oranges {
 
 	static class OPair {
 		int x;
@@ -65,7 +65,7 @@ public class Rotting_Oranges {
 	}
 
 	public static void main(String args[]) {
-		Rotting_Oranges r = new Rotting_Oranges();
+		_52_Rotting_Oranges r = new _52_Rotting_Oranges();
 		int grid[][] = { { 2, 1, 1 }, { 1, 1, 0 }, { 0, 1, 1 } };
 		System.out.println(r.orangesRotting(grid));
 	}

@@ -91,7 +91,6 @@ public class _4_dijkstra {
     				dis[neighIdx] = neighWt + wt;
     				q.offer(new Node(neighIdx, dis[neighIdx]));
     			}
-    			
     		}
     		
     	}

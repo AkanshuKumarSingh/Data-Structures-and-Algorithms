@@ -19,7 +19,7 @@ public class _44_Two_water_Jug_problem {
 		for(int i = 0; i < operations.length; i++) {
 			int currentStep = operations[i] + ssf;
 			if (currentStep >= 0 && currentStep <= m+n && !vis[currentStep]) {
-				int currAns = minStepsUtils(m,n,d,currentStep, prev);
+				int currAns = minStepsUtils(m, n, d, currentStep, prev);
 				if(currAns != Integer.MAX_VALUE) {
 //					System.out.println(ssf + " : " + currentStep);
 					if(currAns+1 < steps[ssf]) {

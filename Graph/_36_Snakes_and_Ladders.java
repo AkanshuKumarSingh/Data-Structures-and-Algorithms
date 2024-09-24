@@ -71,7 +71,9 @@ public class _36_Snakes_and_Ladders {
         int count = 1;
         int n = board.length;
         boolean flag = true;
-        //traversing the board in the board game fashion and checking if the count that is representing the cell number, if we encounter something other then -1, then it can be a snake or it can be a ladder and mapping that cell index (i.e count to that number)
+        //traversing the board in the board game fashion and checking if the count that is representing the cell number, 
+        //if we encounter something other then -1, then it can be a snake or it can be a ladder and mapping that cell index
+        //(i.e count to that number)
         for(int i=n-1;i>=0;i--){
             //traversing in the order of the board
             if(flag){
