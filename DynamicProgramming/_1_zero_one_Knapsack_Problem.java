@@ -13,6 +13,8 @@ public class _1_zero_one_Knapsack_Problem {
 		} else {
 			return knapSackRecursive(W, wt, val, n - 1);
 		}
+//		Time Complexity: O(2^n) (Exponential)
+//		Space Complexity: O(n) (Call stack depth)
 	}
 
 	static int t[][];
@@ -28,6 +30,8 @@ public class _1_zero_one_Knapsack_Problem {
 		} else {
 			return t[n][W] = knapSackMemoization(W, wt, val, n - 1);
 		}
+//		Time Complexity: O(n * W) (as each subproblem is solved only once)
+//		Space Complexity: O(n * W) (for the table) + O(n) (for the recursion stack). (due to the memoization table and recursion stack)
 	}
 
     
@@ -58,6 +62,9 @@ public class _1_zero_one_Knapsack_Problem {
 			}
 		}
 		return t[n][W];
+
+//		Time Complexity: O(n * W) (due to the two nested loops iterating over n items and W capacities).
+//		Space Complexity: O(n * W) (due to the t[][] table storing the intermediate results).
 	}
     
     

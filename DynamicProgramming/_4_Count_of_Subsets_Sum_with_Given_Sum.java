@@ -26,7 +26,9 @@ public class _4_Count_of_Subsets_Sum_with_Given_Sum {
 	static int mod=1000000007;
 
 	public static int perfectSumMemoization(int arr[],int n, int sum) { 
-        if(n == 0) {
+        if(n == 0) { // because suppose we have case of 9, 5, 0, and sum is 14 then we have 2 sets like 9,5 and 9, 5, 0
+        	// so when we don't use n == 0 condition we get ans as 1 as we don't process idx of 0 number which we do include
+        	// exclude of current idx
         	if(sum == 0) {
         		return t[n][sum]=1;
         	}else {

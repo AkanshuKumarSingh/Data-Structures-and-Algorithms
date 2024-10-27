@@ -13,7 +13,8 @@ public class _8_Unbounded_Knapsack {
 		} else {
 			return knapSackRecursive(N - 1, W, val, wt);
 		}
-
+//		Time Complexity: O(2^n) (Exponential)
+//		Space Complexity: O(n) (Call stack depth)
 	}
 
 	static int t[][];
@@ -31,6 +32,9 @@ public class _8_Unbounded_Knapsack {
 		} else {
 			return t[N][W] = knapSackMemoization(N - 1, W, val, wt);
 		}
+//		Time Complexity: O(n * W) (as each subproblem is solved only once)
+//		Space Complexity: O(n * W) (for the table) + O(n) (for the recursion stack). (due to the memoization table and recursion stack)
+
 	}
 
 	static int knapSack(int N, int W, int val[], int wt[]) {
@@ -60,6 +64,9 @@ public class _8_Unbounded_Knapsack {
 			}
 		}
 		return t[N][W];
+//		Time Complexity: O(n * W) (due to the two nested loops iterating over n items and W capacities).
+//		Space Complexity: O(n * W) (due to the t[][] table storing the intermediate results).
+
 	}
 
 	public static void main(String args[]) {
