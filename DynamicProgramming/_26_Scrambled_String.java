@@ -26,9 +26,21 @@ public class _26_Scrambled_String {
 		}
 
 		return flag;
+		
+//		Time Complexity
+//		The time complexity of this technique is given by O(2^N) where N is the length of either of the 2 strings.
+//		The function uses recursion, and in the worst case, it has to try all possible combinations. 
+//		Thus, the time complexity of this technique is exponential and is given by  O(2^N).
+//
+//		Space Complexity
+//		The space complexity is given by O(N) where N is the length of either of the 2 strings.
+//		Since recursion uses a call stack, there will be N  calls to the function, and hence the space complexity is given by O(N). 
+//
+
 	}
 
 	static HashMap<String, Boolean> map = new HashMap<>();
+
 	static boolean scrambleStringsMemoization(String s1, String s2) {
 		if (s1.equals(s2)) {
 			return true;
@@ -37,9 +49,9 @@ public class _26_Scrambled_String {
 		if (s1.length() <= 1) {
 			return false;
 		}
-		
+
 		String key = s1 + " " + s2;
-		if(map.containsKey(key)) {
+		if (map.containsKey(key)) {
 			return map.get(key);
 		}
 
@@ -54,11 +66,11 @@ public class _26_Scrambled_String {
 				break;
 			}
 		}
-		
+
 		map.put(key, flag);
 		return flag;
 	}
-	
+
 	static boolean isScramble(String s1, String s2) {
 		if (s1.length() != s2.length())
 			return false;

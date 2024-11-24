@@ -14,6 +14,15 @@ public class _12_Longest_Common_Subsequence {
 		} else {
 			return Math.max(lcsRecursive(n - 1, m, s1, s2), lcsRecursive(n, m - 1, s1, s2));
 		}
+
+//		For each of the n + m steps, there are potentially two choices (branches). 
+//		This leads to approximately 2^(n + m) combinations of recursive calls in the worst case, 
+//		where the function explores all possible subsequences of the two strings.
+//		
+//		The time complexity of this recursive solution is O(2^(n + m)).
+//		The space complexity of this recursive solution is O(n + m).
+
+
 	}
 
 	static int t[][];

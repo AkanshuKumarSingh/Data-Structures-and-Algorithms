@@ -20,24 +20,22 @@ public class _35_Unique_Paths {
 		return dp[0][0];
 	}
 
-	public int solve(int i, int j, int m, int n, boolean dp[][]) {
-		if (i == m - 1 && j == n - 1)
-			return 1;
+    public int solve(int i, int j, int m, int n, int dp[][]){
+        if(i == m-1 && j == n-1) return 1;
+        else if(dp[i][j] != 0) return dp[i][j];
 
-		dp[i][j] = true;
-		int ans = 0;
-		if (i + 1 < m && !dp[i + 1][j]) {
-			ans = solve(i + 1, j, m, n, dp);
-		}
-		if (j + 1 < n && !dp[i][j + 1]) {
-			ans += solve(i, j + 1, m, n, dp);
-		}
-		dp[i][j] = false;
-		return ans;
-	}
+        int ans = 0;
+        if(i + 1 < m){
+            ans = solve(i+1, j, m, n, dp);
+        }
+        if(j + 1 < n){
+            ans += solve(i, j+1, m, n, dp);
+        }
+        return dp[i][j]=ans;
+    }
 
 	public int uniquePaths(int m, int n) {
-		boolean dp[][] = new boolean[m][n];
+		int dp[][] = new int[m][n];
 		int ans = solve(0, 0, m, n, dp);
 		return ans;
 	}

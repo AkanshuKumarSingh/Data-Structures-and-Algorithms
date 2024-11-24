@@ -33,6 +33,17 @@ public class _23_Matrix_Chain_Multiplication {
 		}
 
 		return ans;
+		
+//		Time Complexity: The time complexity of this recursive solution is O(2^N), where N is the number of matrices.
+//		Space Complexity: The space complexity is O(N) due to the recursion stack.
+		
+//		the recurrence relation is approximately:
+//		T(N)= k=1
+//				∑ (T(k)+T(N−k))+O(N)
+//			  N−1
+//	    The exact time complexity for this recursive process is roughly: O(4^N) but we usually take it as O(2^n)
+
+
 	}
 
 	static int t[][];

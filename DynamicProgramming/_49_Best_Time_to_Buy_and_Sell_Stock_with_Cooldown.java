@@ -12,7 +12,7 @@ public class _49_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown {
 				} else if (j == 0) {
 					dp[i][j] = Math.max(-1 * prices[i] + dp[i + 1][1], dp[i + 1][0]);
 				} else {
-					dp[i][j] = Math.max(prices[i] + dp[i + 2][0], dp[i + 1][1]);
+					dp[i][j] = Math.max(prices[i] + dp[i + 2][0], dp[i + 1][1]); // i+2 is imp
 				}
 			}
 		}

@@ -3,7 +3,7 @@
 public class _2_Subset_Sum_Problem {
 
 	static Boolean isSubsetSumRecursion(int N, int arr[], int sum){
-        if(sum == 0) return true;
+        if(sum == 0) return true; // order is important
         else if(N == 0) return false;
         
 		boolean ans = false;

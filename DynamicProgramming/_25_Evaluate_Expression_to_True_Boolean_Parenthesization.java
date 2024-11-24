@@ -55,6 +55,10 @@ public class _25_Evaluate_Expression_to_True_Boolean_Parenthesization {
 		}
 
 		return ans;
+
+//		Time Complexity: The time complexity of this recursive solution is O(4^N), where N is the number of matrices.
+//		Space Complexity: The space complexity is O(N) due to the recursion stack.
+
 	}
 
 	static int t[][][];
