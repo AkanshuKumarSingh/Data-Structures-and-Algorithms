@@ -30,6 +30,16 @@ public class _25_Minimum_time_taken_by_each_job_to_be_completed_given_by_a_Direc
             }
         }
         
+//        I also tried doing below code after this step but same nodes are being traversed for multiple starting points
+//        leading to time limit exceeded.
+//        public static void dfs(int src, int dis[], ArrayList<ArrayList<Integer>> adj){
+//            for(int neigh = 0; neigh < adj.get(src).size() ; neigh++){
+//                dis[neigh] = Math.max(dis[neigh], dis[src]+1);
+//                dfs(neigh,dis, adj);
+//            }
+//            
+//        }
+        
         while(!q.isEmpty()){
             int node = q.remove();
             for(int neigh: adj.get(node)){

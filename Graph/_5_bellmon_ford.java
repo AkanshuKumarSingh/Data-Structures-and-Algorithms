@@ -32,6 +32,9 @@ public class _5_bellmon_ford {
 				return new int[] { -1 };
 			}
 		}
+//		Best Case: O(E), when distance array after 1st and 2nd relaxation are same , we can simply stop further processing.
+//		Average Case: O(V*E)
+//		Worst Case: O(V*E)
 
 		return distance;
 	}

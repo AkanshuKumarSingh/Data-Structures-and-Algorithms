@@ -4,6 +4,8 @@ import java.util.*;
 
 public class _38_kopsraju {
 
+	
+	// strongly connected components: each nodes can be visited by another one in same component.
 	public void dfs(int src, boolean vis[], ArrayList<ArrayList<Integer>> adj, Stack<Integer> st) {
 		vis[src] = true;
 		for (int nxtSrc : adj.get(src)) {

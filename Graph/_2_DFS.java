@@ -14,7 +14,9 @@ public class _2_DFS {
                 dfs(i, adj, isVisited, ans);
             }
         }
-        
+//        Time complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+//        Auxiliary Space: O(V + E), since an extra visited array of size V is required, And stack size for recursive 
+//        calls to DFSRec function.
     }
     
     // Function to return a list containing the DFS traversal of the graph.

@@ -7,6 +7,11 @@ import java.util.Queue;
 
 public class _41_Cheapest_Flights_Within_K_Stops {
 	
+//	0 -> [(1, 10), (2, 50)] ans not working in below test case but this test case is not in leetcode, made by me
+//			1 -> [(2, 10)]
+//			2 -> [(4, 60)]
+//			4 -> [(5, 50)]
+
     static class Node implements Comparable<Node>{
         int n;
         int wt;

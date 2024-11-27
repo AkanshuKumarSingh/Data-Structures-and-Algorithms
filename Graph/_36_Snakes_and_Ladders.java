@@ -97,7 +97,7 @@ public class _36_Snakes_and_Ladders {
             }
         }
         //if snake on destination then just return -1;
-        if(board[0][0]!=-1) return -1;
+        if(board[0][0]!= -1) return -1;
         //we only want the minimum steps, but for more conceptual approach for this question, {minm steps,ladders used, snakes used} 
         return findAns(board, map, n);        
     }

@@ -26,6 +26,17 @@ public class _1_BFS {
         }
         
         return ans;
+//        Time Complexity: O(V+E), where V is the number of nodes and E is the number of edges.
+//        Outer while loop:
+//        	The while loop runs until the queue becomes empty. Every vertex is enqueued and dequeued exactly once, so the 
+//        	loop runs O(V) times (where V is the number of vertices).
+//    	  Inner for loop:
+//        	For each vertex, the inner for loop iterates over all its adjacent vertices. Across all vertices, 
+//        	this loop will run O(E) times (where E is the number of edges), since each edge is considered exactly once.
+//
+//        	Adding an edge to the queue and marking it visited takes O(1).
+//        Auxiliary Space: O(V)
+
     }
 	
     //GFG Function to return Breadth First Traversal of given graph.
