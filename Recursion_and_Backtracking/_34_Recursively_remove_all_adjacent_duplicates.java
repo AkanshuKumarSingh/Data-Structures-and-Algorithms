@@ -5,6 +5,30 @@ import java.util.Stack;
 
 public class _34_Recursively_remove_all_adjacent_duplicates {
 
+    public String removeUtil(String s) {
+        StringBuilder sb = new StringBuilder();
+        if (s.length() == 1)
+            return s;
+        for (int i = 0; i < s.length(); i++) {
+
+            // 1st situation
+            if (i == 0) {
+                if (s.charAt(i) != s.charAt(i + 1)) {
+                    sb.append(s.charAt(i));
+                }
+            } else if (i == s.length() - 1) {
+                if (s.charAt(i) != s.charAt(i - 1)) {
+                    sb.append(s.charAt(i));
+                }
+            } else {
+                if (s.charAt(i) != s.charAt(i + 1) && s.charAt(i) != s.charAt(i - 1)) {
+                    sb.append(s.charAt(i));
+                }
+            }
+        }
+        return s.equals(sb.toString()) ? s : removeUtil(sb.toString());
+    }
+
     char last = '\0';
 
     String rremove(String s) {
@@ -50,7 +74,8 @@ public class _34_Recursively_remove_all_adjacent_duplicates {
                 i++;
             }
         }
- 
+        
+        System.out.println(stack);
         // Check if resulting string is the same as the original string
         char[] stackArray = new char[stack.size()];
         for (int j = 0; j < stackArray.length; j++) {
@@ -70,15 +95,13 @@ public class _34_Recursively_remove_all_adjacent_duplicates {
             }
             return rremove1(result.toString()); // Recursively call rremove with the resulting string as input
         }
-
-
     }
 
 
     
     
 	public static void main(String args[]) {
-		String S = "bbbacdddd";
+		String S = "abccbccba";
 		System.out.println(new _34_Recursively_remove_all_adjacent_duplicates().rremove(S));
 	}
 

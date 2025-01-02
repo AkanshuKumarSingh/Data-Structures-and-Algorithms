@@ -37,7 +37,7 @@ public class _44_Duplicate_subtree_in_Binary_Tree {
 		// Serialize current subtree
 		// Append random char in between the value to differentiate from 11,1 and 1,11
 		s = s + root.data + "%" + lStr + "%" + rStr;
-
+		System.out.println(s);
 		// If current subtree already exists in hash
 		// table. [Note that size of a serialized tree
 		// with single node is 7 (3+4 accounting for special chars appended)
@@ -63,11 +63,11 @@ public class _44_Duplicate_subtree_in_Binary_Tree {
 		Node root = new Node('A');
 		root.left = new Node('B');
 		root.right = new Node('C');
-		root.left.left = new Node('D');
-		root.left.right = new Node('E');
-		root.right.right = new Node('B');
-		root.right.right.right = new Node('E');
-		root.right.right.left = new Node('D');
+//		root.left.left = new Node('D');
+//		root.left.right = new Node('E');
+//		root.right.right = new Node('B');
+//		root.right.right.right = new Node('E');
+//		root.right.right.left = new Node('D');
 		String str = dupSub(root);
 		if (str.equals(""))
 			System.out.print(" Yes ");

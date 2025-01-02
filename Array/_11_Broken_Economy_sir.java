@@ -44,7 +44,6 @@ public class _11_Broken_Economy_sir {
 			} else if (arr[mid] < no) {
 				floor = arr[mid];
 				start = mid + 1;
-				
 			} else {
 				ceil = arr[mid];
 				end = mid - 1;

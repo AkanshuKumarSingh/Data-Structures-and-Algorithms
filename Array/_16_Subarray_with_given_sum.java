@@ -50,13 +50,25 @@ public class _16_Subarray_with_given_sum {
 	}
 
 	public static void main(String args[]) {
-		int arr[] = { 0 };
-		int n = 1, s = 0;
-		int st = 0, curr = 0, sumSoFar = arr[0];
-		while (true) {
-			System.out.println(st + " " + curr);
+//		int arr[] = { 0 };
+//		int n = 1, s = 0;
+		int arr[] = {38, 22, 20, 12, 47, 23, 18, 13, 18, 47, 36, 42};
+		int n = arr.length, s = 174;
+		int st = 0, curr = 1, sumSoFar = arr[0];
+		ArrayList<Integer> ans = new ArrayList<>();
+//		as we can see this approach can't handle cases like when len is 9 and our sumSoFar is
+//		btw idx 5 to 8 but ans is 6 to 8 so we need do sumSoFar -= arr[st]; but that handling becomes
+//		bit hard to above one is good
+		while (curr < n) {
 			if (sumSoFar == s) {
-				break;
+				if(st < curr) {
+					ans.add(st + 1);
+					ans.add(curr);		
+					break;
+				}else {
+					sumSoFar += arr[curr];
+					curr++;	
+				}
 			} else if (sumSoFar < s) {
 				sumSoFar += arr[curr];
 				curr++;
@@ -65,10 +77,9 @@ public class _16_Subarray_with_given_sum {
 				st++;
 			}
 		}
-		ArrayList<Integer> ans = new ArrayList<>();
-		ans.add(st + 1);
-		ans.add(curr);
-		System.out.println(ans);
+
+
+		System.out.println(sumSoFar);
 	}
 
 }

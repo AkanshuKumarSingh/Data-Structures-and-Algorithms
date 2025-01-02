@@ -1,6 +1,6 @@
 package BinarySearchTree;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Stack;
 
 public class _19_Find_Common_Nodes_in_two_BSTs {
@@ -52,6 +52,48 @@ public class _19_Find_Common_Nodes_in_two_BSTs {
 			}
 		}
 		return ans;
+	}
+
+	static Set<Integer> set;
+	static ArrayList<Integer> result;
+
+	// First DFS to populate the set with elements from the first tree
+	private static void dfs(Node root) {
+		if (root == null)
+			return;
+
+		dfs(root.left);
+		set.add(root.data);
+		dfs(root.right);
+	}
+
+	// Second DFS to find common elements from the second tree
+	private static void dfs2(Node root) {
+		if (root == null)
+			return;
+
+		dfs2(root.left);
+		if (set.contains(root.data)) {
+			result.add(root.data);
+		}
+		dfs2(root.right);
+	}
+
+	public static ArrayList<Integer> findCommon1(Node root1, Node root2) {
+
+		set = new HashSet<>();
+		result = new ArrayList<>();
+
+		// Perform DFS on the first tree to populate the set
+		dfs(root1);
+
+		// Perform DFS on the second tree to find common elements
+		dfs2(root2);
+
+		// Sort the result since it may not be in sorted order
+		Collections.sort(result);
+
+		return result;
 	}
 
 }

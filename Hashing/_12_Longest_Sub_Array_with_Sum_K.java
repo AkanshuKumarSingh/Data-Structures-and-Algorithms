@@ -13,6 +13,8 @@ public class _12_Longest_Sub_Array_with_Sum_K {
                 maxLen = i+1;
             }
             int prevIdx = map.getOrDefault(sum-K, -1);
+            // here we have both conditions as 0 + 0 is 0 so in prev question if else is fine 14 + 14 is not same
+//            so need to update
             if(!map.containsKey(sum)) {
             	map.put(sum, i);
             }

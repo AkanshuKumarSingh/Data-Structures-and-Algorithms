@@ -2,6 +2,28 @@ package Queue;
 
 public class _9_Circular_tour {
 
+	int tour(petrolPump p[], int n) {
+		int tot_petrol = 0;
+		int tot_distance = 0;
+		for (int i = 0; i < n; i++) {
+			tot_petrol += p[i].petrol;
+			tot_distance += p[i].distance;
+		}
+		if (tot_petrol < tot_distance) {
+			return -1;
+		}
+		int balance = 0;
+		int start = 0;
+		for (int i = 0; i < n; i++) {
+			balance += p[i].petrol - p[i].distance;
+			if (balance < 0) {
+				start = i + 1;
+				balance = 0;
+			}
+		}
+		return balance >= 0 ? start : -1;
+	}
+
 	// mine
 	static int tour(int petrol[], int distance[]) {
 		int rem = 0, st = -1, total = 0;
@@ -33,18 +55,17 @@ public class _9_Circular_tour {
 	}
 
 	// gfg
-    static class petrolPump
-    {
-        int petrol;
-        int distance;
-         
-        // constructor
-        public petrolPump(int petrol, int distance) 
-        {
-            this.petrol = petrol;
-            this.distance = distance;
-        }
-    }
+	static class petrolPump {
+		int petrol;
+		int distance;
+
+		// constructor
+		public petrolPump(int petrol, int distance) {
+			this.petrol = petrol;
+			this.distance = distance;
+		}
+	}
+
 	static int printTour(petrolPump arr[], int n) {
 		int start = 0;
 		int end = 1;

@@ -82,18 +82,58 @@ public class _53_Largest_number_in_K_swaps {
 		return ans;
 	}
 
+    public static void findMax(char nos[], int idx, int n, int k, Res res){
+        if(k  == 0) return;
+        if(idx == n) return;
+        
+        boolean flag = false;
+    	for(int j = idx+1; j < n; j++){
+            if(nos[idx] < nos[j]){
+                char temp = nos[idx];
+                nos[idx] = nos[j];
+                nos[j] = temp;
+
+                String st = new String(nos);
+    			if (res.max.compareTo(st) < 0) {
+        			res.max = st;
+    			}
+
+                findMax(nos, idx+1, n,k-1, res);
+
+                temp = nos[idx];
+                nos[idx] = nos[j];
+                nos[j] = temp;
+                flag = true;
+            }
+        }
+    	
+    	if(!flag) {
+    		findMax(nos, idx+1, n,k, res);
+    	}
+        
+    }
+    
+    //Function to find the largest number after k swaps.
+    public static String findMaximumNum1(String str, int k){
+        Res res = new Res();
+        res.max = str;
+        char nos[] = str.toCharArray();
+        findMax(nos, 0, nos.length, k, res);
+        return res.max;
+    }
+	
 	public static void main(String[] args) {
-		String str = "61979";
-		int k = 2;
+		String str = "4551711527";
+		int k = 3;
 		Res r = new Res();
 		r.max = str;
-		findMaximumNum(str.toCharArray(), k, r, 0);
-		System.out.println(r.max);
+//		findMaximumNum(str.toCharArray(), k, r, 0);
+//		System.out.println(r.max);
 		
 		// This code not working as we can have 2 types of cases
 		// first if no is 54177, k = 1 now we need to choose 2nd 7 and second if no is 61979, k = 2 in this 
 		// we need to choose in this we need to choose 1st 8 for k=1
-		System.out.println(findMaximumNum(str, k));
+		System.out.println(findMaximumNum1(str, k));
 	}
 
 }

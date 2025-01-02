@@ -12,7 +12,7 @@ public class _11_Smallest_Number_Following_Pattern {
 
 		for (int i = 0; i < pattern.length(); i++) {
 			char ch = pattern.charAt(i);
-				if (ch == 'd') {
+			if (ch == 'd') {
 				st.push(count);
 				count++;
 			} else {
