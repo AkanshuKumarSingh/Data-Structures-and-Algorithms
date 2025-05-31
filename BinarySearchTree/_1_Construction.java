@@ -42,7 +42,6 @@ public class _1_Construction {
 		int data[] = { 12, 25, 30, 37, 50, 62, 70, 75, 87 };
 		Node root = construction(data,0,data.length-1);
 		display(root);
-		
 	}
 
 }

@@ -40,6 +40,21 @@ public class _13_Rotate_an_array {
 		reverse(a,k,a.length-1);
 	}
 
+//	def reverse(a, left, right):
+//	    while left < right:
+//	        a[left], a[right] = a[right], a[left]
+//	        left += 1
+//	        right -= 1
+//
+//	def rotate(a, k):
+//	    k = k % len(a)
+//	    if k < 0:
+//	        k += len(a)
+//	    reverse(a, 0, len(a) - 1)
+//	    reverse(a, 0, k - 1)
+//	    reverse(a, k, len(a) - 1)
+
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

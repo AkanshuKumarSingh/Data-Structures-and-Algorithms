@@ -24,5 +24,29 @@ public class _23_Reverse_each_word_in_given_string {
 		ans = curr + ans;
 		return ans;
 	}
+	
+    public String reverseWords1(String S) {
+        Stack<Character> stack = new Stack<>();
+        StringBuilder sb = new StringBuilder();
+        S = S.trim();
+        
+        for(int i=0;i<S.length();i++){
+            char c = S.charAt(i);
+            if(c != ' '){
+                stack.push(c);
+            } else{
+                while(!stack.isEmpty()){
+                    sb.append(stack.pop());
+                }
+                sb.append(' ');
+            }
+        }
+        
+        while(!stack.isEmpty()){
+            sb.append(stack.pop());
+        }
+        
+        return sb.toString();
+    }
 
 }

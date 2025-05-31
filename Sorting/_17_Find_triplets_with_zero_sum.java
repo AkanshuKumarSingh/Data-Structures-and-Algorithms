@@ -23,4 +23,22 @@ public class _17_Find_triplets_with_zero_sum {
         return false;
     }
 	
+//	def findTriplets(arr, n):
+//	    arr.sort()
+//
+//	    for i in range(n):
+//	        no = arr[i]
+//	        l, r = i + 1, n - 1
+//
+//	        while l < r:
+//	            total = arr[l] + arr[r] + no
+//	            if total == 0:
+//	                return True
+//	            elif total < 0:
+//	                l += 1
+//	            else:
+//	                r -= 1
+//
+//	    return False
+
 }

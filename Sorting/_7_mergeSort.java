@@ -59,6 +59,46 @@ public class _7_mergeSort {
 
 		return res;
 	}
+
+//	def merge_two_sorted_arrays(arr, low, mid, high):
+//	    i = low
+//	    j = mid + 1
+//	    k = 0
+//	    temp = [0] * (high - low + 1)
+//
+//	    while i <= mid and j <= high:
+//	        if arr[i] < arr[j]:
+//	            temp[k] = arr[i]
+//	            i += 1
+//	        else:
+//	            temp[k] = arr[j]
+//	            j += 1
+//	        k += 1
+//
+//	    while i <= mid:
+//	        temp[k] = arr[i]
+//	        i += 1
+//	        k += 1
+//
+//	    while j <= high:
+//	        temp[k] = arr[j]
+//	        j += 1
+//	        k += 1
+//
+//	    # Copy back to original array
+//	    for i in range(len(temp)):
+//	        arr[low + i] = temp[i]
+//
+//
+//	def merge_sort(arr, low, high):
+//	    if low == high:
+//	        return
+//
+//	    mid = low + (high - low) // 2
+//	    merge_sort(arr, low, mid)
+//	    merge_sort(arr, mid + 1, high)
+//	    merge_two_sorted_arrays(arr, low, mid, high)
+
 	
 //	public static void mergeTwoSortedArrays(int low, int mid, int high, int arr[]) {
 //		int i = low; // without returning array

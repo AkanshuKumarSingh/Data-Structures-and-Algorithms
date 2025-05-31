@@ -22,5 +22,22 @@ public class _29_k_largest_elements {
         
         return ans;
     }
-	
+
+//    def k_largest(arr, k):
+//        min_heap = []
+//
+//        for num in arr:
+//            if len(min_heap) < k:
+//                heapq.heappush(min_heap, num)
+//            else:
+//                heapq.heappush(min_heap, num)
+//                heapq.heappop(min_heap)
+//
+//        # Extract elements in descending order
+//        result = []
+//        while min_heap:
+//            result.append(heapq.heappop(min_heap))
+//        
+//        return result[::-1]  #
+    
 }

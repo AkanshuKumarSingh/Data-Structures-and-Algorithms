@@ -16,7 +16,16 @@ public class _14_Union_of_two_arrays {
 	    }
 	    
 	    return set.size();
-	
+
+//    def count_unique_elements(a, b):
+//        unique_elements = set()
+//        for i in a:
+//            unique_elements.add(i)
+//        for i in b:
+//            unique_elements.add(i)
+//        return len(unique_elements)
+
+	    
 //	    python code
 //	    set_union = set(a) | set(b)
 //	    result = len(set_union)

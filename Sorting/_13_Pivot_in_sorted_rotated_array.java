@@ -13,7 +13,19 @@ public class _13_Pivot_in_sorted_rotated_array {
 		}
 		
 	}
-	
+
+//	def find_pivot(arr, lo, hi):
+//	    if lo == hi:
+//	        return arr[lo]
+//	    
+//	    mid = lo + (hi - lo) // 2
+//	    
+//	    if arr[mid] < arr[hi]:
+//	        return find_pivot(arr, lo, mid)
+//	    else:
+//	        return find_pivot(arr, mid + 1, hi)
+
+
 	public static void main(String[] args) {
 		int arr[] = {60,70,10,20,30,40,50};
 		System.out.println(findPivot(arr,0,arr.length-1));

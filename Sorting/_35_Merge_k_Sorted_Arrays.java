@@ -46,6 +46,36 @@ public class _35_Merge_k_Sorted_Arrays {
         return ans;
     }
 	
+//    import heapq
+//
+//    class Node:
+//        def __init__(self, no, idx, list_idx):
+//            self.no = no
+//            self.idx = idx
+//            self.list_idx = list_idx
+//
+//        def __lt__(self, other):
+//            return self.no < other.no
+//
+//    def mergeKArrays(arr, K):
+//        result = []
+//        heap = []
+//
+//        # Initialize heap with first element of each array
+//        for i in range(K):
+//            if arr[i]:
+//                heapq.heappush(heap, Node(arr[i][0], 0, i))
+//
+//        while heap:
+//            node = heapq.heappop(heap)
+//            result.append(node.no)
+//            if node.idx + 1 < len(arr[node.list_idx]):
+//                next_no = arr[node.list_idx][node.idx + 1]
+//                heapq.heappush(heap, Node(next_no, node.idx + 1, node.list_idx))
+//
+//        return result
+
+    
     public static void main(String args[]) {
     	int arr[][] = {{1,2,3},{4,5,6},{7,8,9}};
     	int k = 3;

@@ -20,5 +20,19 @@ public class _22_Minimize_the_Heights_II {
         return result;
     }
 
+//    def get_min_diff(arr, n, k):
+//        arr.sort()
+//        min_ele = arr[0] + k
+//        max_ele = arr[-1] - k
+//        result = arr[-1] - arr[0]
+//
+//        for i in range(n - 1):
+//            curr_max = max(max_ele, arr[i] + k)
+//            curr_min = min(min_ele, arr[i + 1] - k)
+//            if curr_min >= 0:
+//                result = min(result, curr_max - curr_min)
+//
+//        return result
+
 
 }

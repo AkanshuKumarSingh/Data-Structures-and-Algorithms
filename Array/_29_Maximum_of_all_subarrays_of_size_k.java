@@ -79,6 +79,33 @@ public class _29_Maximum_of_all_subarrays_of_size_k {
 		return ans;
 		
 
+//		def max_in_windows(arr, n, k):
+//		    nge = [0] * n
+//		    stack = []
+//
+//		    # Build the NGE array
+//		    for i in range(n):
+//		        while stack and arr[i] > arr[stack[-1]]:
+//		            nge[stack.pop()] = i
+//		        stack.append(i)
+//
+//		    while stack:
+//		        nge[stack.pop()] = n
+//
+//		    # Initialize result array
+//		    ans = [0] * (n - k + 1)
+//
+//		    j = 0
+//		    for i in range(n - k + 1):
+//		        if j < i:
+//		            j = i
+//		        while nge[j] < i + k:
+//		            j = nge[j]
+//		        ans[i] = arr[j]
+//
+//		    return ans
+		
+		
 //		python code
 //	    n = len(arr)
 //	    nge = [0] * n

@@ -16,5 +16,16 @@ public class _22_Chocolate_Distribution_Problem {
         }
         return ans;
     }
-	
+
+//    def find_min_diff(arr, n, m):
+//        arr.sort()
+//        min_diff = arr[m - 1] - arr[0]
+//        
+//        for i in range(m, n):
+//            curr_diff = arr[i] - arr[i - m + 1]
+//            min_diff = min(min_diff, curr_diff)
+//        
+//        return min_diff
+
+    
 }

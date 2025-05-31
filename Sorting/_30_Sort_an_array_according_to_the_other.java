@@ -34,4 +34,31 @@ public class _30_Sort_an_array_according_to_the_other {
 		return A1;
 	}
 
+//	def sort_a1_by_a2(A1, A2):
+//	    # Step 1: Count frequency of each element in A1
+//	    freq_map = {}
+//	    for num in A1:
+//	        if num in freq_map:
+//	            freq_map[num] += 1
+//	        else:
+//	            freq_map[num] = 1
+//
+//	    result = []
+//	    # Step 2: Add elements present in A2 in the given order
+//	    for num in A2:
+//	        if num in freq_map:
+//	            result.extend([num] * freq_map[num])
+//	            del freq_map[num]
+//
+//	    # Step 3: Add remaining elements sorted
+//	    remaining = []
+//	    for num in freq_map:
+//	        remaining.extend([num] * freq_map[num])
+//	    remaining.sort()
+//
+//	    result.extend(remaining)
+//	    return result
+
+
+	
 }

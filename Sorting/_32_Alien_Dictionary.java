@@ -60,5 +60,38 @@ public class _32_Alien_Dictionary {
         return ans;
     }
 
+//    def dfs(ch, graph, visited, stack):
+//        visited.add(ch)
+//        for neighbor in graph.get(ch, []):
+//            if neighbor not in visited:
+//                dfs(neighbor, graph, visited, stack)
+//        stack.append(ch)
+//
+//    def find_order(dict, N, K):
+//        from collections import defaultdict
+//
+//        graph = defaultdict(list)
+//
+//        # Build the graph based on given dictionary
+//        for i in range(N - 1):
+//            s1 = dict[i]
+//            s2 = dict[i + 1]
+//            for j in range(min(len(s1), len(s2))):
+//                if s1[j] != s2[j]:
+//                    graph[s1[j]].append(s2[j])
+//                    break
+//
+//        visited = set()
+//        stack = []
+//
+//        # Topological sort
+//        for i in range(K):
+//            ch = chr(ord('a') + i)
+//            if ch not in visited:
+//                dfs(ch, graph, visited, stack)
+//
+//        # Reverse the result for correct order
+//        return ''.join(reversed(stack))
+
 	
 }

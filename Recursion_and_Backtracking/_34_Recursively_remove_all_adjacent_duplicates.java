@@ -29,6 +29,26 @@ public class _34_Recursively_remove_all_adjacent_duplicates {
         return s.equals(sb.toString()) ? s : removeUtil(sb.toString());
     }
 
+//    def remove_util(s):
+//        if len(s) <= 1:
+//            return s
+//
+//        sb = []
+//        for i in range(len(s)):
+//            if i == 0:
+//                if s[i] != s[i + 1]:
+//                    sb.append(s[i])
+//            elif i == len(s) - 1:
+//                if s[i] != s[i - 1]:
+//                    sb.append(s[i])
+//            else:
+//                if s[i] != s[i - 1] and s[i] != s[i + 1]:
+//                    sb.append(s[i])
+//
+//        new_s = ''.join(sb)
+//        return s if s == new_s else remove_util(new_s)
+
+    
     char last = '\0';
 
     String rremove(String s) {

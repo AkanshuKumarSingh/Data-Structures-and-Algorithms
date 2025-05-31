@@ -60,7 +60,6 @@ public class _18_prims {
                     q.offer(new Node(v, wt));
                 }
             }
-            
         }
     
         int ans = 0;

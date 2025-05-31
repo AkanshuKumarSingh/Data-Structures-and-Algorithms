@@ -18,5 +18,20 @@ public class _6_Array_Subset_of_another_array {
 		}
 		return "Yes";
     }
-	
+
+//    def is_subset(a, b, n, m):
+//        from collections import defaultdict
+//
+//        freq_map = defaultdict(int)
+//        for num in a:
+//            freq_map[num] += 1
+//
+//        for num in b:
+//            if freq_map[num] == 0:
+//                return "No"
+//            freq_map[num] -= 1
+//
+//        return "Yes"
+
+    
 }

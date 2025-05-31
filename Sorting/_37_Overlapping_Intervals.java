@@ -51,4 +51,32 @@ public class _37_Overlapping_Intervals {
         return ans;
     }
 	
+//    from typing import List
+//
+//    class Pair:
+//        def __init__(self, st, end):
+//            self.st = st
+//            self.end = end
+//
+//        def __lt__(self, other):
+//            return self.st < other.st
+//
+//    def overlappedInterval(arr: List[List[int]]) -> List[List[int]]:
+//        pairs = [Pair(start, end) for start, end in arr]
+//        pairs.sort()  # Sort by start time
+//
+//        stack = [pairs[0]]
+//        
+//        for i in range(1, len(pairs)):
+//            top = stack[-1]
+//            curr = pairs[i]
+//            if top.end < curr.st:
+//                stack.append(curr)
+//            else:
+//                top.end = max(top.end, curr.end)
+//
+//        result = [[p.st, p.end] for p in stack]
+//        return result
+
+    
 }

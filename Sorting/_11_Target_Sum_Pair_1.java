@@ -26,6 +26,25 @@ public class _11_Target_Sum_Pair_1 {
 
 	}
 
+//	def target_sum(arr, target):
+//	    arr.sort()  # Sort the array
+//
+//	    i = 0
+//	    j = len(arr) - 1
+//
+//	    while i < j:
+//	        s = arr[i] + arr[j]
+//
+//	        if s == target:
+//	            print(f"{arr[i]},{arr[j]}")
+//	            i += 1
+//	            j -= 1
+//	        elif s < target:
+//	            i += 1
+//	        else:
+//	            j -= 1
+
+
 	public static void main(String[] args) {
 		int arr[] = {10,40,20,90,50,70,30};
 		targetSum(arr,70);

@@ -36,4 +36,35 @@ public class _18_Minimum_number_of_jumps {
     	
     	return -1;
     }
+    
+//    def min_jumps(arr):
+//        n = len(arr)
+//
+//        if n <= 1:
+//            return 0
+//        elif arr[0] == 0:
+//            return -1
+//        elif arr[0] >= n - 1:
+//            return 1
+//
+//        jumps = 1
+//        max_reach = arr[0]
+//        step = arr[0]
+//
+//        for i in range(1, n):
+//            max_reach = max(max_reach, i + arr[i])
+//            step -= 1
+//
+//            if step == 0:
+//                jumps += 1
+//                step = max_reach - i
+//
+//                if max_reach >= n - 1:
+//                    return jumps
+//                elif i >= max_reach:
+//                    return -1
+//
+//        return -1
+    
+
 }

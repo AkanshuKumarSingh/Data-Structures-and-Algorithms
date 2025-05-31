@@ -22,5 +22,21 @@ public class _16_Check_if_two_arrays_are_equal_or_not {
         
         return true;
     }
-	
+
+//    from collections import defaultdict
+//
+//    def check(A, B, N):
+//        freq_map = defaultdict(int)
+//
+//        for num in A:
+//            freq_map[num] += 1
+//
+//        for num in B:
+//            if freq_map[num] == 0:
+//                return False
+//            freq_map[num] -= 1
+//
+//        return True
+
+    
 }

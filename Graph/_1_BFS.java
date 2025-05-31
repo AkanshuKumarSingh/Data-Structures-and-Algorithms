@@ -39,6 +39,28 @@ public class _1_BFS {
 
     }
 	
+//	from collections import deque
+//
+//	def bfs_of_graph(V, adj):
+//	    q = deque()
+//	    ans = []
+//	    is_visited = [False] * V
+//
+//	    q.append(0)
+//	    is_visited[0] = True
+//
+//	    while q:
+//	        v = q.popleft()
+//	        ans.append(v)
+//
+//	        for i in adj[v]:
+//	            if not is_visited[i]:
+//	                q.append(i)
+//	                is_visited[i] = True
+//
+//	    return ans
+
+	
     //GFG Function to return Breadth First Traversal of given graph.
     public ArrayList<Integer> bfsOfGraph_1(int V, ArrayList<ArrayList<Integer>> adj) {
         Queue<Integer> q = new LinkedList<>();

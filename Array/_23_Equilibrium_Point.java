@@ -18,5 +18,21 @@ public class _23_Equilibrium_Point {
         
         return -1;
     }
-	
+
+//    def equilibrium_point(arr, n):
+//        if n == 1:
+//            return 1
+//
+//        total_sum = sum(arr)
+//        left_sum = 0
+//
+//        for i in range(n):
+//            total_sum -= arr[i]
+//            if left_sum == total_sum:
+//                return i + 1  # 1-based index
+//            left_sum += arr[i]
+//
+//        return -1
+
+    
 }

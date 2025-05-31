@@ -21,5 +21,22 @@ public class _18_Anagram {
         
         return true;
     }
-	
+
+//    def isAnagram(a: str, b: str) -> bool:
+//        if len(a) != len(b):
+//            return False
+//
+//        char_count = {}
+//
+//        for ch in a:
+//            char_count[ch] = char_count.get(ch, 0) + 1
+//
+//        for ch in b:
+//            if ch not in char_count or char_count[ch] == 0:
+//                return False
+//            char_count[ch] -= 1
+//
+//        return True
+
+    
 }

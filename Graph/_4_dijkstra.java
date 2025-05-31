@@ -91,11 +91,60 @@ public class _4_dijkstra {
     				dis[neighIdx] = neighWt + wt;
     				q.offer(new Node(neighIdx, dis[neighIdx]));
     			}
-    		}
-    		
-    	}
-    	
+    		}	
+    	}	
     }
+    
+//    import heapq
+//
+//    class Node:
+//        def __init__(self, idx, wt):
+//            self.idx = idx
+//            self.wt = wt
+//
+//        def __lt__(self, other):
+//            return self.wt < other.wt
+//
+//    def dijkstra():
+//        V = 8
+//        src = 0
+//
+//        # Example Adjacency list: (You need to populate this as per your graph)
+//        # Each entry: adj[u] = [[v, weight], [v2, weight2], ...]
+//        adj = [[] for _ in range(V)]
+//        
+//        # Sample graph (you can replace this with actual edges)
+//        adj[0].append([1, 4])
+//        adj[0].append([7, 8])
+//        adj[1].append([0, 4])
+//        adj[1].append([2, 8])
+//        adj[7].append([0, 8])
+//        adj[7].append([6, 1])
+//        adj[2].append([1, 8])
+//        # Add more as needed...
+//
+//        dis = [float('inf')] * V
+//        dis[src] = 0
+//
+//        pq = []
+//        heapq.heappush(pq, Node(src, 0))
+//
+//        while pq:
+//            curr = heapq.heappop(pq)
+//            v = curr.idx
+//            wt = curr.wt
+//
+//            for neighbor in adj[v]:
+//                neigh_idx = neighbor[0]
+//                neigh_wt = neighbor[1]
+//
+//                if dis[neigh_idx] > wt + neigh_wt:
+//                    dis[neigh_idx] = wt + neigh_wt
+//                    heapq.heappush(pq, Node(neigh_idx, dis[neigh_idx]))
+//
+//        print("Shortest distances from source:")
+//        print(dis)
+
     
     public static void main(String[] args) {
     	

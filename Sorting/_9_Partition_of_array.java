@@ -27,6 +27,16 @@ public class _9_Partition_of_array {
 	// return i-1 -- partition index
 	}
 
+//	def partition(arr, pivot):
+//	    i = 0
+//	    j = 0
+//	    while j < len(arr):
+//	        if arr[j] <= pivot:
+//	    	    arr[i], arr[j] = arr[j], arr[i]
+//	            i += 1
+//	        j += 1
+//	    return i - 1  # partition index
+
 	// used for swapping ith and jth elements of array
 	public static void swap(int[] arr, int i, int j) {
 		System.out.println("Swapping " + arr[i] + " and " + arr[j]);

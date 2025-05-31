@@ -34,6 +34,32 @@ public class _12_QuickSelect {
 	    return (j - 1);
 	  }
 
+//	  def quick_select(arr, lo, hi, k):
+//		    pivot = arr[hi]
+//		    pi = partition(arr, pivot, lo, hi)
+//
+//		    if pi > k:
+//		        return quick_select(arr, lo, pi - 1, k)
+//		    elif pi < k:
+//		        return quick_select(arr, pi + 1, hi, k)
+//		    else:
+//		        return arr[pi]
+//
+//		def partition(arr, pivot, lo, hi):
+//		    print("pivot ->", pivot)
+//		    i = lo
+//		    j = lo
+//		    while i <= hi:
+//		        if arr[i] <= pivot:
+//		            arr[i], arr[j] = arr[j], arr[i]
+//		            i += 1
+//		            j += 1
+//		        else:
+//		            i += 1
+//		    print("pivot index ->", j - 1)
+//		    return j - 1
+
+	  
 	  // used for swapping ith and jth elements of array
 	  public static void swap(int[] arr, int i, int j) {
 	    System.out.println("Swapping " + arr[i] + " and " + arr[j]);

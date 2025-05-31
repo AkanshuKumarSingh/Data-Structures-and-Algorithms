@@ -33,6 +33,24 @@ public class _2_Sort_an_array_of_0s_1s_and_2s {
 		}
 		
 	}
+
+//	def sort012(arr):
+//	    i = j = 0
+//	    k = len(arr) - 1
+//
+//	    while j <= k:
+//	        if arr[j] == 0:
+//	            arr[i], arr[j] = arr[j], arr[i]
+//	            i += 1
+//	            j += 1
+//	        elif arr[j] == 1:
+//	            j += 1
+//	        else:  # arr[j] == 2
+//	            arr[j], arr[k] = arr[k], arr[j]
+//	            k -= 1
+//
+//	    for num in arr:
+//	        print(num, end=" ")
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

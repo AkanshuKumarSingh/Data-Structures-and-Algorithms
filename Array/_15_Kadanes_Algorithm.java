@@ -70,4 +70,28 @@ public class _15_Kadanes_Algorithm {
         return maxAns;
     }
     
+//    def max_sub_array_sum_print(a):
+//        size = len(a)
+//        st_ans = 0
+//        end_ans = 0
+//        st_curr = 0
+//        max_ans = float('-inf')
+//        max_so_far = 0
+//
+//        for i in range(size):
+//            max_so_far += a[i]
+//            
+//            if max_so_far > max_ans:
+//                max_ans = max_so_far
+//                st_ans = st_curr
+//                end_ans = i
+//
+//            if max_so_far < 0:
+//                max_so_far = 0
+//                st_curr = i + 1
+//
+//        print(f"{st_ans}:{end_ans}")
+//        return max_ans
+
+    
 }

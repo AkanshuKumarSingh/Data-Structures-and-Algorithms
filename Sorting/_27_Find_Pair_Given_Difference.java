@@ -23,5 +23,22 @@ public class _27_Find_Pair_Given_Difference {
         }
         return false;
     }
-	
+
+//    def find_pair(arr, n):
+//        arr.sort()
+//        size = len(arr)
+//        for i in range(size):
+//            target = arr[i] + n
+//            x, y = i + 1, size - 1
+//            while x <= y:
+//                m = x + (y - x) // 2
+//                if arr[m] == target:
+//                    return True
+//                elif arr[m] < target:
+//                    x = m + 1
+//                else:
+//                    y = m - 1
+//        return False
+
+    
 }

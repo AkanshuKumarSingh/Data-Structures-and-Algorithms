@@ -32,7 +32,6 @@ public class _51_Quick_Sort_on_Linked_List {
 		ptr.data = t;
 
 		return prev;
-
 	}
 
 	public static void sort(Node head, Node tail) {

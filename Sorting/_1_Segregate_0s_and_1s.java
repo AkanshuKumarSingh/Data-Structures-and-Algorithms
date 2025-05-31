@@ -28,6 +28,19 @@ public class _1_Segregate_0s_and_1s {
 
 	}
 
+//	def sort01(arr):
+//	    i = j = 0
+//	    while j < len(arr):
+//	        if arr[j] == 1:
+//	            j += 1
+//	        else:
+//	            arr[i], arr[j] = arr[j], arr[i]
+//	            i += 1
+//	            j += 1
+//
+//	    for num in arr:
+//	        print(num, end=" ")
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();

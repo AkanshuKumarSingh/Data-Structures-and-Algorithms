@@ -350,7 +350,7 @@ public class _5_Merge_Sort_A_Linked_List {
 	    {
 	        if(head == null || head.next == null) {
 				return head;
-			}        
+			}
 	        Node mid = getMiddle(head);
 	        Node midNextHead = mid.next;
 	        mid.next = null;

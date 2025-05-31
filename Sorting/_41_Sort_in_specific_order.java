@@ -40,4 +40,28 @@ public class _41_Sort_in_specific_order {
 		Arrays.sort(arr, l, (int)n);
     }
 	
+//    def swap(arr, l, r):
+//        arr[l], arr[r] = arr[r], arr[l]
+//
+//    def reverse(arr, start, end):
+//        while start < end:
+//            arr[start], arr[end] = arr[end], arr[start]
+//            start += 1
+//            end -= 1
+//
+//    def sortIt(arr, n):
+//        l, r = 0, n - 1
+//        while l < r:
+//            while l < r and arr[l] % 2 != 0:
+//                l += 1
+//            while l < r and arr[r] % 2 == 0:
+//                r -= 1
+//            if l < r:
+//                swap(arr, l, r)
+//
+//        # Now all odd elements are from index 0 to l-1
+//        arr[0:l] = sorted(arr[0:l], reverse=True)  # Sort odd numbers in descending order
+//        arr[l:n] = sorted(arr[l:n])                # Sort even numbers in ascending order
+
+    
 }

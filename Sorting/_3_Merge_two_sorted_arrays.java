@@ -30,6 +30,32 @@ public class _3_Merge_two_sorted_arrays {
 		
 	}
 
+//	def merge_two_sorted_arrays(a, b):
+//	    i = j = k = 0
+//	    ans = [0] * (len(a) + len(b))
+//
+//	    while i < len(a) and j < len(b):
+//	        if a[i] < b[j]:
+//	            ans[k] = a[i]
+//	            i += 1
+//	        else:
+//	            ans[k] = b[j]
+//	            j += 1
+//	        k += 1
+//
+//	    while i < len(a):
+//	        ans[k] = a[i]
+//	        i += 1
+//	        k += 1
+//
+//	    while j < len(b):
+//	        ans[k] = b[j]
+//	        j += 1
+//	        k += 1
+//
+//	    return ans
+
+	
 	public static void print(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i]);

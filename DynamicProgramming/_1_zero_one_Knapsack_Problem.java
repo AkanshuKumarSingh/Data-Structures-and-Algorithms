@@ -69,7 +69,7 @@ public class _1_zero_one_Knapsack_Problem {
     
     
     public static void main(String args[]) {
-    	
+    	System.out.println("HHM");
     }
 
 }

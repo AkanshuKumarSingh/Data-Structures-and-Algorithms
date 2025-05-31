@@ -20,6 +20,16 @@ public class _5_SelectionSort {
 		}
 	}
 
+//	def selection_sort(arr):
+//	    for i in range(len(arr) - 1):
+//	        min_index = i
+//	        for j in range(i + 1, len(arr)):
+//	            if arr[j] < arr[min_index]:
+//	                min_index = j
+//	        # Inlined swap
+//	        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+	
 	public static void swap(int[] arr, int i, int j) {
 		System.out.println("Swapping " + arr[i] + " and " + arr[j]);
 		int temp = arr[i];

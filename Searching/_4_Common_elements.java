@@ -30,5 +30,31 @@ public class _4_Common_elements {
         
         return list;
     }
-	
+
+//    def common_elements(A, B, C, n1, n2, n3):
+//        i = j = k = 0
+//        prev = float('inf')
+//        result = []
+//
+//        while i < n1 and j < n2 and k < n3:
+//            if A[i] == B[j] == C[k] and prev != A[i]:
+//                result.append(A[i])
+//                prev = A[i]
+//                i += 1
+//                j += 1
+//                k += 1
+//            elif A[i] == B[j] == C[k]:
+//                i += 1
+//                j += 1
+//                k += 1
+//            elif A[i] < B[j] or A[i] < C[k]:
+//                i += 1
+//            elif B[j] < C[k] or B[j] < A[i]:
+//                j += 1
+//            else:
+//                k += 1
+//
+//        return result
+
+    
 }

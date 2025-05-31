@@ -50,7 +50,42 @@ public class _26_Find_All_Four_Sum_Numbers {
         return fourSumAns;
     }
 
-	
+//    from typing import List
+//    from collections import defaultdict
+//
+//    def get_ans(sum_val, idx, k, arr, seen):
+//        fans = []
+//        for i in range(idx + 1, len(arr)):
+//            no = arr[i]
+//            l, r = i + 1, len(arr) - 1
+//            while l < r:
+//                total = sum_val + no + arr[l] + arr[r]
+//                if total == k:
+//                    quad = [sum_val, no, arr[l], arr[r]]
+//                    quad.sort()  # ensure it's in a canonical form
+//                    tup_quad = tuple(quad)
+//                    if tup_quad not in seen:
+//                        fans.append(quad)
+//                        seen.add(tup_quad)
+//                    l += 1
+//                    r -= 1
+//                elif total < k:
+//                    l += 1
+//                else:
+//                    r -= 1
+//        return fans
+//
+//    def four_sum(arr: List[int], k: int) -> List[List[int]]:
+//        arr.sort()
+//        four_sum_ans = []
+//        seen = set()
+//        for i in range(len(arr) - 3):
+//            curr_ans = get_ans(arr[i], i, k, arr, seen)
+//            if curr_ans:
+//                four_sum_ans.extend(curr_ans)
+//        return four_sum_ans
+
+    
     public static void main(String args[]) {
     	int arr[] = {0,0,2,1,1};
     	int k = 3;

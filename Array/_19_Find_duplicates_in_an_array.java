@@ -25,4 +25,20 @@ public class _19_Find_duplicates_in_an_array {
         return ans;
     }
 
+//    def duplicates(arr, n):
+//        ans = []
+//        temp = [0] * n
+//
+//        for i in arr:
+//            temp[i] += 1
+//
+//        for i in range(n):
+//            if temp[i] > 1:
+//                ans.append(i)
+//
+//        if not ans:
+//            ans.append(-1)
+//
+//        return ans
+    
 }

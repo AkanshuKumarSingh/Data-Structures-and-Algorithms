@@ -10,5 +10,11 @@ public class _17_Missing_number_in_array {
         int expSum = (n*(n+1))/2;
         return expSum - sum;
     }
-	
+
+//    def missing_number(array, n):
+//        total = sum(array)
+//        expected_sum = (n * (n + 1)) // 2
+//        return expected_sum - total
+
+    
 }
