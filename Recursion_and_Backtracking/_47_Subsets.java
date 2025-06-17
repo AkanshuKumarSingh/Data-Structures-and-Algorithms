@@ -44,6 +44,30 @@ public class _47_Subsets {
 
     }
 
+// def subsets(ip):
+//     def prepare_subsets(idx, curr_ans, result):
+//         if idx == len(ip):
+//             result.append(curr_ans.copy())
+//             return
+        
+//         # Exclude current element
+//         prepare_subsets(idx + 1, curr_ans, result)
+        
+//         # Include current element
+//         curr_ans.append(ip[idx])
+//         prepare_subsets(idx + 1, curr_ans, result)
+//         curr_ans.pop()  # Backtrack
+    
+//     list_result = []
+//     prepare_subsets(0, [], list_result)
+    
+//     # Custom sorting similar to Java Comparator
+//     def custom_sort(subset):
+//         return (len(subset), subset)
+    
+//     list_result.sort(key=custom_sort)
+//     return list_result
+    
 	public static void main(String[] args) {
 	
 	}

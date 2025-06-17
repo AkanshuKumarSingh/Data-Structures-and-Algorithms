@@ -38,6 +38,47 @@ public class _43_Generate_IP_Addresses {
         return gen(s, 3);
     }
     
+    // def gen_ip(s: str) -> list[str]:
+    // def gen(str_part: str, n: int) -> list[str]:
+    //     ans = []
+    //     if n == 0:
+    //         if len(str_part) > 3:
+    //             return ans
+    //         try:
+    //             num = int(str_part)
+    //         except ValueError:
+    //             return ans
+            
+    //         if num < 256:
+    //             if num == 0 and len(str(str_part)) == len(str_part):
+    //                 ans.append(str_part)
+    //             elif 0 < num < 256 and str_part[0] != '0':
+    //                 ans.append(str_part)
+    //         return ans
+        
+    //     sz = len(str_part)
+    //     for i in range(1, sz):
+    //         if (sz - i) - (n - 1) == 0:
+    //             break
+            
+    //         first_part = str_part[:i]
+    //         try:
+    //             if int(first_part) >= 256:
+    //                 break
+    //         except ValueError:
+    //             break
+            
+    //         curr = gen(str_part[i:], n - 1)
+    //         for valid_str in curr:
+    //             ans.append(first_part + "." + valid_str)
+            
+    //         if str_part[0] == '0':
+    //             break
+        
+    //     return ans
+    
+    // return gen(s, 3)
+
     public void findList(String s, ArrayList<String> ans, String asf, int deci){
         if(deci == 0){
             if(s.length() == 0) return;

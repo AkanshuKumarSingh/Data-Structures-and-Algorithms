@@ -15,5 +15,15 @@ public class _40_Print_Patterns {
         ans.add(N);
         return ans;
     }
-	
+
+    // def pattern(N):
+    // if N <= 0:
+    //     bans = []
+    //     bans.append(N)
+    //     return bans
+    // ans = pattern(N - 5)
+    // ans.insert(0, N)
+    // ans.append(N)
+    // return ans
+
 }

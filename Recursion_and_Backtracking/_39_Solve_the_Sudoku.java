@@ -59,5 +59,40 @@ public class _39_Solve_the_Sudoku {
             }
         }
     }
-	
+
+//     def is_safe(grid, i, j, no):
+//     for k in range(9):
+//         if grid[i][k] == no or grid[k][j] == no:
+//             return False
+
+//     start_i = i - i % 3
+//     start_j = j - j % 3
+
+//     for k in range(3):
+//         for l in range(3):
+//             if grid[start_i + k][start_j + l] == no:
+//                 return False
+
+//     return True
+
+// def solve_sudoku(grid):
+//     for i in range(9):
+//         for j in range(9):
+//             if grid[i][j] == 0:
+//                 for no in range(1, 10):
+//                     if is_safe(grid, i, j, no):
+//                         grid[i][j] = no
+//                         if solve_sudoku(grid):
+//                             return True
+//                         grid[i][j] = 0
+//                 return False
+//     return True
+
+// def print_grid(grid):
+//     for i in range(9):
+//         for j in range(9):
+//             print(grid[i][j], end=' ')
+//     print()
+
+
 }
