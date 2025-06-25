@@ -35,4 +35,32 @@ public class _42_Unique_Subsets {
     }
 
 	
+//    class Solution:
+//        def allSubsets(self, arr: List[int]) -> List[List[int]]:
+//            arr.sort()
+//            ans = []
+//            subset = []
+//            seen = set()
+//            self._generate(arr, 0, len(arr), subset, ans, seen)
+//            return ans
+//
+//        def _generate(self, arr, i, n, subset, ans, seen):
+//            # Convert list to tuple to make it hashable for the set
+//            subset_tuple = tuple(subset)
+//            if subset_tuple not in seen:
+//                ans.append(list(subset))
+//                seen.add(subset_tuple)
+//
+//            if i >= n:
+//                return
+//
+//            # Include arr[i]
+//            subset.append(arr[i])
+//            self._generate(arr, i + 1, n, subset, ans, seen)
+//            subset.pop()
+//
+//            # Exclude arr[i]
+//            self._generate(arr, i + 1, n, subset, ans, seen)
+
+    
 }

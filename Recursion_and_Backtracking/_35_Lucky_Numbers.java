@@ -30,6 +30,24 @@ public class _35_Lucky_Numbers {
         return find(n);
     }
     
+//    class Solution:
+//        
+//        counter = 2
+//        
+//        def find(self, n):
+//            if n < Solution.counter:
+//                return True;
+//            if n%Solution.counter == 0:
+//                return False;
+//            next_no = n-(n//Solution.counter)
+//            Solution.counter += 1;
+//            return self.find(next_no)
+//
+//        def isLucky(self, n): 
+//            Solution.counter = 2
+//            return self.find(n)
+//                
+    
     public static void main(String args[]) {
     	System.out.println(isLucky(4));
     }

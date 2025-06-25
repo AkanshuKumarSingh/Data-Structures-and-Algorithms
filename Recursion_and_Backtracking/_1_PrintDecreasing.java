@@ -24,6 +24,14 @@ public class _1_PrintDecreasing {
 		printDecreasing(n-1);
 	}
 
+//	def print_decreasing(n):
+//	    if n == 0:
+//	        # Base case: smallest possible input
+//	        return
+//	    print(n)
+//	    print_decreasing(n - 1)
+
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();

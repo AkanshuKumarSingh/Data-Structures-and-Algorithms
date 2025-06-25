@@ -35,6 +35,7 @@ public class _32_Knight_tour {
 		}
 		board[r][c] = 0;
 	}
+	
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

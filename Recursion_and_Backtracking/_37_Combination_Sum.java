@@ -40,4 +40,28 @@ public class _37_Combination_Sum {
 
     }
 	
+//    class Solution:
+//        def combinationSum(self, arr: List[int], target: int) -> List[List[int]]:
+//            ans = []
+//            cans = []
+//            arr = sorted(list(set(arr)))  # Remove duplicates and sort
+//            self._getCombinationSum(arr, target, 0, cans, ans)
+//            return ans
+//
+//        def _getCombinationSum(self, arr, target, idx, cans, ans):
+//            if idx == len(arr):
+//                if target == 0:
+//                    ans.append(list(cans))
+//                return
+//            
+//            # Include current element if target allows
+//            if target - arr[idx] >= 0:
+//                cans.append(arr[idx])
+//                self._getCombinationSum(arr, target - arr[idx], idx, cans, ans)
+//                cans.pop()
+//
+//            # Exclude current element
+//            self._getCombinationSum(arr, target, idx + 1, cans, ans)
+
+    
 }

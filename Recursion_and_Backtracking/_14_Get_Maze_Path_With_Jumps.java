@@ -53,4 +53,37 @@ public class _14_Get_Maze_Path_With_Jumps {
 		return rres;
 	}
 
+//	def get_maze_paths(sr, sc, dr, dc):
+//	    if sr == dr and sc == dc:
+//	        return [""]
+//
+//	    rres = []
+//
+//	    # Horizontal moves
+//	    for steps in range(1, dc - sc + 1):
+//	        cres = get_maze_paths(sr, sc + steps, dr, dc)
+//	        for t in cres:
+//	            rres.append(f"h{steps}{t}")
+//
+//	    # Vertical moves
+//	    for steps in range(1, dr - sr + 1):
+//	        cres = get_maze_paths(sr + steps, sc, dr, dc)
+//	        for t in cres:
+//	            rres.append(f"v{steps}{t}")
+//
+//	    # Diagonal moves
+//	    i, j = 1, 1
+//	    while sr + i <= dr and sc + j <= dc:
+//	        dres = get_maze_paths(sr + i, sc + j, dr, dc)
+//	        for t in dres:
+//	            rres.append(f"d{i}{t}")
+//	        i += 1
+//	        j += 1
+//
+//	    return rres
+//
+//	# Example usage
+//	paths = get_maze_paths(0, 0, 2, 2)
+//	print(paths)
+	
 }

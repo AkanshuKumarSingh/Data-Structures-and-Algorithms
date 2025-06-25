@@ -29,6 +29,22 @@ public class _10_Get_SubSequence {
 		return cres;
     }
 
+//	def gss(string):
+//	    if len(string) == 0:
+//	        return [""]
+//
+//	    ch = string[0]
+//	    rres = gss(string[1:])  # Recursive result for the rest of the string
+//	    cres = []
+//
+//	    for s in rres:
+//	        cres.append(s)        # Exclude current character
+//	    for s in rres:
+//	        cres.append(ch + s)   # Include current character
+//
+//	    return cres
+
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String str = scan.nextLine().trim();

@@ -22,6 +22,18 @@ public class _7_power_logaritmic {
 		return val;
 	}
 
+//	def power(no, pow):
+//	    if pow == 0:
+//	        return 1
+//
+//	    half_val = power(no, pow // 2)
+//	    val = half_val * half_val
+//
+//	    if pow % 2 == 1:
+//	        val *= no
+//
+//	    return val
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int no = scan.nextInt();
