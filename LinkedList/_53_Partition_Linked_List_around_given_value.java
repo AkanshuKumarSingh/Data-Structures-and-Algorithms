@@ -69,4 +69,59 @@ public class _53_Partition_Linked_List_around_given_value {
 		return gHead;
 	}
 
+
+//	class Node:
+//	    def __init__(self, key):
+//	        self.data = key
+//	        self.next = None
+//
+//	def partition(node, x):
+//	    gHead = gTail = None  # Less than x
+//	    mHead = mTail = None  # Equal to x
+//	    lHead = lTail = None  # Greater than x
+//
+//	    curr = node
+//	    while curr:
+//	        next_node = curr.next
+//	        curr.next = None  # Detach the node
+//
+//	        if curr.data < x:
+//	            if gHead is None:
+//	                gHead = gTail = curr
+//	            else:
+//	                gTail.next = curr
+//	                gTail = curr
+//	        elif curr.data == x:
+//	            if mHead is None:
+//	                mHead = mTail = curr
+//	            else:
+//	                mTail.next = curr
+//	                mTail = curr
+//	        else:
+//	            if lHead is None:
+//	                lHead = lTail = curr
+//	            else:
+//	                lTail.next = curr
+//	                lTail = curr
+//
+//	        curr = next_node
+//
+//	    # Merge the three lists
+//	    if gHead is None:
+//	        if mHead is None:
+//	            return lHead
+//	        mTail.next = lHead
+//	        return mHead
+//	    elif mHead is None:
+//	        gTail.next = lHead
+//	        return gHead
+//	    elif lHead is None:
+//	        gTail.next = mHead
+//	        return gHead
+//
+//	    gTail.next = mHead
+//	    mTail.next = lHead
+//	    return gHead
+
+	
 }

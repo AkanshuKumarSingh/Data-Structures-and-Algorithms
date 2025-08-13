@@ -299,6 +299,24 @@ public class _6_Remove_Duplicates_In_A_Sorted_Linked_List {
 		      // set original head and tail
 		      this.tail = curr;
 		    }
+
+//		    def remove_duplicates(self):
+//		        curr = self.head
+//		        if not curr:
+//		            return
+//
+//		        next_node = curr.next
+//		        while next_node:
+//		            if next_node.data == curr.data:
+//		                next_node = next_node.next
+//		            else:
+//		                curr.next = next_node
+//		                curr = next_node
+//		                next_node = next_node.next
+//
+//		        curr.next = None
+//		        self.tail = curr  # Set tail to the last unique node
+
 		    
 		    //GFG
 		    Node removeDuplicates(Node head)

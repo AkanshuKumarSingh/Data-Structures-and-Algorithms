@@ -86,6 +86,25 @@ public class _3_Duplicate_Brackets {
 		return 0;
 	}
 
+//	def check_redundancy(s):
+//	    stack = []
+//
+//	    for ch in s:
+//	        if ch in '+-*/':
+//	            stack.append(ch)
+//	        elif ch == '(' or ch == ')':
+//	            if ch == '(':
+//	                stack.append(ch)
+//	            else:
+//	                if stack and stack[-1] == '(':
+//	                    return 1  # Redundant
+//	                while stack and stack[-1] != '(':
+//	                    stack.pop()
+//	                if stack:
+//	                    stack.pop()
+//	    return 0
+
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String str = scan.nextLine().trim();

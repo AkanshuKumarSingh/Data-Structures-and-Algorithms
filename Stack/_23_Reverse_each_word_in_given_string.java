@@ -49,4 +49,23 @@ public class _23_Reverse_each_word_in_given_string {
         return sb.toString();
     }
 
+//    def reverse_words1(S: str) -> str:
+//        stack = []
+//        sb = []
+//        S = S.strip()
+//        
+//        for c in S:
+//            if c != ' ':
+//                stack.append(c)
+//            else:
+//                while stack:
+//                    sb.append(stack.pop())
+//                sb.append(' ')
+//        
+//        while stack:
+//            sb.append(stack.pop())
+//        
+//        return ''.join(sb)
+
+    
 }

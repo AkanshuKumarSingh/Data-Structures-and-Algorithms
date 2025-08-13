@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class _2_DynamicStack {
+
 	public static class CustomStack {
 		int[] data;
 		int tos;

@@ -216,6 +216,32 @@ public class _2_Kth_Node_From_End_Of_Linked_List {
 		       
 		       return slow.data;
 		    }
+
+//		    class Node:
+//		        def __init__(self, data):
+//		            self.data = data
+//		            self.next = None
+//
+//		    class LinkedList:
+//		        def __init__(self):
+//		            self.head = None
+//
+//		        def kth_from_last(self, k):
+//		            fast = self.head
+//		            slow = self.head
+//
+//		            for _ in range(k):
+//		                if fast is None:
+//		                    return None  # k is larger than the length of the list
+//		                fast = fast.next
+//
+//		            while fast and fast.next:
+//		                slow = slow.next
+//		                fast = fast.next
+//
+//		            return slow.data if slow else None
+
+		  
 		  }
 
 		  public static void main(String[] args) throws Exception {

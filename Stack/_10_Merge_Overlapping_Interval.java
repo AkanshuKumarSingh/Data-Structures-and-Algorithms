@@ -82,6 +82,48 @@ public class _10_Merge_Overlapping_Interval {
 		
 	}
 
+
+//	class Pair:
+//	    def __init__(self, st, end):
+//	        self.st = st
+//	        self.end = end
+//
+//	    def __lt__(self, other):
+//	        return self.st < other.st
+//
+//
+//	def merge_overlapping_intervals(arr):
+//	    # Convert array of [start, end] into Pair objects
+//	    pairs = [Pair(st, end) for st, end in arr]
+//	    
+//	    # Sort based on start time
+//	    pairs.sort()
+//
+//	    stack = []
+//	    stack.append(pairs[0])
+//
+//	    for i in range(1, len(pairs)):
+//	        top = stack[-1]
+//	        current = pairs[i]
+//
+//	        if top.end >= current.st:
+//	            if top.end < current.end:
+//	                top.end = current.end
+//	        else:
+//	            stack.append(current)
+//
+//	    # Reverse the stack to maintain output order
+//	    result = []
+//	    while stack:
+//	        result.append(stack.pop())
+//	    result.reverse()
+//
+//	    # Print the merged intervals
+//	    for p in result:
+//	        print(p.st, p.end)
+
+	
+	
 	public static void mergeOverlappingIntervals1(int[][] arr) {
 		// merge overlapping intervals and print in increasing order of start time
 		Pair pairs[] = new Pair[arr.length];

@@ -195,6 +195,22 @@ public class _9_Linearize_A_Generic_Tree {
 //        }
 	}
 	
+//	def linearize_better(root):
+//	    if len(root.children) == 0:
+//	        return root
+//
+//	    n = len(root.children)
+//	    tail = linearize_better(root.children[n - 1])
+//
+//	    for i in range(n - 2, -1, -1):
+//	        rem = root.children.pop(i + 1)
+//	        ntail = linearize_better(root.children[i])
+//	        ntail.children.append(rem)
+//
+//	    return tail
+
+	
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());

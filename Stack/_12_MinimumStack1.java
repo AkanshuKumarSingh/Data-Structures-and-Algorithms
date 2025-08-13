@@ -102,6 +102,44 @@ public class _12_MinimumStack1 {
 //			}
 //		}
 //
+	  
+	  
+//	  class MinStack:
+//		    def __init__(self):
+//		        self.allData = []
+//		        self.minData = []
+//
+//		    def size(self):
+//		        return len(self.allData)
+//
+//		    def push(self, val):
+//		        self.allData.append(val)
+//		        if not self.minData:
+//		            self.minData.append(val)
+//		        else:
+//		            self.minData.append(min(val, self.minData[-1]))
+//
+//		    def pop(self):
+//		        if not self.allData:
+//		            print("Stack underflow")
+//		            return -1
+//		        self.minData.pop()
+//		        return self.allData.pop()
+//
+//		    def top(self):
+//		        if not self.allData:
+//		            print("Stack underflow")
+//		            return -1
+//		        return self.allData[-1]
+//
+//		    def min(self):
+//		        if not self.minData:
+//		            print("Stack underflow")
+//		            return -1
+//		        return self.minData[-1]
+
+	  
+	  
 	  public static void main(String[] args) throws Exception {
 	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	    MinStack st = new MinStack();

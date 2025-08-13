@@ -2,6 +2,30 @@ package Queue;
 
 public class _9_Circular_tour {
 
+    public int startStation(int[] gas, int[] cost) {
+		int tot_petrol = 0;
+		int n = gas.length;
+		int tot_distance = 0;
+		for (int i = 0; i < n; i++) {
+			tot_petrol += gas[i];
+			tot_distance += cost[i];
+		}
+		if (tot_petrol < tot_distance) {
+			return -1;
+		}
+		int balance = 0;
+		int start = 0;
+		for (int i = 0; i < n; i++) {
+			balance += gas[i] - cost[i];
+			if (balance < 0) {
+				start = i + 1;
+				balance = 0;
+			}
+		}
+		return start;
+        
+    }
+
 	int tour(petrolPump p[], int n) {
 		int tot_petrol = 0;
 		int tot_distance = 0;

@@ -79,5 +79,70 @@ public class _1_Normal_Stack {
 			str = br.readLine();
 		}
 	}
+	
+//	class CustomStack:
+//	    def __init__(self, cap):
+//	        self.data = [0] * cap
+//	        self.tos = -1
+//
+//	    def size(self):
+//	        return self.tos + 1
+//
+//	    def display(self):
+//	        for i in range(self.tos, -1, -1):
+//	            print(self.data[i], end=" ")
+//	        print()
+//
+//	    def push(self, val):
+//	        if self.tos == len(self.data) - 1:
+//	            print("Stack overflow")
+//	            return
+//	        self.tos += 1
+//	        self.data[self.tos] = val
+//
+//	    def pop(self):
+//	        if self.tos == -1:
+//	            print("Stack underflow")
+//	            return -1
+//	        val = self.data[self.tos]
+//	        self.tos -= 1
+//	        return val
+//
+//	    def top(self):
+//	        if self.tos == -1:
+//	            print("Stack underflow")
+//	            return -1
+//	        return self.data[self.tos]
+//
+//
+//	def main():
+//	    import sys
+//	    cap = int(sys.stdin.readline())
+//	    st = CustomStack(cap)
+//
+//	    while True:
+//	        line = sys.stdin.readline().strip()
+//	        if line == "quit":
+//	            break
+//	        elif line.startswith("push"):
+//	            val = int(line.split()[1])
+//	            st.push(val)
+//	        elif line == "pop":
+//	            val = st.pop()
+//	            if val != -1:
+//	                print(val)
+//	        elif line == "top":
+//	            val = st.top()
+//	            if val != -1:
+//	                print(val)
+//	        elif line == "size":
+//	            print(st.size())
+//	        elif line == "display":
+//	            st.display()
+//
+//
+//	if __name__ == "__main__":
+//	    main()
+
 
 }

@@ -445,6 +445,26 @@ public class _10_K_Reverse_In_Linked_List {
         return prev;
     }
 
+//    def reverse_in_groups(node, k):
+//        prev = None
+//        curr = node
+//        next_node = None
+//        count = 0
+//
+//        # Reverse first k nodes
+//        while count < k and curr:
+//            next_node = curr.next
+//            curr.next = prev
+//            prev = curr
+//            curr = next_node
+//            count += 1
+//
+//        # Recur for remaining list and connect
+//        if curr:
+//            node.next = reverse_in_groups(curr, k)
+//
+//        return prev
+    
 //	public void kReverse(int k) {
 //		// Second and nice way
 //		Node head = this.head;

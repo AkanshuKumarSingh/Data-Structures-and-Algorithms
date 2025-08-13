@@ -40,6 +40,28 @@ public class _4_Balanced_Brackets {
 		return st.size() == 0;
 	}
 
+//	def balance_brackets(s):
+//	    stack = []
+//
+//	    for ch in s:
+//	        if ch in '({[':
+//	            stack.append(ch)
+//	        elif ch == ')':
+//	            if not stack or stack[-1] != '(':
+//	                return False
+//	            stack.pop()
+//	        elif ch == ']':
+//	            if not stack or stack[-1] != '[':
+//	                return False
+//	            stack.pop()
+//	        elif ch == '}':
+//	            if not stack or stack[-1] != '{':
+//	                return False
+//	            stack.pop()
+//
+//	    return len(stack) == 0
+
+	
 	// GFG
 	static boolean ispar(String x) {
 		Stack<Character> st = new Stack<>();

@@ -36,4 +36,36 @@ public class _54_Merge_Lists_Alternatingly {
 
 	}
 
+//	class Node:
+//	    def __init__(self, data):
+//	        self.data = data
+//	        self.next = None
+//
+//	def merge_alt(head1, head2):
+//	    curr1 = head1
+//	    curr2 = head2
+//	    head = head1  # Just for printing merged list
+//
+//	    while curr1 and curr2:
+//	        next1 = curr1.next
+//	        next2 = curr2.next
+//
+//	        curr1.next = curr2
+//	        curr2.next = next1
+//
+//	        curr1 = next1
+//	        curr2 = next2
+//
+//	    # Print merged list (head1)
+//	    while head:
+//	        print(head.data, end=" ")
+//	        head = head.next
+//	    print()
+//
+//	    # Print remaining nodes of second list (if any)
+//	    while curr2:
+//	        print(curr2.data, end=" ")
+//	        curr2 = curr2.next
+
+	
 }

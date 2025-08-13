@@ -33,4 +33,26 @@ public class _7_Remove_duplicates_from_an_unsorted_linked_list {
 		return head;
     }
 	
+//    def remove_duplicates(head):
+//        if head is None or head.next is None:
+//            return head
+//
+//        seen = set()
+//        seen.add(head.data)
+//
+//        prev = head
+//        curr = head.next
+//
+//        while curr:
+//            if curr.data in seen:
+//                prev.next = curr.next
+//                curr = curr.next
+//            else:
+//                seen.add(curr.data)
+//                prev = curr
+//                curr = curr.next
+//
+//        return head
+
+    
 }

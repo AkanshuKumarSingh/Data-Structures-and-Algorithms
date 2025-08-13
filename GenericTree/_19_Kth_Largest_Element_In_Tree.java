@@ -80,6 +80,35 @@ public class _19_Kth_Largest_Element_In_Tree {
 
 		return currMax;
 	}
+	
+//	ceil = float('inf')
+//			floor = float('-inf')
+//
+//			def ceil_and_floor(node, data):
+//			    global ceil, floor
+//			    if node.data > data:
+//			        if node.data < ceil:
+//			            ceil = node.data
+//
+//			    if node.data < data:
+//			        if node.data > floor:
+//			            floor = node.data
+//
+//			    for child in node.children:
+//			        ceil_and_floor(child, data)
+//
+//			def kth_largest(node, k):
+//			    global floor
+//			    curr_max = float('inf')
+//
+//			    for _ in range(k):
+//			        floor = float('-inf')
+//			        ceil_and_floor(node, curr_max)
+//			        curr_max = floor
+//
+//			    return curr_max
+
+	
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

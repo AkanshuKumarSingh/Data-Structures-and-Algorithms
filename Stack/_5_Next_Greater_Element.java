@@ -60,6 +60,21 @@ public class _5_Next_Greater_Element {
 		return res;
 	}
 
+//	def solve(arr):
+//	    stack = [0]
+//	    res = [0] * len(arr)
+//
+//	    for i in range(1, len(arr)):
+//	        while stack and arr[stack[-1]] < arr[i]:
+//	            res[stack.pop()] = arr[i]
+//	        stack.append(i)
+//
+//	    while stack:
+//	        res[stack.pop()] = -1
+//
+//	    return res
+
+	
 	// Next Smaller element
 	public static int[] solve1(int[] arr) {
 		Stack<Integer> st = new Stack<>();

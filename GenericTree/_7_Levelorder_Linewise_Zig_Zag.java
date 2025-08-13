@@ -173,6 +173,31 @@ public class _7_Levelorder_Linewise_Zig_Zag {
 
 	}
 
+//	def level_order_linewise_zz1(node):
+//	    # Zig-Zag traversal using two stacks
+//	    main_stack = [node]
+//	    helper_stack = []
+//	    level = 0
+//
+//	    while main_stack:
+//	        rem = main_stack.pop()
+//	        print(rem.data, end=" ")
+//
+//	        if level % 2 == 0:
+//	            # left to right
+//	            for child in rem.children:
+//	                helper_stack.append(child)
+//	        else:
+//	            # right to left
+//	            for child in reversed(rem.children):
+//	                helper_stack.append(child)
+//
+//	        if not main_stack:
+//	            print()  # new line after each level
+//	            main_stack, helper_stack = helper_stack, []
+//	            level += 1
+
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());

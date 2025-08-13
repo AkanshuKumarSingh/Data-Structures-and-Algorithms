@@ -40,6 +40,39 @@ public class _27_String_rp_or_pr {
 		return ans;
 	}
 
+
+//	str_global = ""  # acts like static variable
+//
+//	def remove_pattern(S: str, pattern: str, cost: int) -> int:
+//	    global str_global
+//	    stack = []
+//	    score = 0
+//
+//	    for ch in S:
+//	        if stack and stack[-1] == pattern[0] and ch == pattern[1]:
+//	            stack.pop()
+//	            score += cost
+//	        else:
+//	            stack.append(ch)
+//
+//	    remaining = ''.join(stack)
+//	    str_global = remaining
+//	    return score
+//
+//
+//	def solve1(X: int, Y: int, S: str) -> int:
+//	    global str_global
+//	    ans = 0
+//	    if X > Y:
+//	        ans += remove_pattern(S, "pr", X)
+//	        ans += remove_pattern(str_global, "rp", Y)
+//	    else:
+//	        ans += remove_pattern(S, "rp", Y)
+//	        ans += remove_pattern(str_global, "pr", X)
+//	    return ans
+
+	
+	
 	static long solve(int X, int Y, String S) {
 		int n = S.length();
 		long ans = 0;

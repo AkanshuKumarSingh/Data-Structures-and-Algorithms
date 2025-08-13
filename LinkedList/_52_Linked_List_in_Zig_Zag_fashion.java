@@ -2,6 +2,40 @@ package LinkedList;
 
 public class _52_Linked_List_in_Zig_Zag_fashion {
 
+	
+//	class Node:
+//	    def __init__(self, data):
+//	        self.data = data
+//	        self.next = None
+//
+//	def reverse(head):
+//	    prev = None
+//	    curr = head
+//
+//	    while curr is not None:
+//	        next_node = curr.next
+//	        curr.next = prev
+//	        prev = curr
+//	        curr = next_node
+//
+//	    return prev
+//
+//	def modifyTheList(head):
+//	    flag = True
+//	    current = head
+//
+//	    while current is not None and current.next is not None:
+//	        if flag:
+//	            if current.data > current.next.data:
+//	                current.data, current.next.data = current.next.data, current.data
+//	        else:
+//	            if current.data < current.next.data:
+//	                current.data, current.next.data = current.next.data, current.data
+//	        
+//	        current = current.next
+//	        flag = not flag
+
+	
 	static class Node {
 		int data;
 		Node next;

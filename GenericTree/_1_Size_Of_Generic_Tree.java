@@ -48,6 +48,40 @@ public class _1_Size_Of_Generic_Tree {
 		return root;
 	}
 
+//	class Node:
+//	    def __init__(self, data):
+//	        self.data = data
+//	        self.children = []
+//
+//	def display(node):
+//	    # Print current node and its children
+//	    str_ = f"{node.data} -> "
+//	    str_ += ", ".join(str(child.data) for child in node.children)
+//	    str_ += "."
+//	    print(str_)
+//
+//	    # Recursively display all children
+//	    for child in node.children:
+//	        display(child)
+//
+//	def construct(arr):
+//	    root = None
+//	    stack = []
+//
+//	    for value in arr:
+//	        if value == -1:
+//	            stack.pop()
+//	        else:
+//	            new_node = Node(value)
+//	            if stack:
+//	                stack[-1].children.append(new_node)
+//	            else:
+//	                root = new_node
+//	            stack.append(new_node)
+//
+//	    return root
+
+	
 	public static int size(Node node) {
 		int children = 0;
 		for(Node child : node.children) {

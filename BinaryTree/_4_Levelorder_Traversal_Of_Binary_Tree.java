@@ -104,6 +104,34 @@ public class _4_Levelorder_Traversal_Of_Binary_Tree {
 		}
 	}
 
+//	from collections import deque
+//
+//	class Node:
+//	    def __init__(self, data):
+//	        self.data = data
+//	        self.left = None
+//	        self.right = None
+//
+//	def level_order(node):
+//	    if not node:
+//	        return
+//
+//	    q = deque()
+//	    q.append(node)
+//
+//	    while q:
+//	        sz = len(q)
+//	        for _ in range(sz):
+//	            rem = q.popleft()
+//	            print(rem.data, end=" ")
+//
+//	            if rem.left:
+//	                q.append(rem.left)
+//	            if rem.right:
+//	                q.append(rem.right)
+//	        print()  # Move to next line after each level
+
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
